@@ -6,7 +6,8 @@ const ThinMidTitle = ({ children, className = '' }) => {
 
 //prop-type
 ThinMidTitle.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  className: PropTypes.string
 };
 
 export default ThinMidTitle;
