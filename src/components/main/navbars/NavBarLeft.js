@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 const NavBarLeft = ({ isOpen = true }) => {
@@ -12,3 +13,8 @@ const NavBarLeft = ({ isOpen = true }) => {
 };
 
 export default NavBarLeft;
+
+//propTypes
+NavBarLeft.propTypes = {
+  isOpen: PropTypes.bool.isRequired
+};
