@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ThickMidTitle from '../../base/headers/ThickMidTitle';
 import ArrowUpDownIcon from '../../base/icons/ArrowUpDownIcon';
 
@@ -39,3 +40,10 @@ const NewMembersCard = ({ thisYearAmount, lastYearAmount, className = '' }) => {
 };
 
 export default NewMembersCard;
+
+//protoTypes
+NewMembersCard.propTypes = {
+  thisYearAmount: PropTypes.string.isRequired,
+  lastYearAmount: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
