@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ThinMidTitle from '../../base/headers/ThinMidTitle';
 import PersonCard from './PersonCard';
 
@@ -16,10 +17,22 @@ const SupportTicketsCard = ({ personInfo = [], className = '' }) => {
           />
         ))
       ) : (
-        <ThinMidTitle>There isn't nothing</ThinMidTitle>
+        <ThinMidTitle>There isn&apos;t nothing</ThinMidTitle>
       )}
     </div>
   );
 };
 
 export default SupportTicketsCard;
+
+//propTypes
+SupportTicketsCard.propTypes = {
+  personInfo: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      imgUrl: PropTypes.string.isRequired
+    })
+  ),
+  className: PropTypes.string
+};
