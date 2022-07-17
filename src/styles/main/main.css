@@ -1,0 +1,202 @@
+@import '../common/common.css';
+
+/*main*/
+/*cards*/
+
+/*common*/
+
+/*main-card*/
+.main-card {
+  padding: var(--mar-pad-2);
+  border-radius: var(--border-radius-6);
+  background-color: var(--col-bg-2);
+}
+
+/*card-margin*/
+.card-margin {
+  margin-bottom: var(--mar-pad-2);
+}
+
+/*sales-card*/
+.sales-card {
+  width: 100%;
+  justify-content: space-between;
+}
+
+/*sales-card-info*/
+.sales-card-info {
+  padding: var(--mar-pad-2);
+  background-color: var(--col-bg-3);
+  width: var(--size-1-2);
+  border-radius: var(--border-radius-3);
+  color: var(--col-bg-1);
+  margin: var(--mar-pad-1);
+  user-select: none;
+}
+
+.sales-card-info h1 {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-1);
+  margin-bottom: var(--mar-pad-1);
+}
+
+.sales-card-info span {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-3);
+}
+
+/*sales-report-card*/
+.sales-report-card {
+  width: 100%;
+}
+
+.sales-report-card .col-left {
+  text-align: left;
+  margin: 0 var(--mar-pad-1) 0 0;
+}
+
+.sales-report-card .col-right {
+}
+
+.sales-report-card .col-right .sales-card {
+  margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
+}
+
+/*yearly-sales-report-card*/
+.yearly-sales-report-card {
+  max-width: 100%;
+  min-width: var(--size-3);
+  height: 100%;
+}
+
+/*compare-years-card*/
+.compare-years-card {
+  height: max-content;
+  max-height: 500px;
+  user-select: none;
+  overflow-y: auto;
+}
+
+.compare-line {
+  padding: var(--mar-pad-1);
+  border-bottom: 1px solid var(--col-bg-1);
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.compare-line-cell {
+  margin: var(--mar-pad-1);
+}
+
+/*new-members-card*/
+.new-members-card {
+  justify-content: space-between;
+  background-color: var(--col-bg-4);
+  border-radius: var(--border-radius-9);
+  height: 100%;
+  padding: var(--mar-pad-8) var(--mar-pad-4) var(--mar-pad-8) var(--mar-pad-4);
+  width: 100%;
+  user-select: none;
+}
+
+.new-members-card-cell {
+  margin-left: var(--mar-pad-3);
+}
+
+/*support-tickets card*/
+.support-tickets-card {
+  min-width: 300px;
+}
+
+/*person-card*/
+.person-card {
+  justify-content: space-between;
+}
+
+/*test*/
+.test {
+  background-color: #d4d4d4d4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 450px 1fr;
+  grid-gap: 20px;
+  padding: var(--mar-pad-2);
+}
+
+/*routes*/
+.dashboard-page {
+  background-color: var(--col-bg-5);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 450px 1fr;
+  grid-gap: var(--mar-pad-4);
+  padding: var(--mar-pad-2);
+  width: 100%;
+  border-radius: var(--border-radius-3);
+  border: 1px solid green;
+}
+
+.grid-left-first {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+
+.grid-right-first {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.grid-left-second {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.grid-right-second {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.grid-bottom-thirth {
+  grid-column: 1/4;
+  grid-row: 3;
+}
+
+/*layouts*/
+/*dashboard-layout*/
+.dashboard-layout {
+  width: 100%;
+  transition: 1s width;
+  background-color: var(--col-bg-1);
+  border: 1px solid red;
+}
+.dashboard-layout-right {
+  width: 100%;
+}
+
+/*nav-bars*/
+/*nav-bar-left*/
+.nav-bar-left {
+  height: 100vh;
+  min-width: 250px;
+  transition: 0.5s ease-in-out;
+  background-color: var(--col-bg-1);
+  position: sticky;
+  top: 0;
+  border: 1px solid red;
+}
+
+.close-nav-bar {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/*nav-bar-top*/
+.nav-bar-top {
+  min-height: 70px;
+  background-color: var(--col-bg-1);
+  border: 1px solid red;
+  padding: var(--mar-pad-2);
+  align-items: center;
+}
