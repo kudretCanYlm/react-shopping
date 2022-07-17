@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Test } from './routes/Test';
 import './styles/main/main.css';
 import './styles/common/common.css';
+import './styles/base/base.css';
 import DashboardPage from './routes/DashboardPage';
 import DashboardLayout from './components/layouts/DashboardLayout';
 /*test*/
