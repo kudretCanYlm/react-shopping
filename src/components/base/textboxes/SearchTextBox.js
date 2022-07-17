@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BsSearch } from 'react-icons/bs';
 import { useRef } from 'react';
 import '../../../styles/common/common.css';
@@ -26,3 +27,10 @@ export default function SearchTextBox({
     </>
   );
 }
+
+
+SearchTextBox.propTypes={
+  placeHolder:PropTypes.string,
+  textChange:PropTypes.func.isRequired,
+  className:PropTypes.string
+};
