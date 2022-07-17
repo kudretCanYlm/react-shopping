@@ -1,4 +1,6 @@
-const SalesCardInfo = ({ title, info, className }) => {
+import PropTypes from 'prop-types';
+
+const SalesCardInfo = ({ title, info, className = '' }) => {
   return (
     <div className={`sales-card-info ${className}`}>
       <h1>{title}</h1>
@@ -8,3 +10,10 @@ const SalesCardInfo = ({ title, info, className }) => {
 };
 
 export default SalesCardInfo;
+
+//propTypes
+SalesCardInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
