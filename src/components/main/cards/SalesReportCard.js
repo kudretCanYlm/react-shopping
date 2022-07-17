@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ColumnChart from '../../base/charts/ColumnChart';
 import ThinMidTitle from '../../base/headers/ThinMidTitle';
 import SalesCardInfo from './SalesCardInfo';
@@ -28,3 +29,13 @@ const SalesReportCard = ({
 };
 
 export default SalesReportCard;
+
+//propTypes
+SalesReportCard.propTypes = {
+  chart_x_values: PropTypes.arrayOf(PropTypes.string),
+  chart_y_values: PropTypes.arrayOf(PropTypes.number),
+  totalSales: PropTypes.number.isRequired,
+  totalRefunds: PropTypes.number.isRequired,
+  totalIncome: PropTypes.number.isRequired,
+  className: PropTypes.string
+};
