@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import IconButton from '../../base/buttons/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
 import SearchTextBox from '../../base/textboxes/SearchTextBox';
@@ -22,3 +23,8 @@ const NavBarTop = ({ MenuClick = (f) => f }) => {
 };
 
 export default NavBarTop;
+
+//propTypes
+NavBarTop.propTypes = {
+  MenuClick: PropTypes.func.isRequired
+};
