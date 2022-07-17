@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ThinMidTitle from '../../base/headers/ThinMidTitle';
 import SalesCard from './SalesCard';
 
@@ -7,20 +8,34 @@ const YearlySalesCard = ({ productInfo = [], className = '' }) => {
       <ThinMidTitle className="title-margin-3 title-border-bottom-1">Yearly Sales</ThinMidTitle>
 
       {productInfo.length > 0 ? (
-        productInfo.map((product) => (
+        productInfo.map((product, key) => (
           <SalesCard
             productName={product.productName}
             price={product.price}
             imgUrl={product.imgUrl}
-            linkTo={product.LinkTo}
+            linkTo={product.linkTo}
             className={'card-margin'}
+            key={key}
           />
         ))
       ) : (
-        <ThinMidTitle>There isn't nothing</ThinMidTitle>
+        <ThinMidTitle>There isn&apos;t nothing</ThinMidTitle>
       )}
     </div>
   );
 };
 
 export default YearlySalesCard;
+
+//propTypes
+YearlySalesCard.propTypes = {
+  productInfo: PropTypes.arrayOf(
+    PropTypes.shape({
+      productName: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      imgUrl: PropTypes.string.isRequired,
+      linkTo: PropTypes.string.isRequired
+    })
+  ),
+  className: PropTypes.string
+};
