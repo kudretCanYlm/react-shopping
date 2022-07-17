@@ -4,7 +4,6 @@ import NavBarTop from '../main/navbars/NavBarTop';
 import PropTypes from 'prop-types';
 
 const DashboardLayout = ({ children }) => {
-
   //will change ,use the redux
   const [isOpen, setIsOpen] = useState(true);
 
