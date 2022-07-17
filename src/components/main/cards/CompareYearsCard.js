@@ -1,22 +1,30 @@
-import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import ThickMidTitle from '../../base/headers/ThickMidTitle';
 import GraphUpDownIcon from '../../base/icons/GraphUpDownIcon';
 
 const CompareYearsCard = ({ compares = [], className = '' }) => {
   return (
     <div className={`compare-years-card main-card flex-column ${className}`}>
-      {compares.map((compare) => (
+      {compares.map((compare, key) => (
         <CompareLine
           title={compare.title}
           nameA={compare.nameA}
           valueA={compare.valueA}
           nameB={compare.nameB}
           valueB={compare.valueB}
+          key={key}
         />
       ))}
     </div>
   );
 };
+
+CompareYearsCard.propTypes = {
+  compares: PropTypes.array.isRequired,
+  className: PropTypes.string
+};
+
+export default CompareYearsCard;
 
 const CompareLine = ({ title, nameA, valueA, nameB, valueB }) => {
   return (
@@ -62,4 +70,10 @@ const CompareLine = ({ title, nameA, valueA, nameB, valueB }) => {
   );
 };
 
-export default CompareYearsCard;
+CompareLine.propTypes = {
+  title: PropTypes.string.isRequired,
+  nameA: PropTypes.string.isRequired,
+  valueA: PropTypes.string.isRequired,
+  nameB: PropTypes.string.isRequired,
+  valueB: PropTypes.string.isRequired
+};
