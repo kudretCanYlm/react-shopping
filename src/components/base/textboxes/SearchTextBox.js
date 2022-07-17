@@ -3,11 +3,11 @@ import { BsSearch } from 'react-icons/bs';
 import { useRef } from 'react';
 import '../../../styles/common/common.css';
 
-export default function SearchTextBox({
+const SearchTextBox = ({
   placeHolder = 'Search here..',
   textChange = (t) => t,
   className = ''
-}) {
+}) => {
   let text = useRef();
 
   return (
@@ -26,11 +26,13 @@ export default function SearchTextBox({
       </div>
     </>
   );
-}
+};
 
+export default SearchTextBox;
 
-SearchTextBox.propTypes={
-  placeHolder:PropTypes.string,
-  textChange:PropTypes.func.isRequired,
-  className:PropTypes.string
+//propTypes
+SearchTextBox.propTypes = {
+  placeHolder: PropTypes.string,
+  textChange: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
