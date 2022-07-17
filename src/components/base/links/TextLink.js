@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const TextLink = ({ children, to, className = '' }) => {
@@ -9,3 +10,10 @@ const TextLink = ({ children, to, className = '' }) => {
 };
 
 export default TextLink;
+
+//proptypes
+TextLink.propTypes = {
+  children: PropTypes.object.isRequired,
+  to: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
