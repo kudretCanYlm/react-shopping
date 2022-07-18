@@ -6,7 +6,7 @@ const ThickMidTitle = ({ children, className = '' }) => {
 
 //prop-type
 ThickMidTitle.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.string.isRequired,
   className: PropTypes.string
 };
 
