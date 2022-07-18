@@ -32,7 +32,7 @@ YearlySalesCard.propTypes = {
   productInfo: PropTypes.arrayOf(
     PropTypes.shape({
       productName: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
+      price: PropTypes.string.isRequired,
       imgUrl: PropTypes.string.isRequired,
       linkTo: PropTypes.string.isRequired
     })
