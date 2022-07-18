@@ -100,28 +100,28 @@ export const Test = () => {
       price: '200',
       imgUrl:
         'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      LinkTo: `products/${'apple'}`
+      linkTo: `products/${'apple'}`
     },
     {
       productName: 'Apple',
       price: '200',
       imgUrl:
         'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      LinkTo: `products/${'apple'}`
+      linkTo: `products/${'apple'}`
     },
     {
       productName: 'Apple',
       price: '200',
       imgUrl:
         'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      LinkTo: `products/${'apple'}`
+      linkTo: `products/${'apple'}`
     },
     {
       productName: 'Apple',
       price: '200',
       imgUrl:
         'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      LinkTo: `products/${'apple'}`
+      linkTo: `products/${'apple'}`
     }
   ];
 
