@@ -34,8 +34,8 @@ export default SalesReportCard;
 SalesReportCard.propTypes = {
   chart_x_values: PropTypes.arrayOf(PropTypes.string),
   chart_y_values: PropTypes.arrayOf(PropTypes.number),
-  totalSales: PropTypes.number.isRequired,
-  totalRefunds: PropTypes.number.isRequired,
-  totalIncome: PropTypes.number.isRequired,
+  totalSales: PropTypes.string.isRequired,
+  totalRefunds: PropTypes.string.isRequired,
+  totalIncome: PropTypes.string.isRequired,
   className: PropTypes.string
 };
