@@ -13,7 +13,7 @@ export default TextLink;
 
 //proptypes
 TextLink.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   className: PropTypes.string
 };
