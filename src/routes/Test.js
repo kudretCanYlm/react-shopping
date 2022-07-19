@@ -1,4 +1,5 @@
 /* eslint-disable */
+import React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import SalesReportCard from '../components/main/cards/SalesReportCard';
 import YearlySalesCard from '../components/main/cards/YearlySalesCard';
