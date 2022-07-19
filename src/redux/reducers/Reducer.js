@@ -1,8 +1,8 @@
-import NavBarReducer from "./NavBarReducer";
-import { combineReducers } from "redux";
+import NavBarReducer from './NavBarReducer';
+import { combineReducers } from 'redux';
 
-const Reducers=combineReducers({
-    NavBarReducer
-})
+const Reducers = combineReducers({
+  NavBarReducer
+});
 
 export default Reducers;
