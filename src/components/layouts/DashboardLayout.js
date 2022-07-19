@@ -1,21 +1,16 @@
+import React from 'react';
 import { useState } from 'react';
 import NavBarLeft from '../main/navbars/NavBarLeft';
 import NavBarTop from '../main/navbars/NavBarTop';
 import PropTypes from 'prop-types';
 
 const DashboardLayout = ({ children }) => {
-  //will change ,use the redux
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleIsOpen = () => {
-    setIsOpen(!isOpen);
-  };
-
+  
   return (
     <div className="dashboard-layout flex-row">
-      <NavBarLeft isOpen={isOpen} />
+      <NavBarLeft />
       <div className="flex-column dashboard-layout-right">
-        <NavBarTop MenuClick={toggleIsOpen} />
+        <NavBarTop />
         {children}
       </div>
     </div>

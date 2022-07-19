@@ -1,25 +1,30 @@
-import PropTypes from 'prop-types';
+import React, { useCallback } from 'react';
 import IconButton from '../../base/buttons/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
 import SearchTextBox from '../../base/textboxes/SearchTextBox';
 import TextLink from '../../base/links/TextLink';
-import { useState } from 'react';
+import {  useDispatch, useSelector,connect } from 'react-redux';
+import {
+  TOGGLE_LEFT_NAV_BAR
+} from '../../../redux/actions/NavBarActions';
 
-//menuclick reduxla sağlanacak
-const NavBarTop = ({ MenuClick = (f) => f }) => {
-  const [text, setText] = useState();
+const mapStateToProps = state => ({
+  ...state.NavBarReducer
+});
 
-  const textChange = (txt) => {
-    setText(txt);
-    console.log(txt + ' ' + text);
-  };
+const NavBarTop = () => {
+
+  const dispatch = useDispatch();
+
+  const onClick = useCallback(() => dispatch({ type: TOGGLE_LEFT_NAV_BAR }), [dispatch]);
 
   return (
     <div className="nav-bar-top flex-row">
-      <IconButton text={'Main'} onClick={MenuClick}>
+      <IconButton text={'Main'} onClick={onClick}>
         <AiOutlineMenu className={'white fontsize-dashboard'} />
       </IconButton>
-      <SearchTextBox textChange={textChange} placeHolder="Search Here" className="max-width-100" />
+      {/* will add to redux */}
+      <SearchTextBox textChange={() => {}} placeHolder="Search Here" className="max-width-100" />
       <TextLink to={'/dashboard'} className={'white'}>
         Dashboard
       </TextLink>
@@ -30,9 +35,4 @@ const NavBarTop = ({ MenuClick = (f) => f }) => {
   );
 };
 
-export default NavBarTop;
-
-//propTypes
-NavBarTop.propTypes = {
-  MenuClick: PropTypes.func.isRequired
-};
+export default connect(mapStateToProps)(NavBarTop);

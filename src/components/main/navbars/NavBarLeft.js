@@ -1,20 +1,14 @@
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-const NavBarLeft = ({ isOpen = true }) => {
-  let [isOpenPage, setIsOpenPage] = useState(isOpen);
-  useEffect(() => {
-    setIsOpenPage(isOpen);
-  }, [isOpen]);
+const NavBarLeft = () => {
+  let selector = useSelector((state) => state.NavBarReducer);
 
   return (
-    <div className={`nav-bar-left ${isOpenPage ? 'open-nav-bar' : 'close-nav-bar'}`}>test test</div>
+    <div className={`nav-bar-left ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}>
+      test test
+    </div>
   );
 };
 
 export default NavBarLeft;
-
-//propTypes
-NavBarLeft.propTypes = {
-  isOpen: PropTypes.bool.isRequired
-};
