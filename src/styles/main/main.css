@@ -55,8 +55,7 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {
-}
+.sales-report-card .col-right {}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -111,6 +110,28 @@
 /*person-card*/
 .person-card {
   justify-content: space-between;
+}
+
+/*nav-bar cards*/
+/*user-card*/
+.user-card {
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-card .content {
+  color: var(--col-text-5);
+  margin-right: var(--mar-pad-3);
+  text-align: right;
+}
+
+.user-card .content .top-text {
+  font-size: var(--font-size-4);
+}
+
+.user-card .content .bottom-text {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-1);
 }
 
 /*test*/
@@ -169,6 +190,7 @@
   background-color: var(--col-bg-1);
   border: 1px solid red;
 }
+
 .dashboard-layout-right {
   width: 100%;
 }
@@ -195,8 +217,14 @@
 /*nav-bar-top*/
 .nav-bar-top {
   min-height: 70px;
+  width: 100%;
   background-color: var(--col-bg-1);
   border: 1px solid red;
   padding: var(--mar-pad-2);
   align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar-top .left {
+  flex: 1;
 }

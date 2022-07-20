@@ -4,15 +4,19 @@
 
 /*common*/
 .purple {
-  color: var(--col-bg-1);
+  color: var(--col-bg-1) !important;
 }
 
 .white {
-  color: var(--col-text-1);
+  color: var(--col-text-1) !important;
 }
 
 .fontsize-dashboard {
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-4) !important;
+}
+
+.fontsize-dashboard-min {
+  font-size: var(--font-size-3) !important;
 }
 
 .max-width-100 {

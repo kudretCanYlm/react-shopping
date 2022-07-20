@@ -59,6 +59,7 @@
   --col-text-hover-1: #d996ff;
   --col-text-3: rgba(123, 123, 123, 0.726);
   --col-text-4: rgb(123, 123, 123);
+  --col-text-5: rgb(228, 228, 228);
   --col-icon-1: green;
   --col-icon-2: red;
   --col-scrollbar-1: #f1f1f1;
@@ -134,6 +135,11 @@
 
 .flex-start-items {
   align-items: flex-start;
+}
+
+/*link-margin*/
+.link-margin-1-vertical {
+  margin: 0 var(--mar-pad-3) 0 !important;
 }
 
 /*title-margin*/
