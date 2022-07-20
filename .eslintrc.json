@@ -2,9 +2,9 @@
     "env": {
         "browser": true,
         "es2021": true,
-        //aşağıdakini ilerde jest kullanacağimiz için ekliyoruz
         "jest": true
     },
+    "parser": "@babel/eslint-parser",
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -14,11 +14,21 @@
         "ecmaFeatures": {
             "jsx": true
         },
+        "allowImportExportEverywhere": false,
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false,
+            // your babel options
+            "presets": [
+                "@babel/preset-env"
+            ]
+        }
     },
     "plugins": [
-        "react"
+        "react",
+        "@babel"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off"
