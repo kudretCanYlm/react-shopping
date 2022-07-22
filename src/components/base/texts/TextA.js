@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextA = ({ children, color = 'purple' }) => {
@@ -7,6 +8,6 @@ const TextA = ({ children, color = 'purple' }) => {
 export default TextA;
 
 TextA.propTypes = {
-  children: PropTypes.object.isRequired,
-  color: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  color: PropTypes.string
 };
