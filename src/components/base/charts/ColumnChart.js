@@ -1,8 +1,9 @@
+import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import PropTypes from 'prop-types';
 import { Chart, Colors, DataLabels, PlotOptions, Tooltip } from './common/CommonChartOptions';
 
-const ColumnChart = ({ x_values, y_values }) => {
+const ColumnChart = ({ x_values, y_values, className = '' }) => {
   const chartData = {
     plotOptions: PlotOptions.PlotOptionsTopBar,
     colors: Colors.Purple,
@@ -25,7 +26,7 @@ const ColumnChart = ({ x_values, y_values }) => {
   };
 
   return (
-    <div className="col-chart">
+    <div className={`col-chart ${className}`}>
       <ReactApexChart options={chartData} series={chartData.series} />
     </div>
   );
@@ -34,7 +35,8 @@ const ColumnChart = ({ x_values, y_values }) => {
 //prop-type
 ColumnChart.propTypes = {
   x_values: PropTypes.array.isRequired,
-  y_values: PropTypes.array.isRequired
+  y_values: PropTypes.array.isRequired,
+  className: PropTypes.string
 };
 
 export default ColumnChart;
