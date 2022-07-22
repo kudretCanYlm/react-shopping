@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const ThinMidTitle = ({ children, className = '' }) => {
@@ -6,7 +7,7 @@ const ThinMidTitle = ({ children, className = '' }) => {
 
 //prop-type
 ThinMidTitle.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.string.isRequired,
   className: PropTypes.string
 };
 
