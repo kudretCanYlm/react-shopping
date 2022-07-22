@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const IconButton = ({ children, text, onClick = (f) => f, className = '' }) => {
