@@ -155,6 +155,10 @@
   margin-bottom: var(--mar-pad-3);
 }
 
+.title-big-margin-1 {
+  margin-bottom: var(--mar-pad-5);
+}
+
 /*title border*/
 .title-border-bottom-1 {
   padding-bottom: var(--mar-pad-1);

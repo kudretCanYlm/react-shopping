@@ -48,6 +48,8 @@
 /*sales-report-card*/
 .sales-report-card {
   width: 100%;
+  justify-content: space-evenly;
+
 }
 
 .sales-report-card .col-left {
@@ -55,7 +57,8 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {}
+.sales-report-card .col-right {
+}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -154,7 +157,6 @@
   padding: var(--mar-pad-2);
   width: 100%;
   border-radius: var(--border-radius-3);
-  border: 1px solid green;
 }
 
 .grid-left-first {
@@ -188,7 +190,6 @@
   width: 100%;
   transition: 1s width;
   background-color: var(--col-bg-1);
-  border: 1px solid red;
 }
 
 .dashboard-layout-right {
@@ -204,7 +205,13 @@
   background-color: var(--col-bg-1);
   position: sticky;
   top: 0;
-  border: 1px solid red;
+}
+
+.logo {
+  margin-bottom: var(--mar-pad-1);
+}
+
+.links {
 }
 
 .close-nav-bar {
@@ -219,7 +226,6 @@
   min-height: 70px;
   width: 100%;
   background-color: var(--col-bg-1);
-  border: 1px solid red;
   padding: var(--mar-pad-2);
   align-items: center;
   justify-content: space-between;
@@ -227,4 +233,12 @@
 
 .nav-bar-top .left {
   flex: 1;
+}
+
+/*responsible*/
+
+@media  only screen and (max-width:1300px) {
+  .sales-report-card .col-right{
+    display: none;
+  }
 }
