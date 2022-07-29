@@ -2,7 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",//path.join(__dirname, "src", "index.js"),
+    target:"web",
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: 'bundle.js'
@@ -18,55 +19,28 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
-                    }
                 }
-            },
-        ]
-    },
-    devServer: {
-        port: 3030
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                loader: "babel-loader",
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
-            }
-        ]
+            },
+            {
+                test: /\.svg$/i,
+                issuer: /\.js?$/,
+                use: ['@svgr/webpack', 'url-loader'],
+            },
+        ],
     },
-    // externals: [
-    //     {
-    //         react: {
-    //             root: 'React',
-    //             commonjs2: 'react',
-    //             commonjs: 'react',
-    //             amd: 'react',
-    //         },
-    //     },
-    //     {
-    //         'react-router-dom': {
-    //             root: 'ReactRouterDOM',
-    //             commonjs2: 'react-router-dom',
-    //             commonjs: 'react-router-dom',
-    //             amd: 'react-router-dom',
-    //         },
-    //     },
-    // ],
+    devServer: {
+        port: 3000,
+        hot: true,
+        historyApiFallback: true
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'dist/index.html'
         })
     ],
 
-    // devServer: {
-    //     static: path.resolve(__dirname, './dist'),
-    //     hot: true,
-    //     historyApiFallback: true
-    // },
 }
