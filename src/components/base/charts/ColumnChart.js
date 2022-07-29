@@ -35,7 +35,7 @@ const ColumnChart = ({ x_values, y_values, className = '' }) => {
 //prop-type
 ColumnChart.propTypes = {
   x_values: PropTypes.array.isRequired,
-  y_values: PropTypes.array.isRequired,
+  y_values: PropTypes.arrayOf(PropTypes.number).isRequired,
   className: PropTypes.string
 };
 
