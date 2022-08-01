@@ -3,8 +3,9 @@ import IconButton from '../../base/buttons/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
 import SearchTextBox from '../../base/textboxes/SearchTextBox';
 import TextLink from '../../base/links/TextLink';
-import { useDispatch, useSelector, connect } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
 import { TOGGLE_LEFT_NAV_BAR } from '../../../redux/actions/NavBarActions';
+import { CLOSE_NAV_BAR_TEXT_BOX, OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import UserCard from '../cards/navBarCards/UserCard';
 
 const mapStateToProps = (state) => ({
@@ -14,18 +15,26 @@ const mapStateToProps = (state) => ({
 const NavBarTop = () => {
   const dispatch = useDispatch();
 
-  const onClick = useCallback(() => dispatch({ type: TOGGLE_LEFT_NAV_BAR }), [dispatch]);
+  window.location.pathname == '/member'
+    ? dispatch({ type: CLOSE_NAV_BAR_TEXT_BOX })
+    : dispatch({ type: OPEN_NAV_BAR_TEXT_BOX });
+
+  const onClick = useCallback(() => {
+    dispatch({ type: TOGGLE_LEFT_NAV_BAR });
+  }, [dispatch]);
 
   return (
     <div className="nav-bar-top flex-row">
-
       <div className="left flex-row flex-center-items">
         <IconButton text={'Menu'} onClick={onClick}>
           <AiOutlineMenu className={'white fontsize-dashboard'} />
         </IconButton>
         {/* will add to redux */}
-        <SearchTextBox textChange={() => { }} placeHolder="Search Here" className="max-width-100" />
-        <TextLink to={'/dashboard'} className={'white fontsize-dashboard-min link-margin-1-vertical'}>
+        <SearchTextBox textChange={() => {}} placeHolder="Search Here" className="max-width-100" />
+        <TextLink
+          to={'/dashboard'}
+          className={'white fontsize-dashboard-min link-margin-1-vertical'}
+        >
           Dashboard
         </TextLink>
         <TextLink to={'/member'} className={'white fontsize-dashboard-min link-margin-1-vertical'}>
@@ -38,7 +47,7 @@ const NavBarTop = () => {
           Help
         </TextLink>
       </div>
-      <div className='right'>
+      <div className="right">
         <UserCard
           user={{
             userName: 'Kudret Can',

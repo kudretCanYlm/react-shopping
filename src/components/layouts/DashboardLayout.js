@@ -1,11 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect } from 'react';
 import NavBarLeft from '../main/navbars/NavBarLeft';
 import NavBarTop from '../main/navbars/NavBarTop';
 import PropTypes from 'prop-types';
 
 const DashboardLayout = ({ children }) => {
-  
   return (
     <div className="dashboard-layout flex-row">
       <NavBarLeft />

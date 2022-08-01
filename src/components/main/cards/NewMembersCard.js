@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleRoot } from 'radium';
-import { fades } from "components/base/animations/Animations"
+import { fades } from 'components/base/animations/Animations';
 import ThickMidTitle from '../../base/headers/ThickMidTitle';
 import ArrowUpDownIcon from '../../base/icons/ArrowUpDownIcon';
 
 const NewMembersCard = ({ thisYearAmount, lastYearAmount, className = '' }) => {
   return (
     <StyleRoot>
-      <div style={fades.fadeInRight} className={`new-members-card flex-row flex-center-items ${className}`}>
+      <div
+        style={fades.fadeInRight}
+        className={`new-members-card flex-row flex-center-items ${className}`}
+      >
         <div className="new-members-card-cell">
           <ThickMidTitle className="title-fontsize-3 title-color-1">NEW MEMBERS</ThickMidTitle>
           <ThickMidTitle className="title-fontsize-min-3 title-color-1 ">IN NUMBERS</ThickMidTitle>

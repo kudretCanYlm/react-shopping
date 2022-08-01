@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import ThinMidTitle from '../../base/headers/ThinMidTitle';
 import PersonCard from './PersonCard';

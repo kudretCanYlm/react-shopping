@@ -1,8 +1,10 @@
 import NavBarReducer from './NavBarReducer';
+import TextBoxReducer from './TextBoxReducer';
 import { combineReducers } from 'redux';
 
 const Reducers = combineReducers({
-  NavBarReducer
+  NavBarReducer,
+  TextBoxReducer
 });
 
 export default Reducers;

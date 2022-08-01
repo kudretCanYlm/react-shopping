@@ -60,6 +60,7 @@
   --col-text-3: rgba(123, 123, 123, 0.726);
   --col-text-4: rgb(123, 123, 123);
   --col-text-5: rgb(228, 228, 228);
+  --col-text-6: rgb(56, 56, 56);
   --col-icon-1: green;
   --col-icon-2: red;
   --col-scrollbar-1: #f1f1f1;
@@ -168,27 +169,27 @@
 /*title-fontsize*/
 
 .title-fontsize-min-1 {
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-1) !important;
 }
 
 .title-fontsize-min-2 {
-  font-size: var(--font-size-2);
+  font-size: var(--font-size-2) !important;
 }
 
 .title-fontsize-min-3 {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-3) !important;
 }
 
 .title-fontsize-1 {
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-4) !important;
 }
 
 .title-fontsize-2 {
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-5) !important;
 }
 
 .title-fontsize-3 {
-  font-size: var(--font-size-6);
+  font-size: var(--font-size-6) !important;
 }
 
 /*title-color*/
@@ -199,15 +200,15 @@
 /*icon margin*/
 
 .icon-margin-1 {
-  margin: var(--mar-pad-1);
+  margin: var(--mar-pad-1) !important;
 }
 
 .icon-margin-2 {
-  margin: var(--mar-pad-2);
+  margin: var(--mar-pad-2) !important;
 }
 
 .icon-margin-3 {
-  margin: var(--mar-pad-3);
+  margin: var(--mar-pad-3) !important;
 }
 
 /*text-options*/

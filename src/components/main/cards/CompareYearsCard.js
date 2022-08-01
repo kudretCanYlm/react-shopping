@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleRoot } from 'radium';
-import {fades} from "components/base/animations/Animations"
+import { fades } from 'components/base/animations/Animations';
 import ThickMidTitle from '../../base/headers/ThickMidTitle';
 import GraphUpDownIcon from '../../base/icons/GraphUpDownIcon';
 
@@ -31,7 +31,6 @@ export default CompareYearsCard;
 
 const CompareLine = ({ title, nameA, valueA, nameB, valueB }) => {
   return (
-
     <StyleRoot>
       <div style={fades.fadeInRight} className="compare-line flex-row">
         <div className="compare-line-cell">

@@ -49,7 +49,6 @@
 .sales-report-card {
   width: 100%;
   justify-content: space-evenly;
-
 }
 
 .sales-report-card .col-left {
@@ -96,8 +95,9 @@
   background-color: var(--col-bg-4);
   border-radius: var(--border-radius-9);
   height: 100%;
+  max-height: 250px;
   padding: var(--mar-pad-8) var(--mar-pad-4) var(--mar-pad-8) var(--mar-pad-4);
-  width: 100%;
+  min-width: 100%;
   user-select: none;
 }
 
@@ -113,6 +113,25 @@
 /*person-card*/
 .person-card {
   justify-content: space-between;
+}
+
+/*project-card*/
+.project-card {
+  width: 400px;
+  overflow: hidden;
+  align-items: center;
+  box-sizing: border-box;
+  padding: var(--mar-pad-3) var(--mar-pad-5);
+}
+
+.project-card h2 {
+  font-weight: var(--font-weight-1);
+  color: var(--col-text-6);
+}
+
+.project-card-size {
+  width: 100%;
+  height: auto;
 }
 
 /*nav-bar cards*/
@@ -148,15 +167,20 @@
 }
 
 /*routes*/
-.dashboard-page {
+.common-page {
   background-color: var(--col-bg-5);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 400px 450px 1fr;
-  grid-gap: var(--mar-pad-4);
-  padding: var(--mar-pad-2);
   width: 100%;
   border-radius: var(--border-radius-3);
+  padding: var(--mar-pad-2);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.dashboard-page {
+  display: grid;
+  grid-gap: var(--mar-pad-4);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 450px 1fr;
 }
 
 .grid-left-first {
@@ -182,6 +206,24 @@
 .grid-bottom-thirth {
   grid-column: 1/4;
   grid-row: 3;
+}
+
+.project-page {
+  align-items: center;
+}
+
+.project-page .title {
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-1) 0;
+  margin: var(--mar-pad-1);
+  border-radius: var(--border-radius-3);
+  width: 100%;
+}
+
+.project-page .content {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /*layouts*/
@@ -214,6 +256,12 @@
 .links {
 }
 
+.open-nav-bar {
+  min-width: 250px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
 .close-nav-bar {
   width: 0;
   min-width: 0;
@@ -237,8 +285,23 @@
 
 /*responsible*/
 
-@media  only screen and (max-width:1300px) {
-  .sales-report-card .col-right{
+@media only screen and (max-width: 1300px) {
+  .sales-report-card .col-right {
     display: none;
   }
+}
+
+@media only screen and (max-width: 1000px) {
+  .nav-bar-top .link-text {
+    display: none;
+  }
+  .project-card{
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width:750px)
+{
+
+  
 }

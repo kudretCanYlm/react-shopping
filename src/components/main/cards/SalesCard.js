@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import MiniRadiusImg from '../../base/img/MiniRadiusImg';
 import TextLink from '../../base/links/TextLink';

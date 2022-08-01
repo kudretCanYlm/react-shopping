@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleRoot } from 'radium';
-import { fades } from "components/base/animations/Animations"
+import { fades } from 'components/base/animations/Animations';
 import MiniRadiusImg from '../../base/img/MiniRadiusImg';
 import TextLink from '../../base/links/TextLink';
 import TextA from '../../base/texts/TextA';

@@ -1,7 +1,9 @@
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BsSearch } from 'react-icons/bs';
 import { useRef } from 'react';
 import '../../../styles/common/common.css';
+import { useDispatch, useSelector, connect } from 'react-redux';
 
 const SearchTextBox = ({
   placeHolder = 'Search here..',
@@ -10,9 +12,17 @@ const SearchTextBox = ({
 }) => {
   let text = useRef();
 
+  let isOpen = useSelector((state) => state.TextBoxReducer).isOpen;
+
+  console.log(isOpen);
+
   return (
     <>
-      <div className={`text-box-search flex-row ${className}`}>
+      <div
+        className={`text-box-search flex-row ${className} ${
+          isOpen ? 'open-text-box' : 'close-text-box'
+        }`}
+      >
         <BsSearch className="icon" />
         <input
           className="input-text"

@@ -18,12 +18,18 @@
         "ecmaVersion": "latest",
         "sourceType": "module",
         "babelOptions": {
-            "babelrc": false,
-            "configFile": false,
-            // your babel options
+            "babelrc": true,
+            "configFile": true,
             "presets": [
-                "@babel/preset-env"
+                "@babel/preset-react"
             ]
+        }
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {
+                "allowExistingDirectories": true
+            }
         }
     },
     "plugins": [

@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import ColumnChart from '../../base/charts/ColumnChart';
 import ThinMidTitle from '../../base/headers/ThinMidTitle';
