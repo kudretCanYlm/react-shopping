@@ -83,6 +83,7 @@
   padding: var(--mar-pad-1);
   transition: background-color 0.5s;
 }
+
 .button-link:hover {
   background-color: var(--col-bg-hover-1);
 }
@@ -125,6 +126,43 @@
 
 .text-box-search .input-text::placeholder {
   color: var(--col-text-3);
+}
+
+.button-text-box {
+  padding: var(--mar-pad-2);
+  border-radius: var(--border-radius-1);
+  background-color: var(--col-bg-2);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.button-text-box .input-text {
+  font-size: var(--font-size-4);
+  outline: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: var(--col-text-4);
+}
+
+.button-text-box .input-text::placeholder {
+  color: var(--col-text-3);
+}
+
+.button-text-box button {
+  padding: var(--mar-pad-1) var(--mar-pad-2);
+  border: none;
+  border-radius: inherit;
+  background-color: var(--col-bg-1);
+  color: var(--col-text-1);
+  transition: 0.5s;
+  font-size: var(--font-size-2);
+}
+
+.button-text-box button:hover {
+  cursor: pointer;
+  background-color: var(--col-bg-hover-1);
+  transform: scale(1.1);
 }
 
 /*buttons*/
@@ -261,4 +299,17 @@
 .arrow-up-down-icon {
   color: var(--col-text-1);
   margin: var(--mar-pad-3);
+}
+
+/*list boxes*/
+.list-box {
+  padding: var(--mar-pad-1) var(--mar-pad-2);
+  outline: none;
+  border: none;
+}
+
+.list-box-type-a {
+  border-radius: var(--border-radius-2);
+  background-color: var(--col-bg-1);
+  color: var(--col-text-1);
 }
