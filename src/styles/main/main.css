@@ -56,8 +56,7 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {
-}
+.sales-report-card .col-right {}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -117,7 +116,6 @@
 
 /*project-card*/
 .project-card {
-  width: 400px;
   overflow: hidden;
   align-items: center;
   box-sizing: border-box;
@@ -132,6 +130,39 @@
 .project-card-size {
   width: 100%;
   height: auto;
+}
+
+/*member-card*/
+.member-card {
+  padding: var(--mar-pad-6);
+  background: var(--lg-1);
+  justify-content: space-evenly;
+}
+
+.member-card h2 {
+  font-size: var(--font-size-6);
+}
+
+.member-card h3,
+p {
+  font-size: var(--font-size-3);
+  color: var(--col-text-5);
+  text-align: center;
+}
+
+.member-card .member-img {
+  border-radius: var(--border-radius-percent);
+  height: var(--size-1-2);
+  width: var(--size-1-2);
+}
+
+.member-card .member-btn {
+  background-color: var(--col-bg-2);
+  color: var(--col-text-2);
+}
+
+.member-card .member-btn:hover {
+  background-color: var(--col-bg-hover-2);
 }
 
 /*nav-bar cards*/
@@ -208,6 +239,7 @@
   grid-row: 3;
 }
 
+/*project-page*/
 .project-page {
   align-items: center;
 }
@@ -222,8 +254,32 @@
 
 .project-page .content {
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+}
+.project-page .content .project-card{
+  flex: 1;
+  min-width: 300px;
+}
+
+/*member-page*/
+.member-page {
+  width: 100%;
+  position: relative;
+}
+
+.member-page .top .list-box {
+  font-size: var(--font-size-2);
+}
+
+.member-page .center {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.member-page .center .member-card {
+  min-width: 300px;
+  flex: 1;
+  height: 400px;
 }
 
 /*layouts*/
@@ -253,8 +309,7 @@
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {
-}
+.links {}
 
 .open-nav-bar {
   min-width: 250px;
@@ -295,13 +350,10 @@
   .nav-bar-top .link-text {
     display: none;
   }
-  .project-card{
+
+  .project-card {
     width: 350px;
   }
 }
 
-@media only screen and (max-width:750px)
-{
-
-  
-}
+@media only screen and (max-width: 750px) {}
