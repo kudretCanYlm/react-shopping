@@ -65,7 +65,7 @@ module.exports = {
     // It suggests the Jest to prompt notifications for take a look at results
     notify: false,
     // This configuration indicates the Jest which take a look at  test environment it need to use for the testing run
-    testEnvironment: "jest-environment-jsdom",
+    testEnvironment: "node",
     // This configuration shows the Jest to the options so one can be passed to the testEnvironment
     testEnvironmentOptions: {},
     // This configuration shows the Jest to add a location field to test the outcome of the run
