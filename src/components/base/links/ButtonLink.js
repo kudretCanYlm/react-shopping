@@ -17,4 +17,10 @@ ButtonLink.propTypes = {
   className: PropTypes.string
 };
 
+//default props
+ButtonLink.defaultProps = {
+  to: '',
+  className: ''
+};
+
 export default ButtonLink;
