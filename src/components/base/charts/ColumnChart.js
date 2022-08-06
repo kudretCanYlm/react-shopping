@@ -39,4 +39,11 @@ ColumnChart.propTypes = {
   className: PropTypes.string
 };
 
+//default props
+ColumnChart.defaultProps = {
+  x_values: ['Empty', 'Empty'],
+  y_values: [20, 10],
+  className: ''
+};
+
 export default ColumnChart;
