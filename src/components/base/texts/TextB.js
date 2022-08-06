@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextB = ({ children, color = 'purple' }) => {
+const TextB = ({ children, color }) => {
   return <p className={'text-b ' + color}>{children}</p>;
 };
 
-export default TextB;
-
-TextA.propTypes = {
-  children: PropTypes.object.isRequired,
+TextB.propTypes = {
+  children: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired
 };
+
+TextB.defaultProps = {
+  color: 'purple'
+};
+
+export default TextB;
