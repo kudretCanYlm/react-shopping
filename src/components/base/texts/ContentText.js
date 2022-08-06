@@ -11,4 +11,9 @@ ContentText.propTypes = {
   className: PropTypes.string
 };
 
+//default props
+ContentText.defaultProps = {
+  className: ''
+};
+
 export default ContentText;
