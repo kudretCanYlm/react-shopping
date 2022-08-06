@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { BsGraphUp, BsGraphDown } from 'react-icons/bs';
 
-const GraphUpDownIcon = ({ isToUp = false, fontSize = 40, className = '' }) => {
+const GraphUpDownIcon = ({ isToUp, fontSize, className }) => {
   return (
     <div className={`graph-up-down-icon ${className}`}>
       {isToUp ? (
@@ -14,10 +14,18 @@ const GraphUpDownIcon = ({ isToUp = false, fontSize = 40, className = '' }) => {
   );
 };
 
-export default GraphUpDownIcon;
-
+//prop-type
 GraphUpDownIcon.propTypes = {
   isToUp: PropTypes.bool.isRequired,
   fontSize: PropTypes.number.isRequired,
   className: PropTypes.string
 };
+
+//default props
+GraphUpDownIcon.defaultProps = {
+  isToUp: false,
+  fontSize: 40,
+  className: ''
+};
+
+export default GraphUpDownIcon;
