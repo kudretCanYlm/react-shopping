@@ -2,8 +2,9 @@ import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import PropTypes from 'prop-types';
 import { Chart, Colors, DataLabels, PlotOptions, Tooltip } from './common/CommonChartOptions';
+import { DEFAULT_X_VALUES, DEFAULT_Y_VALUES } from './common/common-props';
 
-const ColumnChart = ({ x_values, y_values, className = '' }) => {
+const ColumnChart = ({ x_values, y_values, className }) => {
   const chartData = {
     plotOptions: PlotOptions.PlotOptionsTopBar,
     colors: Colors.Purple,
@@ -41,8 +42,8 @@ ColumnChart.propTypes = {
 
 //default props
 ColumnChart.defaultProps = {
-  x_values: ['Empty', 'Empty'],
-  y_values: [20, 10],
+  x_values: DEFAULT_X_VALUES,
+  y_values: DEFAULT_Y_VALUES,
   className: ''
 };
 
