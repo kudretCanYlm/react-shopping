@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import NavBarLeft from '../main/navbars/NavBarLeft';
 import NavBarTop from '../main/navbars/NavBarTop';
 import PropTypes from 'prop-types';
+import { NO_CONTENT_ERROR } from './common/common-props';
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -15,9 +16,14 @@ const DashboardLayout = ({ children }) => {
   );
 };
 
-export default DashboardLayout;
-
 //protoTypes
 DashboardLayout.propTypes = {
   children: PropTypes.object.isRequired
 };
+
+//default props
+DashboardLayout.defaultProps = {
+  children: NO_CONTENT_ERROR
+};
+
+export default DashboardLayout;
