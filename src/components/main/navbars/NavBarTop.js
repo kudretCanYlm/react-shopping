@@ -1,27 +1,26 @@
-import React, { useCallback } from 'react';
-import IconButton from '../../base/buttons/IconButton';
+import React from 'react';
+import IconButton from 'components/base/buttons/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
-import SearchTextBox from '../../base/textboxes/SearchTextBox';
-import TextLink from '../../base/links/TextLink';
-import { useDispatch, connect } from 'react-redux';
-import { TOGGLE_LEFT_NAV_BAR } from '../../../redux/actions/NavBarActions';
-import { CLOSE_NAV_BAR_TEXT_BOX, OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
-import UserCard from '../cards/navBarCards/UserCard';
+import SearchTextBox from 'components/base/textboxes/SearchTextBox';
+import TextLink from 'components/base/links/TextLink';
+import { connect } from 'react-redux';
+import { TOGGLE_LEFT_NAV_BAR } from 'redux/actions/NavBarActions';
+import UserCard from 'components/main/cards/navBarCards/UserCard';
 
 const mapStateToProps = (state) => ({
-  ...state.NavBarReducer
+  navBarReducer: state.NavBarReducer
 });
 
-const NavBarTop = () => {
-  const dispatch = useDispatch();
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleLeftNavBar: () => dispatch({ type: TOGGLE_LEFT_NAV_BAR })
+  };
+};
 
-  window.location.pathname == '/member'
-    ? dispatch({ type: CLOSE_NAV_BAR_TEXT_BOX })
-    : dispatch({ type: OPEN_NAV_BAR_TEXT_BOX });
+const NavBarTop = (props) => {
+  const { toggleLeftNavBar } = props;
 
-  const onClick = useCallback(() => {
-    dispatch({ type: TOGGLE_LEFT_NAV_BAR });
-  }, [dispatch]);
+  const onClick = () => toggleLeftNavBar();
 
   return (
     <div className="nav-bar-top flex-row">
@@ -61,4 +60,4 @@ const NavBarTop = () => {
   );
 };
 
-export default connect(mapStateToProps)(NavBarTop);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBarTop);
