@@ -56,7 +56,8 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {}
+.sales-report-card .col-right {
+}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -256,7 +257,7 @@ p {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.project-page .content .project-card{
+.project-page .content .project-card {
   flex: 1;
   min-width: 300px;
 }
@@ -309,7 +310,8 @@ p {
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {}
+.links {
+}
 
 .open-nav-bar {
   min-width: 250px;
@@ -356,4 +358,5 @@ p {
   }
 }
 
-@media only screen and (max-width: 750px) {}
+@media only screen and (max-width: 750px) {
+}
