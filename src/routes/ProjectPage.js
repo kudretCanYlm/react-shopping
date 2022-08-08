@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ThickMidTitle from 'components/base/headers/ThickMidTitle';
 import ProjectCard from 'components/main/cards/ProjectCard';
 import DashboardPagesLayout from 'components/layouts/DashBoardPagesLayout';
-import { useDispatch } from 'react-redux';
-import { CLOSE_NAV_BAR_TEXT_BOX, OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
+import { StyleRoot } from 'radium';
+import { fades } from 'components/base/animations/Animations';
+import { connect } from 'react-redux';
+import { OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 
-const ProjectPage = () => {
-  const dispatch = useDispatch();
+const mapStateToProps = (state) => ({
+  textBoxReducer: state.TextBoxReducer
+});
 
-  dispatch({ type: OPEN_NAV_BAR_TEXT_BOX });
+const mapDispatchToProps = (dispatch) => {
+  return {
+    openNavBarTextBox: () => dispatch({ type: OPEN_NAV_BAR_TEXT_BOX })
+  };
+};
+
+const ProjectPage = (props) => {
+  const { openNavBarTextBox } = props;
+
+  useEffect(() => {
+    openNavBarTextBox();
+  }, []);
 
   let projects = [
     {
@@ -107,23 +121,25 @@ const ProjectPage = () => {
         <div className="title center-text">
           <ThickMidTitle className="title-fontsize-3">Our Projects</ThickMidTitle>
         </div>
-        <div className="content flex-row">
-          {projects.map((project, key) => (
-            <ProjectCard
-              className="icon-margin-3"
-              key={key}
-              project={{
-                title: project.title,
-                about: project.about,
-                imgUrl: project.imgUrl,
-                to: `/project/${project.id}`
-              }}
-            />
-          ))}
-        </div>
+        <StyleRoot>
+          <div style={fades.fadeInUp} className="content flex-row">
+            {projects.map((project, key) => (
+              <ProjectCard
+                className="icon-margin-3 project-card"
+                key={key}
+                project={{
+                  title: project.title,
+                  about: project.about,
+                  imgUrl: project.imgUrl,
+                  to: `/project/${project.id}`
+                }}
+              />
+            ))}
+          </div>
+        </StyleRoot>
       </div>
     </DashboardPagesLayout>
   );
 };
 
-export default ProjectPage;
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectPage);
