@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MiniRadiusImg from '../../../base/img/MiniRadiusImg';
+import MiniRadiusImg from 'components/base/img/MiniRadiusImg';
+import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 
 const UserCard = ({ user, onClick = (f) => f }) => {
   return (
@@ -14,8 +15,6 @@ const UserCard = ({ user, onClick = (f) => f }) => {
   );
 };
 
-export default UserCard;
-
 //propsType
 UserCard.propTypes = {
   user: PropTypes.shape({
@@ -25,3 +24,14 @@ UserCard.propTypes = {
   }),
   onclick: PropTypes.func
 };
+
+//default props
+UserCard.defaultProps = {
+  user: {
+    userName: 'Empty',
+    role: 'Empty',
+    imgUrl: DEFAULT_IMG_URL
+  }
+};
+
+export default UserCard;
