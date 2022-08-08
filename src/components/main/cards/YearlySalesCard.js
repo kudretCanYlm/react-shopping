@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ThinMidTitle from '../../base/headers/ThinMidTitle';
+import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import SalesCard from './SalesCard';
+import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 
-const YearlySalesCard = ({ productInfo = [], className = '' }) => {
+const YearlySalesCard = ({ productInfo, className }) => {
   return (
     <div className={`yearly-sales-report-card main-card flex-column ${className}`}>
       <ThinMidTitle className="title-margin-3 title-border-bottom-1">Yearly Sales</ThinMidTitle>
@@ -26,8 +27,6 @@ const YearlySalesCard = ({ productInfo = [], className = '' }) => {
   );
 };
 
-export default YearlySalesCard;
-
 //propTypes
 YearlySalesCard.propTypes = {
   productInfo: PropTypes.arrayOf(
@@ -40,3 +39,17 @@ YearlySalesCard.propTypes = {
   ),
   className: PropTypes.string
 };
+
+//default props
+YearlySalesCard.defaultProps = {
+  productInfo: [
+    {
+      productName: 'Empty',
+      Price: 'Empty',
+      imgUrl: DEFAULT_IMG_URL,
+      linkTo: ''
+    }
+  ]
+};
+
+export default YearlySalesCard;
