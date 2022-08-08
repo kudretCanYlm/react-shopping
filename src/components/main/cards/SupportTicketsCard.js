@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ThinMidTitle from '../../base/headers/ThinMidTitle';
+import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import PersonCard from './PersonCard';
+import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 
-const SupportTicketsCard = ({ personInfo = [], className = '' }) => {
+const SupportTicketsCard = ({ personInfo, className }) => {
   return (
     <div className={`support-tickets-card main-card flex-column ${className}`}>
       <ThinMidTitle className="title-margin-3 title-border-bottom-1">Support Tickets</ThinMidTitle>
@@ -24,8 +25,6 @@ const SupportTicketsCard = ({ personInfo = [], className = '' }) => {
   );
 };
 
-export default SupportTicketsCard;
-
 //propTypes
 SupportTicketsCard.propTypes = {
   personInfo: PropTypes.arrayOf(
@@ -37,3 +36,16 @@ SupportTicketsCard.propTypes = {
   ),
   className: PropTypes.string
 };
+
+//default props
+SupportTicketsCard.defaultProps = {
+  personInfo: [
+    {
+      id: 'Empty',
+      name: 'Empty',
+      imgUrl: DEFAULT_IMG_URL
+    }
+  ]
+};
+
+export default SupportTicketsCard;
