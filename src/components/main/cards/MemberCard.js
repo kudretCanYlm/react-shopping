@@ -4,7 +4,7 @@ import ButtonLink from 'components/base/links/ButtonLink';
 import CardImg from 'components/base/img/CardImg';
 
 const MemberCard = ({ member, className, to }) => {
-  //config styles text,title
+  
   return (
     <div
       className={`main-card title-color-1 flex-center-items member-card flex-column ${className}`}
@@ -14,7 +14,7 @@ const MemberCard = ({ member, className, to }) => {
         <h2 className="title-margin-1">{member.name}</h2>
         <h3 className="title-margin-1">{member.job}</h3>
       </div>
-      <div className="content title-margin-5">   
+      <div className="content title-margin-5">
         <p>{member.description}</p>
       </div>
       <ButtonLink className="member-btn" to={to}>
@@ -24,6 +24,7 @@ const MemberCard = ({ member, className, to }) => {
   );
 };
 
+//propTypes
 MemberCard.propTypes = {
   member: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -36,6 +37,8 @@ MemberCard.propTypes = {
   to: PropTypes.string.isRequired
 };
 
+
+//default props
 MemberCard.defaultProps = {
   member: {
     id: '',
