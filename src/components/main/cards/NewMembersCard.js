@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ThickMidTitle from '../../base/headers/ThickMidTitle';
-import ArrowUpDownIcon from '../../base/icons/ArrowUpDownIcon';
+import ThickMidTitle from 'components/base/headers/ThickMidTitle';
+import ArrowUpDownIcon from 'components/base/icons/ArrowUpDownIcon';
 
-const NewMembersCard = ({ thisYearAmount, lastYearAmount, className = '' }) => {
+const NewMembersCard = ({ thisYearAmount, lastYearAmount, className }) => {
   return (
     <div className={`new-members-card flex-row flex-center-items ${className}`}>
       <div className="new-members-card-cell">
