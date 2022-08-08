@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
-import MiniRadiusImg from '../../base/img/MiniRadiusImg';
-import TextLink from '../../base/links/TextLink';
-import TextA from '../../base/texts/TextA';
+import MiniRadiusImg from 'components/base/img/MiniRadiusImg';
+import TextLink from 'components/base/links/TextLink';
+import TextA from 'components/base/texts/TextA';
+import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 
-const PersonCard = ({ name, imgUrl, linkTo, className = '' }) => {
+const PersonCard = ({ name, imgUrl, linkTo, className }) => {
   return (
     <StyleRoot>
       <div style={fades.fadeInRight} className={`person-card flex-row ${className}`}>
@@ -20,8 +21,6 @@ const PersonCard = ({ name, imgUrl, linkTo, className = '' }) => {
   );
 };
 
-export default PersonCard;
-
 //propTypes
 PersonCard.propTypes = {
   name: PropTypes.string.isRequired,
@@ -29,3 +28,13 @@ PersonCard.propTypes = {
   linkTo: PropTypes.string.isRequired,
   className: PropTypes.string
 };
+
+//default props
+PersonCard.defaultProps = {
+  name: '',
+  imgUrl: DEFAULT_IMG_URL,
+  linkTo: '',
+  className: ''
+};
+
+export default PersonCard;
