@@ -1,9 +1,9 @@
-#Things TO Do
+# Things TO Do
 
-##Daily
+## Daily
 1-set 2 cards responsive
 
-##Weekly
+## Weekly
 1-desing layout for the subroutes
 2-desing details page 
 3-add Autoprefix 
