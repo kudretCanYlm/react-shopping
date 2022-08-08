@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import LogoImg from 'components/base/img/LogoImg';
 import IconLink from 'components/base/links/IconLink';
@@ -11,10 +12,8 @@ import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import { BiTime } from 'react-icons/bi';
 import Logo from 'assets/icon.svg';
 
-const NavBarLeft = () => {
+const NavBarLeft = (props, { fontSize, color }) => {
   let selector = useSelector((state) => state.NavBarReducer);
-  const fontSize = 20;
-  const color = 'white';
 
   return (
     <div
@@ -48,6 +47,18 @@ const NavBarLeft = () => {
       </div>
     </div>
   );
+};
+
+//propTypes
+NavBarLeft.propTypes = {
+  fontSize: PropTypes.number,
+  color: PropTypes.string
+};
+
+//default props
+NavBarLeft.defaultProps = {
+  fontSize: 20,
+  color: 'white'
 };
 
 export default NavBarLeft;
