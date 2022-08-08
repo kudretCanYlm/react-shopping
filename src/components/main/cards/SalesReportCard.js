@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ColumnChart from '../../base/charts/ColumnChart';
-import ThinMidTitle from '../../base/headers/ThinMidTitle';
+import ColumnChart from 'components/base/charts/ColumnChart';
+import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import SalesCardInfo from './SalesCardInfo';
-import '../../../styles/common/common.css';
+import { DEFAULT_X_VALUES, DEFAULT_Y_VALUES } from 'components/base/charts/common/common-props';
 
 const SalesReportCard = ({
   chart_x_values,
@@ -11,7 +11,7 @@ const SalesReportCard = ({
   totalSales,
   totalRefunds,
   totalIncome,
-  className = ''
+  className
 }) => {
   return (
     <div className={`sales-report-card main-card flex-row ${className}`}>
@@ -29,8 +29,6 @@ const SalesReportCard = ({
   );
 };
 
-export default SalesReportCard;
-
 //propTypes
 SalesReportCard.propTypes = {
   chart_x_values: PropTypes.arrayOf(PropTypes.string),
@@ -40,3 +38,15 @@ SalesReportCard.propTypes = {
   totalIncome: PropTypes.string.isRequired,
   className: PropTypes.string
 };
+
+//default props
+SalesReportCard.defaultProps = {
+  chart_x_values: DEFAULT_X_VALUES,
+  chart_y_values: DEFAULT_Y_VALUES,
+  totalSales: 'Empty',
+  totalRefunds: 'Empty',
+  totalIncome: 'Empty',
+  className: ''
+};
+
+export default SalesReportCard;
