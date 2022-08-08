@@ -1,21 +1,31 @@
 /* eslint-disable */
-import { useCallback, useEffect, useState } from 'react';
-import SalesReportCard from '../components/main/cards/SalesReportCard';
-import YearlySalesCard from '../components/main/cards/YearlySalesCard';
-import CompareYearsCard from '../components/main/cards/CompareYearsCard';
-import NewMembersCard from '../components/main/cards/NewMembersCard';
-import SupportTicketsCard from '../components/main/cards/SupportTicketsCard';
+import { useEffect, useState } from 'react';
+import SalesReportCard from 'components/main/cards/SalesReportCard';
+import YearlySalesCard from 'components/main/cards/YearlySalesCard';
+import CompareYearsCard from 'components/main/cards/CompareYearsCard';
+import NewMembersCard from 'components/main/cards/NewMembersCard';
+import SupportTicketsCard from 'components/main/cards/SupportTicketsCard';
 import React from 'react';
-import { useDispatch} from 'react-redux';
+import { connect } from 'react-redux';
 import { OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import DashboardPagesLayout from 'components/layouts/DashBoardPagesLayout';
 
-const DashboardPage = () => {
+const mapStateToProps = (state) => ({
+  textBoxReducer: state.TextBoxReducer
+});
 
-  const dispatch = useDispatch();
+const mapDispatchToProps = (dispatch) => {
+  return {
+    openNavBarTextBox: () => dispatch({ type: OPEN_NAV_BAR_TEXT_BOX })
+  };
+};
 
-  dispatch({ type: OPEN_NAV_BAR_TEXT_BOX })
+const DashboardPage = (props) => {
+  const { openNavBarTextBox } = props;
 
+  useEffect(() => {
+    openNavBarTextBox();
+  }, []);
 
   const [y_values, setY_values] = useState([28, 38, 47, 60, 67, 76, 83, 58, 48, 40]);
   const [x_values, setX_values] = useState([
@@ -160,4 +170,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardPage);
