@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
-import ThickMidTitle from '../../base/headers/ThickMidTitle';
-import GraphUpDownIcon from '../../base/icons/GraphUpDownIcon';
+import ThickMidTitle from 'components/base/headers/ThickMidTitle';
+import GraphUpDownIcon from 'components/base/icons/GraphUpDownIcon';
 
-const CompareYearsCard = ({ compares = [], className = '' }) => {
+const CompareYearsCard = ({ compares, className }) => {
   return (
     <div className={`compare-years-card main-card flex-column ${className}`}>
       {compares.map((compare, key) => (
@@ -23,8 +23,27 @@ const CompareYearsCard = ({ compares = [], className = '' }) => {
 };
 
 CompareYearsCard.propTypes = {
-  compares: PropTypes.array.isRequired,
+  compares: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      nameA: PropTypes.string.isRequired,
+      valueA: PropTypes.string.isRequired,
+      nameB: PropTypes.string.isRequired,
+      valueB: PropTypes.string.isRequired
+    })
+  ).isRequired,
   className: PropTypes.string
+};
+
+CompareYearsCard.defaultProps = {
+  compares: {
+    title: 'Empty',
+    nameA: 'Empty',
+    valueA: 'Empty',
+    nameB: 'Empty',
+    valueB: 'Empty'
+  },
+  className: ''
 };
 
 export default CompareYearsCard;
@@ -36,12 +55,7 @@ const CompareLine = ({ title, nameA, valueA, nameB, valueB }) => {
         <div className="compare-line-cell">
           <ThickMidTitle className="title-fontsize-1">
             {title.split(' ').map((word) => (
-              <>
-                {
-                  //alta boşluk eklenecek
-                  word.toUpperCase() + ' \n'
-                }
-              </>
+              <>{word.toUpperCase()}</>
             ))}
           </ThickMidTitle>
         </div>
