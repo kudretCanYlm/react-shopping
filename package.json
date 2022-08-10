@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "webpack serve --mode development --open --hot",
+    "dev": "start http://localhost:3000/dashboard & webpack serve --mode development --hot",
     "build": "webpack --mode production",
     "build-babel": "babel src -d build",
     "start": "react-scripts start",
