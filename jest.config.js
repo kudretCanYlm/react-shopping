@@ -37,7 +37,9 @@ module.exports = {
     // This configuration indicates the Jest to allows us to apply a custom runner in preference to Jest's default inbuilt Jest test runner
     //runner: "jest-runner",
     // This configuration factors to the trails to modules that run a few code to configure or installation the test environment before each test run
-    setupFiles: [],
+    setupFiles: [
+         "<rootDir>/setup/setupJestMock.js"
+    ],
     // This configuration indicates the Jest to the direction to a module that runs some code to configure or installation the testing framework before than each test run 
     setupFilesAfterEnv: null,
     // This configuration factors the Jest to the list of paths of the snapshot serializer modules that Jest must use for each of the snapshot testing
@@ -48,17 +50,17 @@ module.exports = {
     testRunner: "jasmine2",
     // This property suggests the Jest to a map from regular expressions to paths to transformers
     transform: {
-        "\\.[jt]s?$": "babel-jest"
+        "\\.[jt]s?$": "babel-jest",
+        //"^.+\\.svg$": "svg-url-loader"
     },
     // This configuration shows the Jest to an array of regex expression sample strings which are matched towards all source record paths, matched documents will pass transformation
     transformIgnorePatterns: [
         '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$'
     ],
     // It suggests that a map from ordinary regex to module names that permit to stub out assets with a single module
-    moduleNameMapper: {},
     moduleNameMapper: {
-        "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
-        "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+        "\\.svg": "<rootDir>/__mocks__/svg.js",
+        "\\.(css|less)$": "identity-obj-proxy"
     },
     // It suggests that an array of regex expression sample strings, matched against all module paths before considered 'visible' to the module loader
     modulePathIgnorePatterns: [],
@@ -108,11 +110,15 @@ module.exports = {
     // It shows the course of the module which exports an async function that is brought on as soon as after all test suites
     globalTeardown: null,
     // It suggests the set of world variables that are required to be available in all test environments
-    globals: {},
+    globals: {
+        window: {
+            location: {}
+        }
+    },
     // It indicates an array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
         "node_modules",
         "src",
-        
+
     ]
 };
