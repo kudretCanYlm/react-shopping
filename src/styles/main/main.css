@@ -340,6 +340,23 @@ p {
   flex: 1;
 }
 
+/*nav-bar-top-details*/
+.nav-bar-top-details{
+  justify-content: space-between;
+  border: 1px solid red;
+  align-items: center;
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-1);
+  position: sticky;
+  top: 0;
+}
+
+.nav-bar-top-details .text-box{
+  border: 1px solid var(--col-text-4);
+  padding: var(--mar-pad-1);
+}
+
+
 /*responsible*/
 
 @media only screen and (max-width: 1300px) {

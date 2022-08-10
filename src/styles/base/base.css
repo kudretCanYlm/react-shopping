@@ -27,7 +27,6 @@
 
 .link-base {
   background-color: transparent;
-  width: 100%;
   transition: 0.5s background-color;
   padding: var(--mar-pad-2);
 }
@@ -86,6 +85,21 @@
 
 .button-link:hover {
   background-color: var(--col-bg-hover-1);
+}
+
+/*border-icon-link*/
+.border-icon-link {
+  cursor: pointer;
+  border-radius: var(--border-radius-percent);
+  width: max-content;
+  height: max-content;
+  padding: var(--mar-pad-2);
+  background-color: var(--col-bg-1);
+}
+
+.border-icon-link .link {
+  flex: 1;
+  display: inherit;
 }
 
 /*text-boxes*/
