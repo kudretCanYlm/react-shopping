@@ -11,20 +11,53 @@ import DashboardLayout from './components/layouts/DashboardLayout';
 import { Provider } from 'react-redux';
 import ProjectPage from 'routes/ProjectPage';
 import MemberPage from 'routes/MemberPage';
+import DetailsLayout from 'components/layouts/DetailsLayout';
+import ProjectDetailsPage from 'routes/subRoutes/ProjectDetailsPage';
 /*test*/
 
 function App() {
   return (
     <Provider store={Store}>
       <BrowserRouter>
-        <DashboardLayout>
-          <Routes>
-            <Route path={'/dashboard'} element={<DashboardPage />} />
-            <Route path={'/project'} element={<ProjectPage />} />
-            <Route path={'/member'} element={<MemberPage />} />
-            <Route path="*" element={<div>Upps!</div>} />
-          </Routes>
-        </DashboardLayout>
+        <Routes>
+          <Route
+            path={'/dashboard'}
+            element={
+              <DashboardLayout>
+                {' '}
+                <DashboardPage />{' '}
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path={'/project'}
+            element={
+              <DashboardLayout>
+                {' '}
+                <ProjectPage />{' '}
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path={'/project/:projectId'}
+            element={
+              <DetailsLayout>
+                {' '}
+                <ProjectDetailsPage />
+              </DetailsLayout>
+            }
+          />
+          <Route
+            path={'/member'}
+            element={
+              <DashboardLayout>
+                {' '}
+                <MemberPage />
+              </DashboardLayout>
+            }
+          />
+          <Route path="*" element={<div>Upps!</div>} />
+        </Routes>
       </BrowserRouter>
     </Provider>
   );
