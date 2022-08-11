@@ -24,8 +24,7 @@ function App() {
             path={'/dashboard'}
             element={
               <DashboardLayout>
-                {' '}
-                <DashboardPage />{' '}
+                <DashboardPage />
               </DashboardLayout>
             }
           />
@@ -33,8 +32,7 @@ function App() {
             path={'/project'}
             element={
               <DashboardLayout>
-                {' '}
-                <ProjectPage />{' '}
+                <ProjectPage />
               </DashboardLayout>
             }
           />
@@ -42,7 +40,6 @@ function App() {
             path={'/project/:projectId'}
             element={
               <DetailsLayout>
-                {' '}
                 <ProjectDetailsPage />
               </DetailsLayout>
             }
@@ -51,7 +48,6 @@ function App() {
             path={'/member'}
             element={
               <DashboardLayout>
-                {' '}
                 <MemberPage />
               </DashboardLayout>
             }
