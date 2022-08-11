@@ -54,6 +54,7 @@
   --col-bg-4: #6300d3d1;
   --col-bg-5: #d4d4d4d4;
   --col-bg-6: #a41cffd2;
+  --col-bg-7: #dceaffd2;
   --col-bg-hover-1: #9f4bff;
   --col-bg-hover-2: #f7eaffd4;
   --col-text-1: #ffffff;
@@ -216,6 +217,24 @@
 
 .title-color-3 {
   color: var(--col-text-4) !important;
+}
+
+/*icon-color*/
+
+.icon-color-1 {
+  color: var(--col-bg-1) !important;
+}
+
+.icon-color-2 {
+  color: var(--col-bg-2) !important;
+}
+
+.icon-color-3 {
+  color: var(--col-bg-3) !important;
+}
+
+.icon-color-4 {
+  color: var(--col-bg-4) !important;
 }
 
 /*icon margin*/

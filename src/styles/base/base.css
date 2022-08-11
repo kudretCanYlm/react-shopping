@@ -294,6 +294,7 @@
 }
 
 /*icons*/
+/*graph-up-down-icon*/
 .graph-up-down-icon {
   padding: var(--mar-pad-1);
 }
@@ -309,10 +310,24 @@
 .graph-up-down-icon .icon-down {
   color: var(--col-icon-2);
 }
-
+/*arrow-up-down-icon*/
 .arrow-up-down-icon {
   color: var(--col-text-1);
   margin: var(--mar-pad-3);
+}
+
+/*border-icon*/
+.border-icon {
+  cursor: pointer;
+  border: 1px solid var(--col-bg-1);
+  padding: var(--mar-pad-1);
+  border-radius: var(--border-radius-2);
+  height: max-content;
+  transition: 0.5s all;
+}
+
+.border-icon:hover {
+  filter: opacity(80%);
 }
 
 /*list boxes*/
