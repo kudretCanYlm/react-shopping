@@ -38,7 +38,7 @@ module.exports = {
     //runner: "jest-runner",
     // This configuration factors to the trails to modules that run a few code to configure or installation the test environment before each test run
     setupFiles: [
-         "<rootDir>/setup/setupJestMock.js"
+        // "<rootDir>/setup/setupJestMock.js"
     ],
     // This configuration indicates the Jest to the direction to a module that runs some code to configure or installation the testing framework before than each test run 
     setupFilesAfterEnv: null,
