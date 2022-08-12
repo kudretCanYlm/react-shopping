@@ -19,12 +19,12 @@ const NavBarTopDetails = () => {
 
   return (
     <nav className="nav-bar-top-details flex-row">
-      <div className='left flex-row'>
+      <div className="left flex-row">
         <BorderIconLink to={'/dashboard'} className="border-icon">
           <RiHome2Line fontSize={iconSize} className={'icon-color-2'} />
         </BorderIconLink>
       </div>
-      <div className='center flex-row'>
+      <div className="center flex-row">
         <ButtonTextBox
           onClickBtn={textBoxClick}
           buttonText="Search"
@@ -32,7 +32,7 @@ const NavBarTopDetails = () => {
           className="text-box"
         />
       </div>
-      <div className='right flex-row'>
+      <div className="right flex-row">
         <BorderIcon className="border-icon">
           <AiTwotoneBell fontSize={iconSize} className={'icon-color-1'} />
         </BorderIcon>
