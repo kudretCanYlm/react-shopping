@@ -5,7 +5,6 @@ const DetailsLayout = ({ children }) => {
   return (
     <div className="details-layout flex-column">
       <NavBarTopDetails />
-      {/* nav bar top */}
       {children}
     </div>
   );
