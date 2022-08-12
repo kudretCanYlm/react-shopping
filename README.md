@@ -1,4 +1,4 @@
-# Things TO Do
+# Things To Do
 
 ## Daily
 1-set 2 cards responsive
