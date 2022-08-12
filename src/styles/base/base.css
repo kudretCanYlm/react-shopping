@@ -342,3 +342,31 @@
   background-color: var(--col-bg-1);
   color: var(--col-text-1);
 }
+
+/*sliders*/
+
+.details-slider{
+  max-height: var(--size-5);
+  height: auto;
+  user-select: none;
+  background-color: transparent;
+}
+
+.details-slider .slider{
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.details-slider .slider .slide{
+  align-items: center;
+  background-color: transparent;
+}
+
+.details-slider .slider .slide img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: var(--size-12-2);
+}

@@ -47,6 +47,17 @@
   --size-7: 700px;
   --size-7-2: 750px;
 
+  --size-8: 800px;
+  --size-8-2: 850px;
+  --size-9: 900px;
+  --size-9-2: 950px;
+  --size-10: 1000px;
+  --size-10-2: 1050px;
+  --size-11: 1100px;
+  --size-11-2: 1150px;
+  --size-12: 1200px;
+  --size-12-2: 1250px;
+
   /*color*/
   --col-bg-1: #8b25ff;
   --col-bg-2: #ffffff;
@@ -55,6 +66,7 @@
   --col-bg-5: #d4d4d4d4;
   --col-bg-6: #a41cffd2;
   --col-bg-7: #dceaffd2;
+  --col-bg-7: #eef5ffd2;
   --col-bg-hover-1: #9f4bff;
   --col-bg-hover-2: #f7eaffd4;
   --col-text-1: #ffffff;

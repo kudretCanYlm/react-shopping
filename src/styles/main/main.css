@@ -296,6 +296,13 @@ p {
   width: 100%;
 }
 
+/*details-layout*/
+.details-layout {
+  width: 100%;  
+  height: 100vh;
+  background-color: var(--col-bg-8);
+}
+
 /*nav-bars*/
 /*nav-bar-left*/
 .nav-bar-left {
@@ -377,7 +384,7 @@ p {
   margin: var(--mar-pad-1);
 }
 
-.nav-bar-top-details .card p{
+.nav-bar-top-details .card p {
   color: var(--col-text-2);
 }
 
@@ -400,7 +407,7 @@ p {
 }
 
 @media only screen and (max-width: 750px) {
-  .nav-bar-top-details .right{
+  .nav-bar-top-details .right {
     display: none;
   }
 }
