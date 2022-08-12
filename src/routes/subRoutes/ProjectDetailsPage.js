@@ -1,10 +1,15 @@
+import DetailsSlider from 'components/base/sliders/DetailsSlider';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const ProjectDetailsPage = () => {
   let { projectId } = useParams();
 
-  return <>project details page {projectId}</>;
+  return (
+    <>
+      <DetailsSlider />
+    </>
+  );
 };
 
 export default ProjectDetailsPage;
