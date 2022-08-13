@@ -1,6 +1,6 @@
 import React from 'react';
-import NavBarLeft from '../main/navbars/NavBarLeft';
-import NavBarTop from '../main/navbars/NavBarTop';
+import NavBarLeft from 'components/main/navbars/NavBarLeft';
+import NavBarTop from 'components/main/navbars/NavBarTop';
 import PropTypes from 'prop-types';
 import { NO_CONTENT_ERROR } from './common/common-props';
 
