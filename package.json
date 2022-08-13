@@ -20,10 +20,11 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "webpack serve --mode development --open --hot",
+    "dev": "start http://localhost:3000/dashboard & webpack serve --mode development --hot",
     "build": "webpack --mode production",
     "build-babel": "babel src -d build",
     "start": "react-scripts start",

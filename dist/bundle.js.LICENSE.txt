@@ -1,4 +1,10 @@
 /*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+
+/*!
  * ApexCharts v3.35.3
  * (c) 2018-2022 ApexCharts
  * Released under the MIT License.

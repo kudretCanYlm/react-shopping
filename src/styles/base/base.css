@@ -27,7 +27,6 @@
 
 .link-base {
   background-color: transparent;
-  width: 100%;
   transition: 0.5s background-color;
   padding: var(--mar-pad-2);
 }
@@ -86,6 +85,21 @@
 
 .button-link:hover {
   background-color: var(--col-bg-hover-1);
+}
+
+/*border-icon-link*/
+.border-icon-link {
+  cursor: pointer;
+  border-radius: var(--border-radius-percent);
+  width: max-content;
+  height: max-content;
+  padding: var(--mar-pad-2);
+  background-color: var(--col-bg-1);
+}
+
+.border-icon-link .link {
+  flex: 1;
+  display: inherit;
 }
 
 /*text-boxes*/
@@ -280,6 +294,7 @@
 }
 
 /*icons*/
+/*graph-up-down-icon*/
 .graph-up-down-icon {
   padding: var(--mar-pad-1);
 }
@@ -295,10 +310,24 @@
 .graph-up-down-icon .icon-down {
   color: var(--col-icon-2);
 }
-
+/*arrow-up-down-icon*/
 .arrow-up-down-icon {
   color: var(--col-text-1);
   margin: var(--mar-pad-3);
+}
+
+/*border-icon*/
+.border-icon {
+  cursor: pointer;
+  border: 1px solid var(--col-bg-1);
+  padding: var(--mar-pad-1);
+  border-radius: var(--border-radius-2);
+  height: max-content;
+  transition: 0.5s all;
+}
+
+.border-icon:hover {
+  filter: opacity(80%);
 }
 
 /*list boxes*/
@@ -312,4 +341,32 @@
   border-radius: var(--border-radius-2);
   background-color: var(--col-bg-1);
   color: var(--col-text-1);
+}
+
+/*sliders*/
+
+.details-slider {
+  max-height: var(--size-5);
+  height: auto;
+  user-select: none;
+  background-color: transparent;
+}
+
+.details-slider .slider {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.details-slider .slider .slide {
+  align-items: center;
+  background-color: transparent;
+}
+
+.details-slider .slider .slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-width: var(--size-12-2);
 }
