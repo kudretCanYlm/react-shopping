@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -6,8 +7,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { DEFAULT_IMG_URL } from '../img/common/common-props';
 
-const DetailsSlider = ({ className }) => {
+const DetailsSlider = ({ images, className }) => {
   //change buttons there are examples on the stack
 
   return (
@@ -25,24 +27,28 @@ const DetailsSlider = ({ className }) => {
         onSlideChange={() => console.log('slide change')}
         className="slider"
       >
-        <SwiperSlide className="flex-column slide">
-          <img src="https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/images/blog/group_projects.png.webp?itok=tQSafZj0" />
-        </SwiperSlide>
-        <SwiperSlide className="flex-column slide">
-          <img src="https://www.iakademi.com/wp-content/uploads/2021/05/microsoft-project-nedir-1170x500.png" />
-        </SwiperSlide>
-        <SwiperSlide className="flex-column slide">
-          <img src="https://thumbs.dreamstime.com/b/business-team-to-calculate-financial-information-invest-new-projects-manager-meeting-euing-smart-phone-laptop-digital-167938232.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className="flex-column slide">
-          <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/10/what_is_a_project_manager_-_article_image.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className="flex-column slide">
-          <img src="https://res.cloudinary.com/monday-blogs/w_768,h_384,c_fit/fl_lossy,f_auto,q_auto/wp-blog/2021/04/project-management-challenges.jpg" />
-        </SwiperSlide>
+        {
+          images.map((image, key) => (
+            <SwiperSlide className="flex-column slide">
+              <img src={image} key={key} />
+            </SwiperSlide>
+          ))
+        }
+
       </Swiper>
     </div>
   );
 };
+
+//prop-types
+DetailsSlider.propTypes={
+  images:PropTypes.arrayOf(PropTypes.object).isRequired,
+  className:PropTypes.string
+}
+
+//default props
+DetailsSlider.defaultProps={
+  images:[DEFAULT_IMG_URL]
+}
 
 export default DetailsSlider;
