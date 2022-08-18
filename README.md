@@ -6,4 +6,3 @@
 ## Weekly
 1-desing layout for the subroutes
 2-desing details page 
-3-add Autoprefix 
