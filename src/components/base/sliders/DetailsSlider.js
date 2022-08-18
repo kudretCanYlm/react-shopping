@@ -27,28 +27,25 @@ const DetailsSlider = ({ images, className }) => {
         onSlideChange={() => console.log('slide change')}
         className="slider"
       >
-        {
-          images.map((image, key) => (
-            <SwiperSlide className="flex-column slide">
-              <img src={image} key={key} />
-            </SwiperSlide>
-          ))
-        }
-
+        {images.map((image, key) => (
+          <SwiperSlide className="flex-column slide">
+            <img src={image} key={key} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
 };
 
 //prop-types
-DetailsSlider.propTypes={
-  images:PropTypes.arrayOf(PropTypes.object).isRequired,
-  className:PropTypes.string
-}
+DetailsSlider.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  className: PropTypes.string
+};
 
 //default props
-DetailsSlider.defaultProps={
-  images:[DEFAULT_IMG_URL]
-}
+DetailsSlider.defaultProps = {
+  images: [DEFAULT_IMG_URL]
+};
 
 export default DetailsSlider;
