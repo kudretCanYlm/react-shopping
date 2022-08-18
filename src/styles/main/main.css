@@ -188,6 +188,127 @@ p {
   font-weight: var(--font-weight-1);
 }
 
+/*details cards*/
+/*company-card*/
+.company-card {
+  width: auto;
+  min-height: var(--size-4);
+  max-width: var(--size-7-2);
+  justify-content: space-evenly;
+  padding: 2%;
+}
+
+.company-card .top {
+  justify-content: space-between;
+}
+
+.company-card .top .left {
+  align-items: center;
+  flex: 1;
+}
+
+.company-card .top .left .left-content {
+}
+
+.company-card .top .left .left-content p {
+  color: var(--col-text-4);
+}
+
+.company-card .top .left .left-content h2 {
+  letter-spacing: var(--letter-spacing-1);
+  color: var(--col-text-6);
+}
+
+.company-card .top .left .logo {
+  padding: 0;
+  margin-right: 5%;
+  height: clamp(var(50px, 100%, var(--size-2)));
+}
+
+.company-card .top .left .logo img {
+  flex: 1;
+}
+
+/*
+apply in future on the all project
+
+.company-card{
+  @at-root{
+    .top{
+      @at-root{
+        .right{
+          border: 1px solid green;
+        }
+      }
+    }
+
+    .center{
+      border: 1px solid green;
+    }
+
+    .bottom{
+      border: 1px solid green;
+    }
+  }
+}
+*/
+
+.company-card .top .right {
+  justify-content: space-between;
+}
+
+.company-card .center {
+  flex-wrap: wrap;
+  border-radius: var(--border-radius-3);
+  background-color: var(--col-bg-9);
+  margin: var(--mar-pad-2) 0;
+  user-select: none;
+}
+
+.company-card .bottom {
+}
+
+.company-card .bottom h3 {
+  margin-bottom: var(--mar-pad-1);
+  font-size: var(--font-size-3);
+  color: var(--col-text-6);
+}
+
+.company-card .bottom .about p {
+  color: var(--col-text-4);
+  text-align: justify;
+}
+
+/*option-card*/
+.option-card {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: var(--size-1-2);
+  background-color: transparent;
+  padding: var(--mar-pad-5);
+}
+
+.option-card h2 {
+  color: var(--col-text-6);
+}
+
+.option-card h6 {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-1);
+  color: var(--col-text-4);
+}
+
+/*score-card*/
+.score-card {
+  align-items: center;
+  font-weight: var(--font-weight-2);
+}
+
+.score-card span {
+  font-size: var(--font-size-2);
+}
+
 /*test*/
 .test {
   background-color: #d4d4d4d4;
@@ -284,6 +405,24 @@ p {
   height: 400px;
 }
 
+/*sub-routes*/
+.project-details-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.project-details-page .card {
+  position: relative;
+  width: auto;
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow-2);
+  max-width: max-content;
+  z-index: 99;
+  transform: translateY(-20%) translateX(-50%);
+  left: 50%;
+  background-color: var(--col-bg-2);
+}
+
 /*layouts*/
 /*dashboard-layout*/
 .dashboard-layout {
@@ -356,6 +495,7 @@ p {
   padding: var(--mar-pad-1);
   position: sticky;
   top: 0;
+  z-index: 99999;
 }
 
 .nav-bar-top-details .left {
