@@ -309,6 +309,45 @@ apply in future on the all project
   font-size: var(--font-size-2);
 }
 
+/*project-details-card*/
+.project-details-card {
+  height: max-content;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-2);
+  padding: var(--mar-pad-2);
+}
+
+.project-details-card .top {
+  max-height: var(--size-4-2);
+}
+
+.project-details-card .top .text {
+  margin: 0 var(--mar-pad-4);
+  font-size: var(--font-size-3);
+  border: 1px solid var(--col-bg-1);
+  border-radius: var(--border-radius-2);
+  padding: var(--mar-pad-3);
+  overflow-y: auto;
+  letter-spacing: var(--letter-spacing-1);
+}
+
+.project-details-card .bottom {
+  margin-top: var(--mar-pad-3);
+  background-color: var(--col-bg-6);
+  border-radius: var(--border-radius-2);
+}
+
+/*will change*/
+.project-details-card .bottom .option h2 {
+  color: var(--col-text-1);
+}
+
+.project-details-card .bottom .option h6 {
+  color: var(--col-text-5);
+}
+/*will change*/
+
 /*test*/
 .test {
   background-color: #d4d4d4d4;
@@ -411,7 +450,11 @@ apply in future on the all project
   min-height: 100vh;
 }
 
-.project-details-page .card {
+.project-details-page .slider {
+  max-height: var(--size-4-2);
+}
+
+.project-details-page .card-company {
   position: relative;
   width: auto;
   border-radius: var(--border-radius-2);
@@ -419,6 +462,18 @@ apply in future on the all project
   max-width: max-content;
   z-index: 99;
   transform: translateY(-20%) translateX(-50%);
+  left: 50%;
+  background-color: var(--col-bg-2);
+}
+
+.project-details-page .card-project-details {
+  position: relative;
+  width: auto;
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow-2);
+  max-width: var(--size-12-2);
+  z-index: 99;
+  transform: translateX(-50%);
   left: 50%;
   background-color: var(--col-bg-2);
 }
@@ -438,7 +493,7 @@ apply in future on the all project
 /*details-layout*/
 .details-layout {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--col-bg-8);
 }
 

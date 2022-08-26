@@ -378,6 +378,7 @@
 
 /*sliders*/
 
+/*details-slider*/
 .details-slider {
   max-height: var(--size-4);
   height: auto;
@@ -402,4 +403,65 @@
   width: 100%;
   height: 100%;
   max-width: var(--size-12-2);
+}
+
+/*vertical-slider*/
+.vertical-slider {
+  height: 100%;
+  width: clamp(var(--size-2), var(--size-9), 60%);
+  border-radius: var(--border-radius-2);
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-1);
+}
+
+.vertical-slider .slider {
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-slider .slider .slide {
+  align-items: center;
+  background-color: transparent;
+}
+
+.vertical-slider .slider .slide img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/*vertical-person-slider*/
+.vertical-person-slider {
+  height: 100%;
+  width: clamp(var(--size-1), var(--size-3), 40%);
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--box-shadow-1);
+  overflow: hidden;
+}
+
+.vertical-person-slider .slider {
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-person-slider .slider .slide {
+  align-items: center;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.slider-card {
+  align-items: center;
+  cursor: pointer;
+}
+
+.slider-card img {
+  border-radius: var(--border-radius-percent);
+  width: var(--size-1);
+  height: var(--size-1);
+  object-fit: cover;
+}
+
+.slider-card span {
 }
