@@ -8,6 +8,8 @@ import { HiInformationCircle } from 'react-icons/hi';
 import BorderIconLink from 'components/base/links/BorderIconLink';
 import ThreeImg from 'components/base/img/ThreeImg';
 import { IMG_1, IMG_2, IMG_3 } from 'components/base/img/common/stock-images';
+import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
+import { DEFAULT_CONTENT_TEXT } from 'components/base/texts/common/common-props';
 
 const CompanyCard = ({ companyDetails, className }) => {
   const fonstSize = 20;
@@ -55,8 +57,59 @@ const CompanyCard = ({ companyDetails, className }) => {
   );
 };
 
+//propTypes
+CompanyCard.propTypes = {
+  companyDetails: PropTypes.shape({
+    imgUrl: PropTypes.string,
+    companyName: PropTypes.string,
+    address: PropTypes.string,
+    about: PropTypes.string,
+    score: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    companyWebSite: PropTypes.string,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string,
+        value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      })
+    ).isRequired
+  }).isRequired,
+  className: PropTypes.string
+};
+
+//default props
+CompanyCard.defaultProps = {
+  companyDetails: {
+    imgUrl: DEFAULT_IMG_URL,
+    companyName: 'No Name',
+    address: 'No Adress',
+    about: DEFAULT_CONTENT_TEXT,
+    score: -1,
+    companyWebSite: 'No Site',
+    options: [
+      {
+        text: 'Null Name',
+        value: -1
+      },
+      {
+        text: 'Null Name',
+        value: -1
+      },
+      {
+        text: 'Null Name',
+        value: -1
+      },
+      {
+        text: 'Null Name',
+        value: -1
+      }
+    ]
+  },
+  className: ''
+};
+
 export default CompanyCard;
 
+//create a new file for this component
 const OptionCart = ({ text, value }) => {
   return (
     <div className={`option-card flex-column`}>
