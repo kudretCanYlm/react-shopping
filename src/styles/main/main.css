@@ -56,8 +56,7 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {
-}
+.sales-report-card .col-right {}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -207,8 +206,7 @@ p {
   flex: 1;
 }
 
-.company-card .top .left .left-content {
-}
+.company-card .top .left .left-content {}
 
 .company-card .top .left .left-content p {
   color: var(--col-text-4);
@@ -265,8 +263,7 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-card .bottom {
-}
+.company-card .bottom {}
 
 .company-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
@@ -346,7 +343,43 @@ apply in future on the all project
 .project-details-card .bottom .option h6 {
   color: var(--col-text-5);
 }
+
 /*will change*/
+
+/*animation-card*/
+/*scroll-card*/
+.scroll-card {
+  max-width: var(--size-5);
+  width: auto;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: var(--mar-pad-4);
+}
+
+.scroll-card .splash {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  clip-path: path('M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
+    );
+}
+
+.scroll-card .card {
+  width: var(--size-3);
+  height: var(--size-4);
+  align-items: center;
+  justify-content: center;
+  background: var(--col-bg-2);
+  border-radius: var(--border-radius-5);
+  box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+    0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+    0 0 16px hsl(0deg 0% 0% / 0.075);
+  transform-origin: 10% 60%;
+}
 
 /*test*/
 .test {
@@ -439,9 +472,9 @@ apply in future on the all project
 }
 
 .member-page .center .member-card {
-  min-width: 300px;
+  min-width: var(--size-3);
   flex: 1;
-  height: 400px;
+  height: var(--size-4);
 }
 
 /*sub-routes*/
@@ -478,6 +511,8 @@ apply in future on the all project
   background-color: var(--col-bg-2);
 }
 
+.project-details-page .card-options {}
+
 /*layouts*/
 /*dashboard-layout*/
 .dashboard-layout {
@@ -512,8 +547,7 @@ apply in future on the all project
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {
-}
+.links {}
 
 .open-nav-bar {
   min-width: 250px;
