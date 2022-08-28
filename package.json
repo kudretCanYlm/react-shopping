@@ -36,17 +36,11 @@
     "test:snap": "jest --updateSnapshot",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject",
-    "lint": "npx eslint src test",
+    "lint": "npx eslint src __tests__",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
