@@ -7,7 +7,7 @@ import { fades } from 'components/base/animations/Animations';
 import ProjectDetailsCard from 'components/main/cards/detailsCards/ProjectDetailsCard';
 import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import ScrollCard from 'components/main/cards/animationCards/ScrollCard';
-import { CgAlarm, CgAlbum, CgAlignMiddle } from "react-icons/cg"
+import { CgAlarm, CgAlbum, CgAlignMiddle } from 'react-icons/cg';
 
 const ProjectDetailsPage = () => {
   let { projectId } = useParams();
@@ -117,15 +117,15 @@ const ProjectDetailsPage = () => {
         </div>
       </StyleRoot>
       {/* test */}
-      <div className='card-options flex-column'>
+      <div className="card-options flex-column">
         <ScrollCard hueA={205} hueB={245}>
-          <CgAlarm color='#0D8AE1' fontSize={200} />
+          <CgAlarm color="#0D8AE1" fontSize={200} />
         </ScrollCard>
         <ScrollCard hueA={260} hueB={290}>
-          <CgAlbum color='#6F2CFF' fontSize={200} />
+          <CgAlbum color="#6F2CFF" fontSize={200} />
         </ScrollCard>
         <ScrollCard hueA={290} hueB={320}>
-          <CgAlignMiddle color='#B533FF' fontSize={200} />
+          <CgAlignMiddle color="#B533FF" fontSize={200} />
         </ScrollCard>
       </div>
     </div>
