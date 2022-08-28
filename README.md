@@ -6,3 +6,6 @@
 ## Weekly
 1-desing layout for the subroutes
 2-desing details page 
+
+## Mountly
+1-desing chat page
