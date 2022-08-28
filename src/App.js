@@ -37,14 +37,6 @@ function App() {
             }
           />
           <Route
-            path={'/project/:projectId'}
-            element={
-              <DetailsLayout>
-                <ProjectDetailsPage />
-              </DetailsLayout>
-            }
-          />
-          <Route
             path={'/member'}
             element={
               <DashboardLayout>
@@ -52,6 +44,23 @@ function App() {
               </DashboardLayout>
             }
           />
+          <Route
+            path={'/test'}
+            element={
+              <DashboardLayout>
+                <Test />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path={'/project/:projectId'}
+            element={
+              <DetailsLayout>
+                <ProjectDetailsPage />
+              </DetailsLayout>
+            }
+          />
+
           <Route path="*" element={<div>Upps!</div>} />
         </Routes>
       </BrowserRouter>
