@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardImgTest render correctly 1`] = `
+<div
+  className="flex-column card-img test classname"
+>
+  <img
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+</div>
+`;

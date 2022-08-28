@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThickMidTitleTest render correctly 1`] = `
+<h2
+  className="title-mid title-thick title-purple test"
+>
+  Test component
+</h2>
+`;
+
+exports[`ThinMidTitleTest render correctly 1`] = `
+<h2
+  className="title-mid title-thin title-purple test"
+>
+  Test title
+</h2>
+`;

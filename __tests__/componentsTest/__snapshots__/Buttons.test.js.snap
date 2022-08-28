@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButtonTest render correctly 1`] = `
+<div
+  className="btn-icon flex-row "
+  onClick={[Function]}
+>
+  <svg
+    fill="currentColor"
+    fontSize={20}
+    height="1em"
+    stroke="currentColor"
+    strokeWidth="0"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+    viewBox="0 0 16 16"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      height="12"
+      rx="1"
+      width="4"
+      x="6"
+      y="1"
+    />
+    <path
+      d="M1.5 14a.5.5 0 0 0 0 1v-1zm13 1a.5.5 0 0 0 0-1v1zm-13 0h13v-1h-13v1z"
+    />
+  </svg>
+  <p
+    className="fontsize-dashboard white"
+  >
+    test
+  </p>
+</div>
+`;
