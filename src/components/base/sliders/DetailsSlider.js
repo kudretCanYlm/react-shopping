@@ -25,8 +25,7 @@ const DetailsSlider = ({ images, className }) => {
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
-        className="slider"
-      >
+        className="slider">
         {images.map((image, key) => (
           <SwiperSlide className="flex-column slide">
             <img src={image} key={key} />

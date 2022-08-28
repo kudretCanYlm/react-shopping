@@ -28,8 +28,7 @@ const VerticalSlider = ({ images, className }) => {
         loop
         mousewheel={true}
         scrollbar={{ draggable: true }}
-        className="slider"
-      >
+        className="slider">
         {images.map((image, key) => (
           <SwiperSlide key={key} className="flex-column slide">
             <img src={image} />

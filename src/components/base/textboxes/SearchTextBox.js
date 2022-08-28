@@ -16,8 +16,7 @@ const SearchTextBox = ({ placeHolder, textChange = (t) => t, className }) => {
     <div
       className={`text-box-search flex-row ${className} ${
         isOpen ? 'open-text-box' : 'close-text-box'
-      }`}
-    >
+      }`}>
       <BsSearch className="icon" />
       <input
         className="input-text"

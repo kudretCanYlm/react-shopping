@@ -29,8 +29,7 @@ const VerticalPersonSlider = ({ persons, slidesPerView, className }) => {
         loop
         mousewheel={true}
         scrollbar={{ draggable: true }}
-        className="slider"
-      >
+        className="slider">
         {persons.map((person, key) => (
           <SwiperSlide key={key} className="flex-column slide">
             <SliderCard person={person} />
