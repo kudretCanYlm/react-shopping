@@ -1,150 +1,46 @@
 /* eslint-disable */
 import React from 'react';
 import { useCallback, useEffect, useState } from 'react';
-import SalesReportCard from '../components/main/cards/SalesReportCard';
-import YearlySalesCard from '../components/main/cards/YearlySalesCard';
-import CompareYearsCard from '../components/main/cards/CompareYearsCard';
-import NewMembersCard from '../components/main/cards/NewMembersCard';
-import SupportTicketsCard from '../components/main/cards/SupportTicketsCard';
+import axios from 'axios';
+import qs from 'qs';
+import ProjectCard from 'components/main/cards/ProjectCard';
 
 export const Test = () => {
-  const [y_values, setY_values] = useState([28, 38, 47, 60, 67, 76, 83, 58, 48, 40]);
-  const [x_values, setX_values] = useState([
-    'Day 1',
-    'Day 2',
-    'Day 3',
-    'Day 4',
-    'Day 5',
-    'Day 6',
-    'Day 7',
-    'Day 8',
-    'Day 9',
-    'Day 10'
-  ]);
 
-  const [compares, setCompares] = useState([
+  const [img, setImg] = useState("https://c.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif");
+
+  useEffect(() => {
+    var data = qs.stringify({
+      'OwnerId': '0b382dfd-9660-444f-9f2c-0bf9b65cb3d4',
+      'ImageType': '0'
+    });
+    var config = {
+      method: 'post',
+      url: 'https://localhost:44369/media/getSingleGlobalImage',
+      headers: {
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjBFMDI5MUQ3NjBDQjA0QUZDMzhFNjJCNDMxRDg3QTNEIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjYxNjIzMjc0LCJleHAiOjE2NjE2MjQ0NzQsImlhdCI6MTY2MTYyMzI3NH0.gtz140GOoSQe3eWhge1oxjtjHSQeHce-uyjw95ZZXeU',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: data
+    };
+
+    axios(config)
+      .then(function (response) {
+        setImg(response.data.ImageData);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  return <div className="test">
     {
-      title: 'TOTAL MEMBERS',
-      nameA: 'LAST YEAR',
-      valueA: '1457121',
-      nameB: 'THIS YEAR',
-      valueB: '1925024'
-    },
-    {
-      title: 'TOTAL MEMBERS',
-      nameA: 'LAST YEAR',
-      valueA: '144657121',
-      nameB: 'THIS YEAR',
-      valueB: '1925024'
-    },
-    {
-      title: 'TOTAL MEMBERS',
-      nameA: 'LAST YEAR',
-      valueA: '1457121',
-      nameB: 'THIS YEAR',
-      valueB: '1925024'
-    },
-    {
-      title: 'TOTAL MEMBERS',
-      nameA: 'LAST YEAR',
-      valueA: '1457121',
-      nameB: 'THIS YEAR',
-      valueB: '14571121'
-    },
-    {
-      title: 'TOTAL MEMBERS',
-      nameA: 'LAST YEAR',
-      valueA: '1457121',
-      nameB: 'THIS YEAR',
-      valueB: '1925024'
+      [...Array(20)].map(x => (
+        <ProjectCard project={{ imgUrl: img }} />
+      ))
     }
-  ]);
 
-  const [persons, setPersons] = useState([
-    {
-      id: 'ds4512-dffdg542-fghfghfg213-dfgdfg65',
-      name: 'Alisa Denver',
-      imgUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU'
-    },
-    {
-      id: 'ds4512-dffdg542-fghfghfg213-dfgdfg65',
-      name: 'Alisa Denver',
-      imgUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU'
-    },
-    {
-      id: 'ds4512-dffdg542-fghfghfg213-dfgdfg65',
-      name: 'Alisa Denver',
-      imgUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU'
-    },
-    {
-      id: 'ds4512-dffdg542-fghfghfg213-dfgdfg65',
-      name: 'Alisa Denver',
-      imgUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU'
-    },
-    {
-      id: 'ds4512-dffdg542-fghfghfg213-dfgdfg65',
-      name: 'Alisa Denver',
-      imgUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU'
-    }
-  ]);
 
-  //product info
 
-  let productInfo = [
-    {
-      productName: 'Apple',
-      price: '200',
-      imgUrl:
-        'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      linkTo: `products/${'apple'}`
-    },
-    {
-      productName: 'Apple',
-      price: '200',
-      imgUrl:
-        'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      linkTo: `products/${'apple'}`
-    },
-    {
-      productName: 'Apple',
-      price: '200',
-      imgUrl:
-        'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      linkTo: `products/${'apple'}`
-    },
-    {
-      productName: 'Apple',
-      price: '200',
-      imgUrl:
-        'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg',
-      linkTo: `products/${'apple'}`
-    }
-  ];
-
-  return (
-    <div className="test">
-      <SalesReportCard
-        chart_x_values={x_values}
-        chart_y_values={y_values}
-        totalSales={'15,280.00'}
-        totalRefunds={'12.00'}
-        totalIncome={'$25,180.00'}
-        className={'grid-left-first'}
-      />
-      <YearlySalesCard productInfo={productInfo} className={'grid-right-first'} />
-      <CompareYearsCard compares={compares} className={'grid-left-second'} />
-      <SupportTicketsCard personInfo={persons} className={'grid-right-second'} />
-
-      <NewMembersCard
-        lastYearAmount={'1,925,024'}
-        thisYearAmount={'1,052,078'}
-        className={'grid-bottom-thirth'}
-      />
-    </div>
-  );
+  </div>;
 };
