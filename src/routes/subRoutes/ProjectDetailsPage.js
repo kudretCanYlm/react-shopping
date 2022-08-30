@@ -7,7 +7,10 @@ import { fades } from 'components/base/animations/Animations';
 import ProjectDetailsCard from 'components/main/cards/detailsCards/ProjectDetailsCard';
 import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import ScrollCard from 'components/main/cards/animationCards/ScrollCard';
-import { CgAlarm, CgAlbum, CgAlignMiddle } from 'react-icons/cg';
+import { MdAccountTree } from 'react-icons/md';
+import { BiDonateHeart } from 'react-icons/bi';
+import { BiBuildings } from 'react-icons/bi';
+import ClassicButton from 'components/base/buttons/ClassicButton';
 
 const ProjectDetailsPage = () => {
   let { projectId } = useParams();
@@ -102,6 +105,21 @@ const ProjectDetailsPage = () => {
   const [companyDetails] = useState(companyDetails_list);
   const [project, setProject] = useState(project_list);
 
+  const modalJoinUsOpen = () => {
+    //will change
+    console.log('modalJoinUsOpen opened');
+  };
+
+  const modalSubscribeUsOpen = () => {
+    //will change
+    console.log('modalSubscribeUsOpen opened');
+  };
+
+  const redirectToOurCompany = () => {
+    //will change
+    console.log('redirect');
+  };
+
   return (
     <div className="project-details-page flex-column">
       <DetailsSlider images={images} className="slider" />
@@ -116,17 +134,25 @@ const ProjectDetailsPage = () => {
           <ProjectDetailsCard project={project} />
         </div>
       </StyleRoot>
-      {/* test */}
       <div className="card-options flex-column">
-        <ScrollCard hueA={205} hueB={245}>
-          <CgAlarm color="#0D8AE1" fontSize={200} />
-        </ScrollCard>
-        <ScrollCard hueA={260} hueB={290}>
-          <CgAlbum color="#6F2CFF" fontSize={200} />
-        </ScrollCard>
-        <ScrollCard hueA={290} hueB={320}>
-          <CgAlignMiddle color="#B533FF" fontSize={200} />
-        </ScrollCard>
+        <div className="option flex-row">
+          <ScrollCard hueA={205} hueB={245} className="scroll">
+            <MdAccountTree color="#0D8AE1" fontSize={200} />
+          </ScrollCard>
+          <ClassicButton onClick={modalJoinUsOpen} text={'JOIN OUR TEAM'} className="btn" />
+        </div>
+        <div className="option flex-row-reverse">
+          <ScrollCard hueA={260} hueB={290} className="scroll">
+            <BiDonateHeart color="#6F2CFF" fontSize={200} />
+          </ScrollCard>
+          <ClassicButton onClick={modalSubscribeUsOpen} text={'SUBSCRIBE US'} className="btn" />
+        </div>
+        <div className="option flex-row">
+          <ScrollCard hueA={290} hueB={320} className="scroll">
+            <BiBuildings color="#B533FF" fontSize={200} />
+          </ScrollCard>
+          <ClassicButton onClick={redirectToOurCompany} text={'OUR COMPANY'} className="btn" />
+        </div>
       </div>
     </div>
   );
