@@ -2,12 +2,14 @@ import NavBarTopDetails from 'components/main/navbars/NavBarTopDetails';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NO_CONTENT_ERROR } from './common/common-props';
+import DetailsFooter from 'components/main/footers/DetailsFooter';
 
 const DetailsLayout = ({ children }) => {
   return (
     <div className="details-layout flex-column">
       <NavBarTopDetails />
       {children}
+      <DetailsFooter />
     </div>
   );
 };
