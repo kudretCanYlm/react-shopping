@@ -516,6 +516,22 @@ apply in future on the all project
 }
 
 .project-details-page .card-options {
+  padding: var(--mar-pad-1);
+  margin: var(--mar-pad-3) 0;
+}
+
+.project-details-page .card-options .option {
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.project-details-page .card-options .option .scroll {
+  flex: 1;
+}
+
+.project-details-page .card-options .option .btn {
+  width: var(--size-2-2);
 }
 
 /*layouts*/
@@ -535,6 +551,16 @@ apply in future on the all project
   width: 100%;
   min-height: 100vh;
   background-color: var(--col-bg-8);
+}
+
+/*footers*/
+.details-footer {
+  border: 1px solid red;
+  width: 100%;
+  /*will change*/
+  height: 400px;
+  background-color: black;
+  /*will change*/
 }
 
 /*nav-bars*/
