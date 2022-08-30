@@ -9,3 +9,42 @@ exports[`CardImgTest render correctly 1`] = `
   />
 </div>
 `;
+
+exports[`LogoImgTest render as correctly 1`] = `
+<div
+  className="logo-img flex-column flex-center-items test classname"
+>
+  <img
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+</div>
+`;
+
+exports[`MiniRadiusImgTest render as correctly 1`] = `
+<div
+  className="img mini-img test classname"
+>
+  <img
+    alt=""
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+</div>
+`;
+
+exports[`ThreeImgTest render as correctly 1`] = `
+<div
+  className="three-img flex-row flex-center-items test classname"
+>
+  <img
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+  <img
+    className="transform-1"
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+  <img
+    className="transform-2"
+    src="https://i.pinimg.com/originals/c7/42/20/c74220fcf2f83f4249b03ed2a2a87016.jpg"
+  />
+</div>
+`;
