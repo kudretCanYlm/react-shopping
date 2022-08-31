@@ -349,6 +349,42 @@ apply in future on the all project
 
 /*will change*/
 
+/*member-details-card*/
+.member-details-card {
+  /*will-change*/
+  border: 1px solid red;
+  overflow: hidden;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow-1);
+  /*will-change*/
+}
+
+.member-details-card .top {
+  border: 1px solid green;
+  width: 100%;
+  overflow: hidden;
+  /*will change*/
+  max-height: 250px;
+  /*will change*/
+}
+
+.member-details-card .bottom {
+  /*will change*/
+  border: 1px solid blue;
+  height: 200px;
+  /*will change*/
+  padding: 0 var(--mar-pad-3);
+}
+
+.member-details-card .bottom .member-img {
+  /*will change*/
+  width: 130px;
+  height: 130px;
+  /*will change*/
+  transform: translateY(-50%);
+}
+
 /*animation-card*/
 /*scroll-card*/
 .scroll-card {
@@ -482,6 +518,7 @@ apply in future on the all project
 }
 
 /*sub-routes*/
+/*project-details-page*/
 .project-details-page {
   width: 100%;
   min-height: 100vh;
@@ -532,6 +569,16 @@ apply in future on the all project
 
 .project-details-page .card-options .option .btn {
   width: var(--size-2-2);
+}
+
+/*member-details-page*/
+.member-details-page {
+}
+
+.member-details-page .left {
+}
+
+.member-details-page .right {
 }
 
 /*layouts*/

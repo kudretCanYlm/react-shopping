@@ -322,6 +322,18 @@
   transform: translateX(-10px);
 }
 
+/*background-img*/
+.background-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-img img {
+  flex: 1;
+  object-fit: cover;
+}
+
 /*charts*/
 /*column-chart*/
 .col-chart {
