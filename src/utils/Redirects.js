@@ -2,4 +2,7 @@ const toCompanyDetailsPage = (companyId) => {
   return `/company/${companyId}`;
 };
 
-export { toCompanyDetailsPage };
+const toMemberReportPage=(memberId)=>{
+  return `/report/member/${memberId}`
+}
+export { toCompanyDetailsPage,toMemberReportPage };
