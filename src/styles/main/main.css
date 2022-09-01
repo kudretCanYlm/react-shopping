@@ -56,8 +56,7 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {
-}
+.sales-report-card .col-right {}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -207,8 +206,7 @@ p {
   flex: 1;
 }
 
-.company-card .top .left .left-content {
-}
+.company-card .top .left .left-content {}
 
 .company-card .top .left .left-content p {
   color: var(--col-text-4);
@@ -265,8 +263,7 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-card .bottom {
-}
+.company-card .bottom {}
 
 .company-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
@@ -351,37 +348,31 @@ apply in future on the all project
 
 /*member-details-card*/
 .member-details-card {
-  /*will-change*/
-  border: 1px solid red;
+  height: max-content;
   overflow: hidden;
-  max-width: 800px;
-  border-radius: 20px;
+  max-width: var(--size-8);
   box-shadow: var(--box-shadow-1);
-  /*will-change*/
 }
 
 .member-details-card .top {
-  border: 1px solid green;
   width: 100%;
   overflow: hidden;
-  /*will change*/
-  max-height: 250px;
-  /*will change*/
+  max-height: var(--size-2-2);
 }
 
 .member-details-card .bottom {
-  /*will change*/
-  border: 1px solid blue;
-  height: 200px;
-  /*will change*/
+  min-height: var(--size-2);
   padding: 0 var(--mar-pad-3);
 }
 
-.member-details-card .bottom .member-img {
-  /*will change*/
-  width: 130px;
-  height: 130px;
-  /*will change*/
+.member-details-card .bottom .bottom-top {
+  justify-content: space-between;
+  max-height: calc(var(--size-1)/ 2);
+}
+
+.member-details-card .bottom .bottom-top .member-img {
+  width: var(--size-1);
+  height: var(--size-1);
   transform: translateY(-50%);
 }
 
@@ -403,9 +394,8 @@ apply in future on the all project
   left: 0;
   right: 0;
   top: 0;
-  clip-path: path(
-    'M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
-  );
+  clip-path: path('M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
+    );
 }
 
 .scroll-card .card {
@@ -573,12 +563,26 @@ apply in future on the all project
 
 /*member-details-page*/
 .member-details-page {
+  justify-content: center;
+  padding: var(--mar-pad-2);
 }
 
 .member-details-page .left {
+  width: auto;
+}
+
+.member-details-page .left .card-member {
+  border-radius: var(--border-radius-2);
+  width: auto;
+  /*will change*/
+  border: 1px solid red;
+  /*will change*/
 }
 
 .member-details-page .right {
+  /*will change*/
+  border: 1px solid green;
+  /*will change*/
 }
 
 /*layouts*/
@@ -625,8 +629,7 @@ apply in future on the all project
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {
-}
+.links {}
 
 .open-nav-bar {
   min-width: 250px;

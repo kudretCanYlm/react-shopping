@@ -255,6 +255,15 @@
 .title-color-3 {
   color: var(--col-text-4) !important;
 }
+.title-color-4 {
+  color: var(--col-text-5) !important;
+}
+.title-color-5 {
+  color: var(--col-text-6) !important;
+}
+.title-color-6 {
+  color: var(--col-text-7) !important;
+}
 
 /*icon-color*/
 
@@ -302,6 +311,12 @@
 
 .icon-margin-top-1 {
   margin-top: var(--mar-pad-1) !important;
+}
+.icon-margin-top-2 {
+  margin-top: var(--mar-pad-2) !important;
+}
+.icon-margin-top-3 {
+  margin-top: var(--mar-pad-3) !important;
 }
 
 .icon-margin-left-1 {
