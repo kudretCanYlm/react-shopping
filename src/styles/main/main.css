@@ -56,7 +56,8 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {}
+.sales-report-card .col-right {
+}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -206,7 +207,8 @@ p {
   flex: 1;
 }
 
-.company-card .top .left .left-content {}
+.company-card .top .left .left-content {
+}
 
 .company-card .top .left .left-content p {
   color: var(--col-text-4);
@@ -263,7 +265,8 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-card .bottom {}
+.company-card .bottom {
+}
 
 .company-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
@@ -367,7 +370,7 @@ apply in future on the all project
 
 .member-details-card .bottom .bottom-top {
   justify-content: space-between;
-  max-height: calc(var(--size-1)/ 2);
+  max-height: calc(var(--size-1) / 2);
 }
 
 .member-details-card .bottom .bottom-top .member-img {
@@ -394,8 +397,9 @@ apply in future on the all project
   left: 0;
   right: 0;
   top: 0;
-  clip-path: path('M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
-    );
+  clip-path: path(
+    'M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
+  );
 }
 
 .scroll-card .card {
@@ -606,12 +610,14 @@ apply in future on the all project
 
 /*footers*/
 .details-footer {
-  border: 1px solid red;
   width: 100%;
-  /*will change*/
-  height: 400px;
-  background-color: black;
-  /*will change*/
+  background-color: var(--col-bg-1);
+  padding: var(--mar-pad-5);
+  align-items: center;
+}
+
+.details-footer .footer-icons {
+  margin: var(--mar-pad-2) 0;
 }
 
 /*nav-bars*/
@@ -629,7 +635,8 @@ apply in future on the all project
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {}
+.links {
+}
 
 .open-nav-bar {
   min-width: 250px;
