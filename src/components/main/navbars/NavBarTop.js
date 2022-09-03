@@ -29,10 +29,16 @@ const NavBarTop = (props) => {
           <AiOutlineMenu className={'white fontsize-dashboard'} />
         </IconButton>
         {/* will add to redux */}
-        <SearchTextBox textChange={() => {}} placeHolder="Search Here" className="max-width-100" />
+        <SearchTextBox
+          isWithParams={true}
+          textChange={() => {}}
+          placeHolder="Search Here"
+          className="max-width-100"
+        />
         <TextLink
           to={'/dashboard'}
-          className={'white fontsize-dashboard-min link-margin-1-vertical'}>
+          className={'white fontsize-dashboard-min link-margin-1-vertical'}
+        >
           Dashboard
         </TextLink>
         <TextLink to={'/member'} className={'white fontsize-dashboard-min link-margin-1-vertical'}>
