@@ -1,6 +1,7 @@
 import DetailsSlider from 'components/base/sliders/DetailsSlider';
 import CompanyCard from 'components/main/cards/detailsCards/CompanyCard';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
@@ -11,9 +12,11 @@ import { MdAccountTree } from 'react-icons/md';
 import { BiDonateHeart } from 'react-icons/bi';
 import { BiBuildings } from 'react-icons/bi';
 import ClassicButton from 'components/base/buttons/ClassicButton';
+import { toCompanyDetailsPage } from 'utils/Redirects';
 
 const ProjectDetailsPage = () => {
   let { projectId } = useParams();
+  let navigate = useNavigate();
 
   const images_list = [
     'https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/images/blog/group_projects.png.webp?itok=tQSafZj0',
@@ -116,8 +119,7 @@ const ProjectDetailsPage = () => {
   };
 
   const redirectToOurCompany = () => {
-    //will change
-    console.log('redirect');
+    navigate(toCompanyDetailsPage('asdsadsad-sdfdsf'));
   };
 
   return (
