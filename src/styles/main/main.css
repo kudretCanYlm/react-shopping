@@ -166,6 +166,22 @@ p {
   background-color: var(--col-bg-hover-2);
 }
 
+/*post-card*/
+.post-card {
+}
+
+.post-card .post-top {
+}
+
+.post-card .post-top .shared-actor {
+}
+
+.post-card .post-center {
+}
+
+.post-card .post-bottom {
+}
+
 /*nav-bar cards*/
 /*user-card*/
 .user-card {
@@ -352,6 +368,7 @@ apply in future on the all project
 /*member-details-card*/
 .member-details-card {
   height: max-content;
+  width: 100%;
   overflow: hidden;
   max-width: var(--size-8);
   box-shadow: var(--box-shadow-1);
@@ -377,6 +394,32 @@ apply in future on the all project
   width: var(--size-1);
   height: var(--size-1);
   transform: translateY(-50%);
+}
+
+/*article-card*/
+.article-card {
+  max-width: var(--size-5-2);
+  min-width: var(--size-2);
+  width: 60%;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-2);
+  background-color: var(--col-bg-2);
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.article-card .article-card-left {
+  flex: 1;
+  height: var(--size-3);
+  overflow: hidden;
+  min-width: var(--size-2);
+}
+
+.article-card .article-card-right {
+  padding: var(--mar-pad-3);
+  flex: 1;
+  justify-content: center;
+  min-width: var(--size-2);
 }
 
 /*animation-card*/
@@ -567,20 +610,27 @@ apply in future on the all project
 
 /*member-details-page*/
 .member-details-page {
-  justify-content: center;
   padding: var(--mar-pad-2);
 }
 
 .member-details-page .left {
-  width: auto;
+  width: 80%;
+  align-items: center;
+  border: 1px solid red;
 }
 
-.member-details-page .left .card-member {
+.member-details-page .left .left-member-card {
   border-radius: var(--border-radius-2);
-  width: auto;
   /*will change*/
   border: 1px solid red;
   /*will change*/
+}
+
+.member-details-page .left .articles {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid green;
 }
 
 .member-details-page .right {

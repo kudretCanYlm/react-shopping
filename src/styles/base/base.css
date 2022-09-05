@@ -3,13 +3,6 @@
 /*base*/
 
 /*common*/
-.purple {
-  color: var(--col-bg-1) !important;
-}
-
-.white {
-  color: var(--col-text-1) !important;
-}
 
 .fontsize-dashboard {
   font-size: var(--font-size-4) !important;

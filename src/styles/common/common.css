@@ -83,6 +83,7 @@
   --col-text-5: rgb(228, 228, 228);
   --col-text-6: rgb(56, 56, 56);
   --col-text-7: #6139ff;
+  --col-text-8: #0f0f0f;
   --col-icon-1: green;
   --col-icon-2: red;
   --col-scrollbar-1: #f1f1f1;
@@ -255,14 +256,46 @@
 .title-color-3 {
   color: var(--col-text-4) !important;
 }
+
 .title-color-4 {
   color: var(--col-text-5) !important;
 }
+
 .title-color-5 {
   color: var(--col-text-6) !important;
 }
+
 .title-color-6 {
   color: var(--col-text-7) !important;
+}
+
+/*colors*/
+.purple {
+  color: var(--col-bg-1) !important;
+}
+
+.white {
+  color: var(--col-text-1) !important;
+}
+
+.black {
+  color: var(--col-text-8);
+}
+
+.gray-1 {
+  color: var(--col-text-3);
+}
+
+.gray-2 {
+  color: var(--col-text-4);
+}
+
+.gray-3 {
+  color: var(--col-text-5);
+}
+
+.gray-4 {
+  color: var(--col-text-6);
 }
 
 /*icon-color*/
@@ -312,15 +345,26 @@
 .icon-margin-top-1 {
   margin-top: var(--mar-pad-1) !important;
 }
+
 .icon-margin-top-2 {
   margin-top: var(--mar-pad-2) !important;
 }
+
 .icon-margin-top-3 {
   margin-top: var(--mar-pad-3) !important;
 }
 
 .icon-margin-left-1 {
   margin-left: var(--mar-pad-1) !important;
+}
+
+/*not*/
+.not-margin {
+  margin: 0 !important;
+}
+
+.not-padding {
+  padding: 0 !important;
 }
 
 /*text-options*/
