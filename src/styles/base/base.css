@@ -211,6 +211,22 @@
   background-color: var(--col-bg-hover-1);
 }
 
+/*text-button*/
+.btn-text {
+  height: max-content;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--col-text-4);
+  font-size: var(--font-size-1);
+  width: max-content;
+  border-bottom: 1px solid transparent;
+}
+
+.btn-text:hover {
+  border-bottom-color: var(--col-text-4);
+}
+
 /*texts*/
 /*text-a*/
 .text-a {
@@ -486,4 +502,24 @@
 }
 
 .slider-card span {
+}
+
+/*tabs*/
+
+/*tab-type-a*/
+.tab-type-a {
+  text-align: center;
+  flex: 1;
+  min-width: var(--size-1);
+  list-style: none;
+  cursor: pointer;
+  background-color: var(--col-bg-1);
+  color: var(--col-text-1);
+  padding: var(--mar-pad-2) var(--mar-pad-1);
+  user-select: none;
+  transition: background-color 0.5s;
+}
+
+.tab-type-a:hover {
+  background-color: var(--col-bg-hover-1);
 }

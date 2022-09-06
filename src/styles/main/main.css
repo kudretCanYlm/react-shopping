@@ -168,18 +168,68 @@ p {
 
 /*post-card*/
 .post-card {
+  /*will change*/
+  max-width: 600px;
+  min-width: 350px;
+  /*will change*/
+  margin-bottom: var(--mar-pad-2);
+  border-radius: var(--border-radius-3);
+  overflow: hidden;
+  background-color: var(--col-bg-2);
+  box-shadow: var(--box-shadow-2);
 }
 
 .post-card .post-top {
+  padding: var(--mar-pad-3);
+  margin-bottom: var(--mar-pad-3);
 }
 
 .post-card .post-top .shared-actor {
+  justify-content: space-between;
+  margin-bottom: var(--mar-pad-3);
 }
 
 .post-card .post-center {
+  margin-bottom: var(--mar-pad-2);
 }
 
 .post-card .post-bottom {
+}
+
+.post-card .post-bottom .post-datas {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-card .post-bottom .post-datas .post-likes {
+  align-items: center;
+}
+
+.post-card .post-bottom .post-datas .post-likes .images img {
+  width: var(--min-size-1);
+  height: var(--min-size-1);
+}
+
+.post-card .post-bottom .post-buttons {
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--col-text-5);
+}
+
+.post-card .post-bottom .post-buttons .btn {
+  flex: 1;
+  justify-content: center;
+  padding: var(--mar-pad-2);
+  transition: background-color 0.5s;
+}
+
+.post-card .post-bottom .post-buttons .btn:hover {
+  background-color: var(--col-bg-5);
+}
+
+.post-card .post-bottom .post-buttons .btn > p {
+  color: var(--col-text-6) !important;
+  font-size: var(--font-size-2) !important;
 }
 
 /*nav-bar cards*/
@@ -372,6 +422,7 @@ apply in future on the all project
   overflow: hidden;
   max-width: var(--size-8);
   box-shadow: var(--box-shadow-1);
+  background-color: var(--col-bg-2);
 }
 
 .member-details-card .top {
@@ -616,26 +667,30 @@ apply in future on the all project
 .member-details-page .left {
   width: 80%;
   align-items: center;
-  border: 1px solid red;
+}
+
+.member-details-page .left .tab-list {
+  overflow: hidden;
+  border-radius: var(--border-radius-2);
+  margin: var(--mar-pad-7) var(--mar-pad-3);
+  flex-wrap: wrap;
 }
 
 .member-details-page .left .left-member-card {
   border-radius: var(--border-radius-2);
-  /*will change*/
-  border: 1px solid red;
-  /*will change*/
 }
 
-.member-details-page .left .articles {
+.member-details-page .left .articles,
+.posts,
+.shares {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border: 1px solid green;
 }
 
 .member-details-page .right {
   /*will change*/
-  border: 1px solid green;
+
   /*will change*/
 }
 
