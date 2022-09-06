@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import PersonCard from './PersonCard';
 import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
+import { toMemberPage } from 'utils/Redirects';
 
 const SupportTicketsCard = ({ personInfo, className }) => {
   return (
@@ -14,7 +15,7 @@ const SupportTicketsCard = ({ personInfo, className }) => {
             name={person.name}
             imgUrl={person.imgUrl}
             key={id}
-            linkTo={`member/${person.id}`}
+            linkTo={toMemberPage(person.id)}
             className={'title-margin-2'}
           />
         ))
