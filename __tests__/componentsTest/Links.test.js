@@ -159,26 +159,24 @@ describe('IconLinkTest', () => {
 });
 
 describe('TextLinkTest', () => {
-
-  it("render correctly", () => {
+  it('render correctly', () => {
     const component = renderer.create(
       <MemoryRouter history={history}>
         <TextLink className={linkClassName} to={to_1}>
           {linkText}
         </TextLink>
       </MemoryRouter>
-    )
-  })
+    );
+  });
 
-  it("it has my children,route and className", () => {
-
+  it('it has my children,route and className', () => {
     const linkCom = shallow(
       <MemoryRouter history={history}>
         <TextLink className={linkClassName} to={to_1}>
           {linkText}
         </TextLink>
       </MemoryRouter>
-    )
+    );
 
     expect(linkCom.html()).toContain(linkText);
     expect(linkCom.html()).toContain(`href=\"${to_1}\"`);
@@ -187,6 +185,5 @@ describe('TextLinkTest', () => {
     expect(linkCom.html()).not.toContain(notContainButtonText);
     expect(linkCom.html()).not.toContain(`href=\"${to_2}\"`);
     expect(linkCom.children().hasClass('not include ClassName')).toEqual(false);
-
-  })
+  });
 });
