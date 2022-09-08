@@ -5,6 +5,7 @@ import BorderIconLink from 'components/base/links/BorderIconLink';
 import ButtonTextBox from 'components/base/textboxes/ButtonTextBox';
 import UserCard from 'components/main/cards/navBarCards/UserCard';
 import BorderIcon from 'components/base/icons/BorderIcon';
+import { useScrollIsToBottom, useScrollPosition } from 'hooks/page-hooks';
 
 const NavBarTopDetails = () => {
   const iconSize = 25;
@@ -17,8 +18,15 @@ const NavBarTopDetails = () => {
     console.log('clicked user card');
   };
 
+  //scroll options
+  const isBottom = useScrollIsToBottom();
+
   return (
-    <nav className="nav-bar-top-details flex-row">
+    <nav
+      className={`nav-bar-top-details ${
+        isBottom ? 'close-nav-bar-top' : 'open-nav-bar-top'
+      } flex-row`}
+    >
       <div className="left flex-row">
         <BorderIconLink to={'/dashboard'} className="border-icon">
           <RiHome2Line fontSize={iconSize} className={'icon-color-2'} />
