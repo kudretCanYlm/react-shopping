@@ -13,6 +13,7 @@ import ProjectPage from 'routes/ProjectPage';
 import MemberPage from 'routes/MemberPage';
 import DetailsLayout from 'components/layouts/DetailsLayout';
 import ProjectDetailsPage from 'routes/subRoutes/ProjectDetailsPage';
+import MemberDetailsPage from 'routes/subRoutes/MemberDetailsPage';
 /*test*/
 
 function App() {
@@ -42,6 +43,14 @@ function App() {
               <DashboardLayout>
                 <MemberPage />
               </DashboardLayout>
+            }
+          />
+          <Route
+            path={'/member/:memberId'}
+            element={
+              <DetailsLayout>
+                <MemberDetailsPage />
+              </DetailsLayout>
             }
           />
           <Route
