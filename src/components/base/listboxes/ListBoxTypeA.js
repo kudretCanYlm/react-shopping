@@ -13,7 +13,8 @@ const ListBoxTypeA = ({ list, name, onChangeSelect = (f) => f, className }) => {
       ref={selected}
       onChange={takeSelected}
       name={name}
-      className={`list-box list-box-type-a ${className}`}>
+      className={`list-box list-box-type-a ${className}`}
+    >
       {list.map((option, key) => (
         <option key={key} value={option.value}>
           {option.name}
