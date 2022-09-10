@@ -56,8 +56,7 @@
   margin: 0 var(--mar-pad-1) 0 0;
 }
 
-.sales-report-card .col-right {
-}
+.sales-report-card .col-right {}
 
 .sales-report-card .col-right .sales-card {
   margin: var(--mar-pad-1) 0 var(--mar-pad-2) 0;
@@ -193,8 +192,7 @@ p {
   margin-bottom: var(--mar-pad-2);
 }
 
-.post-card .post-bottom {
-}
+.post-card .post-bottom {}
 
 .post-card .post-bottom .post-datas {
   justify-content: space-between;
@@ -227,9 +225,29 @@ p {
   background-color: var(--col-bg-5);
 }
 
-.post-card .post-bottom .post-buttons .btn > p {
+.post-card .post-bottom .post-buttons .btn>p {
   color: var(--col-text-6) !important;
   font-size: var(--font-size-2) !important;
+}
+
+/*company-card*/
+.company-card {
+  /*will change*/
+  width: 400px ;
+  /*will change*/
+  margin: var(--mar-pad-1);
+  background-color: var(--col-bg-2);
+  border-radius: var(--border-radius-3);
+  overflow: hidden;
+}
+
+.company-card .img {
+  width: 100%;
+  
+}
+
+.company-card .content {
+  border: 1px solid red;
 }
 
 /*nav-bar cards*/
@@ -256,7 +274,7 @@ p {
 
 /*details cards*/
 /*company-card*/
-.company-card {
+.company-details-card {
   width: auto;
   min-height: var(--size-4);
   max-width: var(--size-7-2);
@@ -264,34 +282,33 @@ p {
   padding: 2%;
 }
 
-.company-card .top {
+.company-details-card .top {
   justify-content: space-between;
 }
 
-.company-card .top .left {
+.company-details-card .top .left {
   align-items: center;
   flex: 1;
 }
 
-.company-card .top .left .left-content {
-}
+.company-details-card .top .left .left-content {}
 
-.company-card .top .left .left-content p {
+.company-details-card .top .left .left-content p {
   color: var(--col-text-4);
 }
 
-.company-card .top .left .left-content h2 {
+.company-details-card .top .left .left-content h2 {
   letter-spacing: var(--letter-spacing-1);
   color: var(--col-text-6);
 }
 
-.company-card .top .left .logo {
+.company-details-card .top .left .logo {
   padding: 0;
   margin-right: 5%;
   height: clamp(var(50px, 100%, var(--size-2)));
 }
 
-.company-card .top .left .logo img {
+.company-details-card .top .left .logo img {
   flex: 1;
 }
 
@@ -319,11 +336,11 @@ apply in future on the all project
 }
 */
 
-.company-card .top .right {
+.company-details-card .top .right {
   justify-content: space-between;
 }
 
-.company-card .center {
+.company-details-card .center {
   flex-wrap: wrap;
   border-radius: var(--border-radius-3);
   background-color: var(--col-bg-9);
@@ -331,16 +348,15 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-card .bottom {
-}
+.company-details-card .bottom {}
 
-.company-card .bottom h3 {
+.company-details-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
   font-size: var(--font-size-3);
   color: var(--col-text-6);
 }
 
-.company-card .bottom .about p {
+.company-details-card .bottom .about p {
   color: var(--col-text-4);
   text-align: justify;
 }
@@ -491,9 +507,8 @@ apply in future on the all project
   left: 0;
   right: 0;
   top: 0;
-  clip-path: path(
-    'M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
-  );
+  clip-path: path('M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
+    );
 }
 
 .scroll-card .card {
@@ -603,6 +618,20 @@ apply in future on the all project
   min-width: var(--size-3);
   flex: 1;
   height: var(--size-4);
+}
+
+/*company-page*/
+.company-page {
+  width: 100%;
+}
+
+.company-page .top .list-box {
+  font-size: var(--font-size-2);
+}
+
+.company-page .center {
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /*sub-routes*/
@@ -740,8 +769,7 @@ apply in future on the all project
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {
-}
+.links {}
 
 .open-nav-bar {
   min-width: 250px;
