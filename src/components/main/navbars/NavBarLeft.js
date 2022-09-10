@@ -7,10 +7,11 @@ import IconLink from 'components/base/links/IconLink';
 //icons
 import { FiHome } from 'react-icons/fi';
 import { GoProject } from 'react-icons/go';
-import { BsPersonLinesFill, BsFillChatLeftTextFill } from 'react-icons/bs';
+import { BsPersonLinesFill, BsFillChatLeftTextFill, BsBuilding } from 'react-icons/bs';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import { BiTime } from 'react-icons/bi';
 import Logo from 'assets/icon.svg';
+import { toChatPage, toCompanyPage, toDashboardPage, toMemberPage, toProjectPage } from 'utils/Redirects';
 
 const NavBarLeft = (props, { fontSize, color }) => {
   let selector = useSelector((state) => state.NavBarReducer);
@@ -23,19 +24,22 @@ const NavBarLeft = (props, { fontSize, color }) => {
         <LogoImg imgUrl={Logo} className="title-big-margin-1" />
       </div>
       <div className={'links'}>
-        <IconLink text={'Dashboard'} to="/dashboard">
+        <IconLink text={'Dashboard'} to={toDashboardPage()}>
           <FiHome fontSize={fontSize} color={color} />
         </IconLink>
-        <IconLink text={'Our Projects'} to="/project">
+        <IconLink text={'Our Projects'} to={toProjectPage()}>
           <GoProject fontSize={fontSize} color={color} />
         </IconLink>
-        <IconLink text={'Members'} to="/member">
+        <IconLink text={'Members'} to={toMemberPage()}>
           <BsPersonLinesFill fontSize={fontSize} color={color} />
+        </IconLink>
+        <IconLink text={'Companies'} to={toCompanyPage()}>
+          <BsBuilding fontSize={fontSize} color={color} />
         </IconLink>
         <IconLink text={'E-mails'} to="/mail">
           <AiOutlineMail fontSize={fontSize} color={color} />
         </IconLink>
-        <IconLink text={'Chat Support'} to="/chat">
+        <IconLink text={'Chat Support'} to={toChatPage()}>
           <BsFillChatLeftTextFill fontSize={fontSize} color={color} />
         </IconLink>
         <IconLink text={'Time Table'} to="/time-table">
