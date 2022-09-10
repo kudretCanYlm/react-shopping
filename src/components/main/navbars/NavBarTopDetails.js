@@ -5,7 +5,7 @@ import BorderIconLink from 'components/base/links/BorderIconLink';
 import ButtonTextBox from 'components/base/textboxes/ButtonTextBox';
 import UserCard from 'components/main/cards/navBarCards/UserCard';
 import BorderIcon from 'components/base/icons/BorderIcon';
-import { useScrollIsToBottom, useScrollPosition } from 'hooks/page-hooks';
+import { useScrollIsToBottom } from 'hooks/page-hooks';
 
 const NavBarTopDetails = () => {
   const iconSize = 25;
@@ -38,6 +38,7 @@ const NavBarTopDetails = () => {
           buttonText="Search"
           placeHolder="Find your property"
           className="text-box"
+          isWithParams={true}
         />
       </div>
       <div className="right flex-row">
