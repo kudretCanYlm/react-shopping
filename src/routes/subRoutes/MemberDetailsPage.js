@@ -26,7 +26,6 @@ const MemberDetailsPage = () => {
     setSearchParams({ ['tab']: index });
   };
 
-  useTitle(`Member ${member.name}`);
 
   //will add animation router between articles,posts,shared
 
@@ -166,6 +165,8 @@ const MemberDetailsPage = () => {
       isLiked: false
     }
   ];
+
+  useTitle(`Member ${member.name}`);
 
   return (
     <StyleRoot>
