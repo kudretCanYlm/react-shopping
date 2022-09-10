@@ -1,8 +1,16 @@
+const toCompanyPage = () => {
+  return `/company`;
+};
+
 const toCompanyDetailsPage = (companyId) => {
   return `/company/${companyId}`;
 };
 
-const toMemberPage = (memberId) => {
+const toMemberPage = () => {
+  return `/member`;
+};
+
+const toMemberDetailsPage = (memberId) => {
   return `/member/${memberId}`;
 };
 
@@ -14,4 +22,31 @@ const toArticleDetailPage = (articleId) => {
   return `/article/${articleId}`;
 };
 
-export { toCompanyDetailsPage, toMemberReportPage, toArticleDetailPage, toMemberPage };
+const toDashboardPage = () => {
+  return `/dashboard`;
+};
+
+const toProjectPage = () => {
+  return `/project`;
+};
+
+const toProjectDetailsPage = (projectId) => {
+  return `/project/${projectId}`;
+};
+
+const toChatPage = () => {
+  return `/chat`;
+};
+
+export {
+  toCompanyPage,
+  toCompanyDetailsPage,
+  toMemberReportPage,
+  toArticleDetailPage,
+  toMemberPage,
+  toMemberDetailsPage,
+  toDashboardPage,
+  toProjectPage,
+  toProjectDetailsPage,
+  toChatPage
+};
