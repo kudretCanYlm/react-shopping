@@ -6,6 +6,7 @@ import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
 import { connect } from 'react-redux';
 import { OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
+import { useTitle } from 'hooks/page-hooks';
 
 const mapStateToProps = (state) => ({
   textBoxReducer: state.TextBoxReducer
@@ -23,6 +24,8 @@ const ProjectPage = (props) => {
   useEffect(() => {
     openNavBarTextBox();
   }, []);
+
+  useTitle(`Project Page`);
 
   let projects = [
     {
