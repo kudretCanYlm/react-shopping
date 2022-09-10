@@ -15,7 +15,7 @@ const CompanyCard = ({ companyDetails, className }) => {
   const fonstSize = 20;
 
   return (
-    <div className={`company-card flex-column ${className}`}>
+    <div className={`company-details-card flex-column ${className}`}>
       <div className="top flex-row">
         <div className="left flex-row">
           <LogoImg imgUrl={companyDetails.imgUrl} className="logo" />
