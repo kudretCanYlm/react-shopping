@@ -531,6 +531,59 @@ apply in future on the all project
   font-size: var(--font-size-3);
 }
 
+/*supporter-card*/
+.supporter-card {
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-2);
+  align-items: center;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-2);
+}
+
+.supporter-card .supporter-card-top {
+  margin-bottom: var(--mar-pad-1);
+}
+
+.supporter-card .supporter-card-top .img {
+  width: var(--size-1);
+  height: var(--size-1);
+}
+
+.supporter-card .supporter-card-center {
+  text-align: center;
+  margin-bottom: var(--mar-pad-3);
+}
+
+.supporter-card .supporter-card-center .supporter-card-icons {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.supporter-card .supporter-card-center .supporter-card-icons .icon-degree {
+  background-color: var(--col-bg-2);
+  box-shadow: var(--box-shadow-1);
+}
+
+.supporter-card .supporter-card-bottom {
+  width: 100%;
+}
+
+/*company-details-card-mini*/
+.company-details-card-mini {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-2);
+  box-shadow: var(--box-shadow-4);
+  border-radius: var(--border-radius-2);
+  /*will change*/
+
+  /* margin-bottom: var(--mar-pad-2); */
+  /* min-width: 200px;
+  max-width: 300px; */
+  /*will change*/
+}
+
 /*animation-card*/
 /*scroll-card*/
 .scroll-card {
@@ -768,11 +821,11 @@ apply in future on the all project
 
 /*company-details-page*/
 .company-details-page {
+  flex-wrap: wrap;
 }
 
 .company-details-page .company-details-page-left {
-  border: 1px solid red;
-  width: 70%;
+  flex: 7;
   padding: var(--mar-pad-3);
 }
 
@@ -805,8 +858,7 @@ apply in future on the all project
 }
 
 .company-details-page .company-details-page-right {
-  border: 1px solid green;
-  flex: 1;
+  flex: 2;
 }
 
 .company-details-page .company-details-page-left .members {
@@ -814,13 +866,40 @@ apply in future on the all project
   justify-content: center;
 }
 
-.company-details-page .company-details-page-left .card-member-mini {
+.company-details-page .company-details-page-left .members .card-member-mini {
   max-width: var(--size-5);
   min-width: var(--size-3);
   width: 100%;
   margin: var(--mar-pad-2);
   box-shadow: var(--box-shadow-4);
   border-radius: var(--border-radius-2);
+}
+
+.company-details-page .company-details-page-left .supporters {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-details-page .company-details-page-left .supporters .card-supporter {
+  flex: 30%;
+  min-width: var(--size-2-2);
+  max-width: var(--size-4-2);
+  margin: var(--mar-pad-2);
+}
+
+.company-details-page .company-details-page-right {
+  padding: var(--mar-pad-2);
+  position: sticky;
+  top: var(--size-1);
+  border-radius: var(--border-radius-4);
+  height: max-content;
+  box-shadow: var(--box-shadow-2);
+}
+
+.company-details-page .company-details-page-right .card-company-details {
+  margin: var(--mar-pad-2);
+  min-width: var(--size-2-2);
 }
 
 /*layouts*/
