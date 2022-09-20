@@ -620,6 +620,34 @@ apply in future on the all project
   transform-origin: 10% 60%;
 }
 
+/*scroll-card*/
+.color-card {
+  position: relative;
+  width: var(--size-2);
+  min-width: var(--size-2);
+  height: var(--size-2-2);
+  min-height: var(--size-2-2);
+  overflow: hidden;
+  border-radius: var(--border-radius-4);
+  scroll-snap-align: start;
+  cursor: context-menu;
+  box-shadow: var(--box-shadow-2);
+}
+
+.color-card .content {
+  padding: var(--mar-pad-2);
+}
+
+.color-card .migrate {
+  position: absolute;
+  background-color: var(--col-bg-2);
+  flex: 1;
+  width: var(--size-2);
+  height: var(--size-1);
+  transform: translateY(50%);
+  bottom: 0;
+}
+
 /*test*/
 .test {
   background-color: #d4d4d4d4;
@@ -827,6 +855,7 @@ apply in future on the all project
 .company-details-page .company-details-page-left {
   flex: 7;
   padding: var(--mar-pad-3);
+  overflow: hidden;
 }
 
 .company-details-page .company-details-page-left .tab-list {
@@ -886,6 +915,25 @@ apply in future on the all project
   min-width: var(--size-2-2);
   max-width: var(--size-4-2);
   margin: var(--mar-pad-2);
+}
+
+.company-details-page .company-details-page-left .about-us {
+  overflow: hidden;
+  border: 1px solid green;
+  padding: var(--mar-pad-1);
+}
+
+.company-details-page .company-details-page-left .about-us .purposes {
+  width: 100%;
+  margin-bottom: var(--mar-pad-5);
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  padding: var(--mar-pad-4) var(--mar-pad-1);
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--mar-pad-3);
+  gap: var(--mar-pad-5);
 }
 
 .company-details-page .company-details-page-right {
