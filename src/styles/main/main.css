@@ -620,7 +620,7 @@ apply in future on the all project
   transform-origin: 10% 60%;
 }
 
-/*scroll-card*/
+/*color-card*/
 .color-card {
   position: relative;
   width: var(--size-2);
@@ -646,6 +646,19 @@ apply in future on the all project
   height: var(--size-1);
   transform: translateY(50%);
   bottom: 0;
+}
+
+/*list-card*/
+.list-card {
+  padding: var(--mar-pad-1);
+  align-items: center;
+  cursor: context-menu;
+}
+
+.list-card .shape {
+  width: var(--min-size-1-2);
+  height: var(--min-size-1-2);
+  background-color: var(--col-bg-1);
 }
 
 /*test*/
@@ -934,6 +947,17 @@ apply in future on the all project
   scroll-snap-type: x mandatory;
   scroll-padding: var(--mar-pad-3);
   gap: var(--mar-pad-5);
+}
+
+.company-details-page .company-details-page-left .about-us .histories {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: var(--mar-pad-5);
+}
+
+.company-details-page .company-details-page-left .about-us .histories .card-list {
+  width: max-content;
 }
 
 .company-details-page .company-details-page-right {
