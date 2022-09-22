@@ -576,12 +576,68 @@ apply in future on the all project
   padding: var(--mar-pad-2);
   box-shadow: var(--box-shadow-4);
   border-radius: var(--border-radius-2);
-  /*will change*/
+}
 
-  /* margin-bottom: var(--mar-pad-2); */
-  /* min-width: 200px;
-  max-width: 300px; */
-  /*will change*/
+/*events-slider-details-card*/
+.events-slider-details-card {
+  border-radius: var(--border-radius-2);
+  background-color: var(--col-bg-5);
+  overflow: hidden;
+  position: relative;
+}
+
+.events-slider-details-card .slider {
+  display: flex;
+}
+
+.events-slider-details-card .slider .slide {
+  flex: 1;
+}
+
+.events-slider-details-card .slider .slide .slide-img-layout {
+  height: var(--size-6);
+}
+
+.events-slider-details-card .slider .slide .slide-img {
+  user-select: none;
+}
+
+.events-slider-details-card .slider .slide .slide-content {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--col-bg-1);
+  width: 100%;
+  padding: var(--mar-pad-1) var(--mar-pad-2) var(--mar-pad-4);
+}
+
+.events-slider-details-card .slider .slide .slide-content .btn {
+  border: 1px solid var(--col-text-1);
+  background-color: transparent;
+}
+
+.custom-slider-button {
+  position: absolute;
+  z-index: 1;
+  color: var(--col-bg-2);
+  background-color: var(--col-bg-1);
+  padding: var(--mar-pad-1);
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+
+.custom-slider-button:hover {
+  background-color: var(--col-bg-hover-1);
+}
+
+.to-left {
+  left: 0;
+}
+
+.to-right {
+  right: 0;
 }
 
 /*animation-card*/
@@ -932,7 +988,6 @@ apply in future on the all project
 
 .company-details-page .company-details-page-left .about-us {
   overflow: hidden;
-  border: 1px solid green;
   padding: var(--mar-pad-1);
 }
 
@@ -958,6 +1013,15 @@ apply in future on the all project
 
 .company-details-page .company-details-page-left .about-us .histories .card-list {
   width: max-content;
+}
+
+.company-details-page .company-details-page-left .about-us .events {
+  align-items: center;
+}
+
+.company-details-page .company-details-page-left .about-us .events .events-slider {
+  width: 100%;
+  max-width: var(--size-10);
 }
 
 .company-details-page .company-details-page-right {
