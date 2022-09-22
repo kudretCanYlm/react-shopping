@@ -26,6 +26,10 @@ const toDashboardPage = () => {
   return `/dashboard`;
 };
 
+const toEventDetailsPage = (eventId) => {
+  return `/event/${eventId}`;
+};
+
 const toProjectPage = () => {
   return `/project`;
 };
@@ -46,6 +50,7 @@ export {
   toMemberPage,
   toMemberDetailsPage,
   toDashboardPage,
+  toEventDetailsPage,
   toProjectPage,
   toProjectDetailsPage,
   toChatPage
