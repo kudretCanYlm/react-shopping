@@ -14,6 +14,7 @@ import MemberPage from 'routes/MemberPage';
 import DetailsLayout from 'components/layouts/DetailsLayout';
 import ProjectDetailsPage from 'routes/subRoutes/ProjectDetailsPage';
 import MemberDetailsPage from 'routes/subRoutes/MemberDetailsPage';
+import CompanyDetailsPage from 'routes/subRoutes/CompanyDetailsPage';
 /*test*/
 
 function App() {
@@ -66,6 +67,15 @@ function App() {
             element={
               <DetailsLayout>
                 <ProjectDetailsPage />
+              </DetailsLayout>
+            }
+          />
+
+          <Route
+            path={'/company/:projectId'}
+            element={
+              <DetailsLayout>
+                <CompanyDetailsPage />
               </DetailsLayout>
             }
           />
