@@ -73,6 +73,11 @@
   --col-bg-7: #dceaffd2;
   --col-bg-8: #eef5ffd2;
   --col-bg-9: #efefef;
+  --col-bg-10: #b957ff;
+  --col-bg-11: #b041ff;
+  --col-bg-12: #a11eff;
+  --col-bg-13: #9d13ff;
+  --col-bg-14: #9500ff;
   --col-bg-hover-1: #9f4bff;
   --col-bg-hover-2: #f7eaffd4;
   --col-text-1: #ffffff;
@@ -84,6 +89,7 @@
   --col-text-6: rgb(56, 56, 56);
   --col-text-7: #6139ff;
   --col-text-8: #0f0f0f;
+  --col-text-9: #e8e8e8;
   --col-icon-1: green;
   --col-icon-2: red;
   --col-scrollbar-1: #f1f1f1;
@@ -112,6 +118,7 @@
   --box-shadow-1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   --box-shadow-2: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   --box-shadow-3: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  --box-shadow-4: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 
   /*linear-gradient*/
   --lg-1: linear-gradient(180deg, rgba(70, 72, 156, 1) 1%, rgba(101, 40, 159, 1) 86%);
@@ -128,6 +135,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -286,25 +294,28 @@
 .white {
   color: var(--col-text-1) !important;
 }
+.white-2 {
+  color: var(--col-text-9) !important;
+}
 
 .black {
-  color: var(--col-text-8);
+  color: var(--col-text-8) !important;
 }
 
 .gray-1 {
-  color: var(--col-text-3);
+  color: var(--col-text-3) !important;
 }
 
 .gray-2 {
-  color: var(--col-text-4);
+  color: var(--col-text-4) !important;
 }
 
 .gray-3 {
-  color: var(--col-text-5);
+  color: var(--col-text-5) !important;
 }
 
 .gray-4 {
-  color: var(--col-text-6);
+  color: var(--col-text-6) !important;
 }
 
 /*background-colors*/
@@ -314,6 +325,27 @@
 
 .bg-col-1-hover-1 {
   background-color: var(--col-bg-hover-1) !important;
+}
+
+/*card-colors*/
+.card-col-1 {
+  background-color: var(--col-bg-10) !important;
+}
+
+.card-col-2 {
+  background-color: var(--col-bg-11) !important;
+}
+
+.card-col-3 {
+  background-color: var(--col-bg-12) !important;
+}
+
+.card-col-4 {
+  background-color: var(--col-bg-13) !important;
+}
+
+.card-col-5 {
+  background-color: var(--col-bg-14) !important;
 }
 
 /*icon-color*/

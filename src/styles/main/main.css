@@ -232,6 +232,25 @@ p {
   font-size: var(--font-size-2) !important;
 }
 
+/*company-card*/
+.company-card {
+  /*will change*/
+  width: 400px;
+  /*will change*/
+  margin: var(--mar-pad-1);
+  background-color: var(--col-bg-2);
+  border-radius: var(--border-radius-3);
+  overflow: hidden;
+}
+
+.company-card .img {
+  width: 100%;
+}
+
+.company-card .content {
+  border: 1px solid red;
+}
+
 /*nav-bar cards*/
 /*user-card*/
 .user-card {
@@ -256,7 +275,7 @@ p {
 
 /*details cards*/
 /*company-card*/
-.company-card {
+.company-details-card {
   width: auto;
   min-height: var(--size-4);
   max-width: var(--size-7-2);
@@ -264,34 +283,34 @@ p {
   padding: 2%;
 }
 
-.company-card .top {
+.company-details-card .top {
   justify-content: space-between;
 }
 
-.company-card .top .left {
+.company-details-card .top .left {
   align-items: center;
   flex: 1;
 }
 
-.company-card .top .left .left-content {
+.company-details-card .top .left .left-content {
 }
 
-.company-card .top .left .left-content p {
+.company-details-card .top .left .left-content p {
   color: var(--col-text-4);
 }
 
-.company-card .top .left .left-content h2 {
+.company-details-card .top .left .left-content h2 {
   letter-spacing: var(--letter-spacing-1);
   color: var(--col-text-6);
 }
 
-.company-card .top .left .logo {
+.company-details-card .top .left .logo {
   padding: 0;
   margin-right: 5%;
   height: clamp(var(50px, 100%, var(--size-2)));
 }
 
-.company-card .top .left .logo img {
+.company-details-card .top .left .logo img {
   flex: 1;
 }
 
@@ -319,11 +338,11 @@ apply in future on the all project
 }
 */
 
-.company-card .top .right {
+.company-details-card .top .right {
   justify-content: space-between;
 }
 
-.company-card .center {
+.company-details-card .center {
   flex-wrap: wrap;
   border-radius: var(--border-radius-3);
   background-color: var(--col-bg-9);
@@ -331,16 +350,16 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-card .bottom {
+.company-details-card .bottom {
 }
 
-.company-card .bottom h3 {
+.company-details-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
   font-size: var(--font-size-3);
   color: var(--col-text-6);
 }
 
-.company-card .bottom .about p {
+.company-details-card .bottom .about p {
   color: var(--col-text-4);
   text-align: justify;
 }
@@ -473,6 +492,154 @@ apply in future on the all project
   min-width: var(--size-2);
 }
 
+/*member-details-card-mini*/
+.member-details-card-mini {
+  flex-wrap: wrap;
+  padding: var(--mar-pad-2);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--col-bg-2);
+}
+
+.member-details-card-mini .member-details-card-mini-left {
+  margin-bottom: var(--mar-pad-1);
+  margin-right: var(--mar-pad-2);
+  margin: 0 var(--mar-pad-2) var(--mar-pad-2) 0;
+}
+
+.member-details-card-mini .member-details-card-mini-left .img {
+  width: var(--size-1);
+  height: var(--size-1);
+}
+
+.member-details-card-mini > .member-details-card-mini-center,
+.member-details-card-mini-right {
+  flex: 1;
+}
+
+.member-details-card-mini .member-details-card-mini-center {
+  min-width: var(--size-1-2);
+}
+
+.member-details-card-mini .member-details-card-mini-right {
+  max-width: var(--size-2);
+}
+
+.member-details-card-mini .member-details-card-mini-right .btn {
+  padding: var(--mar-pad-2);
+  border-radius: var(--border-radius-5);
+  font-size: var(--font-size-3);
+}
+
+/*supporter-card*/
+.supporter-card {
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-2);
+  align-items: center;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-2);
+}
+
+.supporter-card .supporter-card-top {
+  margin-bottom: var(--mar-pad-1);
+}
+
+.supporter-card .supporter-card-top .img {
+  width: var(--size-1);
+  height: var(--size-1);
+}
+
+.supporter-card .supporter-card-center {
+  text-align: center;
+  margin-bottom: var(--mar-pad-3);
+}
+
+.supporter-card .supporter-card-center .supporter-card-icons {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.supporter-card .supporter-card-center .supporter-card-icons .icon-degree {
+  background-color: var(--col-bg-2);
+  box-shadow: var(--box-shadow-1);
+}
+
+.supporter-card .supporter-card-bottom {
+  width: 100%;
+}
+
+/*company-details-card-mini*/
+.company-details-card-mini {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--col-bg-2);
+  padding: var(--mar-pad-2);
+  box-shadow: var(--box-shadow-4);
+  border-radius: var(--border-radius-2);
+}
+
+/*events-slider-details-card*/
+.events-slider-details-card {
+  border-radius: var(--border-radius-2);
+  background-color: var(--col-bg-5);
+  overflow: hidden;
+  position: relative;
+}
+
+.events-slider-details-card .slider {
+  display: flex;
+}
+
+.events-slider-details-card .slider .slide {
+  flex: 1;
+}
+
+.events-slider-details-card .slider .slide .slide-img-layout {
+  height: var(--size-6);
+}
+
+.events-slider-details-card .slider .slide .slide-img {
+  user-select: none;
+}
+
+.events-slider-details-card .slider .slide .slide-content {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--col-bg-1);
+  width: 100%;
+  padding: var(--mar-pad-1) var(--mar-pad-2) var(--mar-pad-4);
+}
+
+.events-slider-details-card .slider .slide .slide-content .btn {
+  border: 1px solid var(--col-text-1);
+  background-color: transparent;
+}
+
+.custom-slider-button {
+  position: absolute;
+  z-index: 1;
+  color: var(--col-bg-2);
+  background-color: var(--col-bg-1);
+  padding: var(--mar-pad-1);
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+
+.custom-slider-button:hover {
+  background-color: var(--col-bg-hover-1);
+}
+
+.to-left {
+  left: 0;
+}
+
+.to-right {
+  right: 0;
+}
+
 /*animation-card*/
 /*scroll-card*/
 .scroll-card {
@@ -507,6 +674,47 @@ apply in future on the all project
     0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
     0 0 16px hsl(0deg 0% 0% / 0.075);
   transform-origin: 10% 60%;
+}
+
+/*color-card*/
+.color-card {
+  position: relative;
+  width: var(--size-2);
+  min-width: var(--size-2);
+  height: var(--size-2-2);
+  min-height: var(--size-2-2);
+  overflow: hidden;
+  border-radius: var(--border-radius-4);
+  scroll-snap-align: start;
+  cursor: context-menu;
+  box-shadow: var(--box-shadow-2);
+}
+
+.color-card .content {
+  padding: var(--mar-pad-2);
+}
+
+.color-card .migrate {
+  position: absolute;
+  background-color: var(--col-bg-2);
+  flex: 1;
+  width: var(--size-2);
+  height: var(--size-1);
+  transform: translateY(50%);
+  bottom: 0;
+}
+
+/*list-card*/
+.list-card {
+  padding: var(--mar-pad-1);
+  align-items: center;
+  cursor: context-menu;
+}
+
+.list-card .shape {
+  width: var(--min-size-1-2);
+  height: var(--min-size-1-2);
+  background-color: var(--col-bg-1);
 }
 
 /*test*/
@@ -605,6 +813,20 @@ apply in future on the all project
   height: var(--size-4);
 }
 
+/*company-page*/
+.company-page {
+  width: 100%;
+}
+
+.company-page .top .list-box {
+  font-size: var(--font-size-2);
+}
+
+.company-page .center {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 /*sub-routes*/
 /*project-details-page*/
 .project-details-page {
@@ -692,6 +914,128 @@ apply in future on the all project
   /*will change*/
 
   /*will change*/
+}
+
+/*company-details-page*/
+.company-details-page {
+  flex-wrap: wrap;
+}
+
+.company-details-page .company-details-page-left {
+  flex: 7;
+  padding: var(--mar-pad-3);
+  overflow: hidden;
+}
+
+.company-details-page .company-details-page-left .tab-list {
+  overflow: hidden;
+  border-radius: var(--border-radius-2);
+  margin: var(--mar-pad-7) var(--mar-pad-3);
+  flex-wrap: wrap;
+}
+
+.company-details-page .company-details-page-left .card-company {
+  width: 100% !important;
+  max-width: 100%;
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-2);
+  margin-bottom: var(--mar-pad-3);
+}
+
+.company-details-page .company-details-page-left .projects {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.company-details-page .company-details-page-left .projects .card-project {
+  max-width: var(--size-5);
+  margin: var(--mar-pad-2);
+  box-shadow: var(--box-shadow-4);
+  background-color: transparent;
+  border-radius: var(--border-radius-2);
+}
+
+.company-details-page .company-details-page-right {
+  flex: 2;
+}
+
+.company-details-page .company-details-page-left .members {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company-details-page .company-details-page-left .members .card-member-mini {
+  max-width: var(--size-5);
+  min-width: var(--size-3);
+  width: 100%;
+  margin: var(--mar-pad-2);
+  box-shadow: var(--box-shadow-4);
+  border-radius: var(--border-radius-2);
+}
+
+.company-details-page .company-details-page-left .supporters {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-details-page .company-details-page-left .supporters .card-supporter {
+  flex: 30%;
+  min-width: var(--size-2-2);
+  max-width: var(--size-4-2);
+  margin: var(--mar-pad-2);
+}
+
+.company-details-page .company-details-page-left .about-us {
+  overflow: hidden;
+  padding: var(--mar-pad-1);
+}
+
+.company-details-page .company-details-page-left .about-us .purposes {
+  width: 100%;
+  margin-bottom: var(--mar-pad-5);
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  padding: var(--mar-pad-4) var(--mar-pad-1);
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--mar-pad-3);
+  gap: var(--mar-pad-5);
+}
+
+.company-details-page .company-details-page-left .about-us .histories {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: var(--mar-pad-5);
+}
+
+.company-details-page .company-details-page-left .about-us .histories .card-list {
+  width: max-content;
+}
+
+.company-details-page .company-details-page-left .about-us .events {
+  align-items: center;
+}
+
+.company-details-page .company-details-page-left .about-us .events .events-slider {
+  width: 100%;
+  max-width: var(--size-10);
+}
+
+.company-details-page .company-details-page-right {
+  padding: var(--mar-pad-2);
+  position: sticky;
+  top: var(--size-1);
+  border-radius: var(--border-radius-4);
+  height: max-content;
+  box-shadow: var(--box-shadow-2);
+}
+
+.company-details-page .company-details-page-right .card-company-details {
+  margin: var(--mar-pad-2);
+  min-width: var(--size-2-2);
 }
 
 /*layouts*/

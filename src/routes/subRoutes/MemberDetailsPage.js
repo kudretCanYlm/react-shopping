@@ -6,9 +6,10 @@ import { fades } from 'components/base/animations/Animations';
 import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 import ArticleCard from 'components/main/cards/ArticleCard';
 import PostCard from 'components/main/cards/PostCard';
-import { IMG_2, IMG_3 } from 'components/base/img/common/stock-images';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import { IMG_3 } from 'components/base/img/common/stock-images';
+import { TabList, TabPanel, Tabs } from 'react-tabs';
 import TabTypeA from 'components/base/tabs/TabTypeA';
+import { useTitle } from 'hooks/page-hooks';
 
 const MemberDetailsPage = () => {
   const { memberId } = useParams();
@@ -24,6 +25,7 @@ const MemberDetailsPage = () => {
     setTabIndex(index);
     setSearchParams({ ['tab']: index });
   };
+
 
   //will add animation router between articles,posts,shared
 
@@ -163,6 +165,8 @@ const MemberDetailsPage = () => {
       isLiked: false
     }
   ];
+
+  useTitle(`Member ${member.name}`);
 
   return (
     <StyleRoot>

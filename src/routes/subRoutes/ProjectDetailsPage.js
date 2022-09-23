@@ -13,6 +13,7 @@ import { BiDonateHeart } from 'react-icons/bi';
 import { BiBuildings } from 'react-icons/bi';
 import ClassicButton from 'components/base/buttons/ClassicButton';
 import { toCompanyDetailsPage } from 'utils/Redirects';
+import { useTitle } from 'hooks/page-hooks';
 
 const ProjectDetailsPage = () => {
   let { projectId } = useParams();
@@ -107,6 +108,8 @@ const ProjectDetailsPage = () => {
   const [images, setImages] = useState(images_list);
   const [companyDetails] = useState(companyDetails_list);
   const [project, setProject] = useState(project_list);
+
+  useTitle(`Project ${project.name}`);
 
   const modalJoinUsOpen = () => {
     //will change

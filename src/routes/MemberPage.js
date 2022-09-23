@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { CLOSE_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import ButtonTextBox from 'components/base/textboxes/ButtonTextBox';
 import MemberCard from 'components/main/cards/MemberCard';
+import { useTitle } from 'hooks/page-hooks';
 
 const mapStateToProps = (state) => ({
   textBoxReducer: state.TextBoxReducer
@@ -24,6 +25,8 @@ const MemberPage = (props) => {
   useEffect(() => {
     closNavBarTextBox();
   }, []);
+
+  useTitle(`Member Page`);
 
   const getListBoxValues = (value) => {
     //will use serach function on here

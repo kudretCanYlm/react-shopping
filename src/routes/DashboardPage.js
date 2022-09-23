@@ -9,6 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import DashboardPagesLayout from 'components/layouts/DashBoardPagesLayout';
+import { useTitle } from 'hooks/page-hooks';
 
 const mapStateToProps = (state) => ({
   textBoxReducer: state.TextBoxReducer
@@ -26,6 +27,8 @@ const DashboardPage = (props) => {
   useEffect(() => {
     openNavBarTextBox();
   }, []);
+
+  useTitle(`Dashboard Page`);
 
   const [y_values, setY_values] = useState([28, 38, 47, 60, 67, 76, 83, 58, 48, 40]);
   const [x_values, setX_values] = useState([

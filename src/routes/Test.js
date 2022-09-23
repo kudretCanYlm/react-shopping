@@ -4,9 +4,12 @@ import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import qs from 'qs';
 import ProjectCard from 'components/main/cards/ProjectCard';
+import { useTitle } from 'hooks/page-hooks';
 
 export const Test = () => {
   const [img, setImg] = useState('https://c.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif');
+
+  useTitle(`Test`);
 
   useEffect(() => {
     var data = qs.stringify({

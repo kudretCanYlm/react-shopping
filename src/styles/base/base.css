@@ -106,6 +106,21 @@
   color: inherit;
 }
 
+/*blank-border-icon-link*/
+.blank-border-icon-link {
+  align-items: center;
+  justify-content: center;
+  padding: var(--mar-pad-2);
+  border-radius: var(--border-radius-percent);
+  background-color: var(--col-bg-2);
+  box-shadow: var(--box-shadow-1);
+  cursor: pointer;
+}
+
+.blank-border-icon-link a {
+  text-decoration: none;
+}
+
 /*text-boxes*/
 /*search-text-box*/
 .text-box-search {
