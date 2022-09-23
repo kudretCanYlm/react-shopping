@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListBoxTypeA Test renderer correctly 1`] = `
+<select
+  className="list-box list-box-type-a test classname"
+  name="test name"
+  onChange={[Function]}
+>
+  <option
+    value="value-a"
+  >
+    name-a
+  </option>
+  <option
+    value="value-b"
+  >
+    name-b
+  </option>
+  <option
+    value="value-c"
+  >
+    name-c
+  </option>
+  <option
+    value="value-d"
+  >
+    name-d
+  </option>
+</select>
+`;
