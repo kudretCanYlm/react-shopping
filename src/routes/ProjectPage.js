@@ -7,6 +7,7 @@ import { fades } from 'components/base/animations/Animations';
 import { connect } from 'react-redux';
 import { OPEN_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import { useTitle } from 'hooks/page-hooks';
+import { toProjectDetailsPage } from 'utils/Redirects';
 
 const mapStateToProps = (state) => ({
   textBoxReducer: state.TextBoxReducer
@@ -134,7 +135,7 @@ const ProjectPage = (props) => {
                   title: project.title,
                   about: project.about,
                   imgUrl: project.imgUrl,
-                  to: `/project/${project.id}`
+                  to: toProjectDetailsPage(project.id)
                 }}
               />
             ))}
