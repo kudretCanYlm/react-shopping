@@ -15,6 +15,7 @@ import DetailsLayout from 'components/layouts/DetailsLayout';
 import ProjectDetailsPage from 'routes/subRoutes/ProjectDetailsPage';
 import MemberDetailsPage from 'routes/subRoutes/MemberDetailsPage';
 import CompanyDetailsPage from 'routes/subRoutes/CompanyDetailsPage';
+import ChatPage from 'routes/ChatPage';
 /*test*/
 
 function App() {
@@ -77,6 +78,15 @@ function App() {
               <DetailsLayout>
                 <CompanyDetailsPage />
               </DetailsLayout>
+            }
+          />
+
+          <Route
+            path={'/chat'}
+            element={
+              <DashboardLayout>
+                <ChatPage />
+              </DashboardLayout>
             }
           />
 
