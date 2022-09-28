@@ -827,6 +827,86 @@ apply in future on the all project
   justify-content: flex-start;
 }
 
+/*chat-page*/
+.chat-page {
+  /*will change*/
+  border: 1px solid red;
+  height: 100vh;
+  /*will change*/
+  border-radius: var(--border-radius-3);
+  overflow: hidden;
+}
+
+.chat-page .chat-page-left {
+  /*will change*/
+  border: 1px solid green;
+  flex: 35%;
+
+  /*will change*/
+}
+
+.chat-page .chat-page-left .chat-page-menu {
+  position: sticky;
+  top: 0;
+  height: max-content;
+  background-color: var(--col-bg-1);
+}
+
+.chat-page .chat-page-left .chat-page-menu .tab-list {
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-3);
+}
+
+.chat-page .chat-page-left .chat-page-menu .tab-list .chat-page-tab {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-page .chat-page-left .chat-page-menu .chat-page-text-box {
+  padding: var(--mar-pad-1);
+  border-radius: var(--border-radius-2);
+}
+
+.chat-page .chat-page-left .chat-page-members {
+  /*will change*/
+  overflow-y: auto;
+  flex: 1;
+  /*will change*/
+  padding: var(--mar-pad-2);
+  background-color: var(--col-bg-9);
+}
+
+.chat-page .chat-page-right {
+  /*will change*/
+  border: 1px solid pink;
+  flex: 65%;
+  /*will change*/
+}
+
+.chat-page .chat-page-right .chat-page-member-options {
+  /*will change*/
+  border: 1px solid rebeccapurple;
+  min-height: 75px;
+  /*will change*/
+}
+
+.chat-page .chat-page-right .chat-page-messages {
+  /*will change*/
+  border: 1px solid red;
+  flex: 1;
+  overflow-y: auto;
+  /*will change*/
+}
+
+.chat-page .chat-page-right .chat-page-send-message {
+  /*will change*/
+  border: 1px solid green;
+  height: 100px;
+  /*will change*/
+}
+
 /*sub-routes*/
 /*project-details-page*/
 .project-details-page {

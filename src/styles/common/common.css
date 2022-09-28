@@ -155,6 +155,10 @@
   background: var(--col-bg-hover-1);
 }
 
+.scroll-overflow-y {
+  overflow-y: auto;
+}
+
 /*display-options*/
 .flex-row {
   display: flex;
@@ -197,6 +201,10 @@
 
 .full-width {
   width: 100%;
+}
+
+.full-height {
+  height: 100%;
 }
 
 /*link-margin*/
@@ -294,6 +302,7 @@
 .white {
   color: var(--col-text-1) !important;
 }
+
 .white-2 {
   color: var(--col-text-9) !important;
 }
