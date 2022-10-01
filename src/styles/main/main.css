@@ -251,6 +251,30 @@ p {
   border: 1px solid red;
 }
 
+/*user-message-card*/
+.user-chat-card {
+  justify-content: space-between;
+  box-shadow: var(--box-shadow-4);
+  cursor: pointer;
+  border-radius: var(--border-radius-2);
+  padding: var(--mar-pad-2);
+  width: 100%;
+  user-select: none;
+}
+
+.user-chat-card:hover {
+  background-color: var(--col-bg-5);
+}
+
+.user-chat-card .user-chat-count-icon {
+  text-align: center;
+  padding: var(--mar-pad-1);
+  border-radius: var(--border-radius-percent);
+  background-color: var(--col-bg-1);
+  color: var(--col-text-1);
+  font-size: var(--font-size-1);
+}
+
 /*nav-bar cards*/
 /*user-card*/
 .user-card {
