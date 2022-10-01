@@ -1,6 +1,7 @@
 import TabTypeA from 'components/base/tabs/TabTypeA';
 import SearchTextBox from 'components/base/textboxes/SearchTextBox';
 import DashboardPagesLayout from 'components/layouts/DashBoardPagesLayout';
+import UserChatCard from 'components/main/cards/UserChatCard';
 import { useTitle } from 'hooks/page-hooks';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
@@ -31,6 +32,324 @@ const ChatPage = (props) => {
 
   const tabList = ['Chat', 'Friends'];
 
+  const UsersWithChat = [
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 4
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 15
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfgfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfssdff-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+      lastMessageTime: '2 days ago',
+      lastMessage: 'Hi Test Name',
+      unreadCount: 0
+    }
+  ];
+
+  const friends = [
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghasdgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsasd-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdfgas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdfghksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlccvbksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasfghasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlsdfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdxcvfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasfghs',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasddfgdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddadfgasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    },
+    {
+      id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+      name: 'Test Name',
+      img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg'
+    }
+  ];
+
+  const UserOnClick = (id) => {
+    //will addd
+    console.log(id + 'clicked');
+  };
+
   return (
     <DashboardPagesLayout>
       <div className="chat-page flex-row">
@@ -60,134 +379,26 @@ const ChatPage = (props) => {
             </div>
             <div className="chat-page-members flex-column">
               <TabPanel>
-                chat-page-members <br /> chat-page-members
-                <br />
-                chat-page-members
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                chat-page-members
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                <br />
+                {UsersWithChat.map((user, key) => (
+                  <UserChatCard
+                    key={key}
+                    onClickUser={UserOnClick}
+                    isWithMessage={true}
+                    userChat={user}
+                    className="title-margin-2"
+                  />
+                ))}
               </TabPanel>
               <TabPanel>
-                friends <br /> friends
-                <br />
-                friends
-                <br />
-                friends
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                friends
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                friends
-                <br />
-                friends
-                <br />
-                <br />
-                friends
-                <br />
-                friends
-                <br />
-                friends
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                chat-page-members
-                <br />
-                <br />
-                <br />
-                <br />
+                {friends.map((friend, key) => (
+                  <UserChatCard
+                    key={key}
+                    onClickUser={UserOnClick}
+                    isWithMessage={false}
+                    userChat={friend}
+                    className="title-margin-2"
+                  />
+                ))}
               </TabPanel>
             </div>
           </Tabs>
