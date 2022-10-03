@@ -275,6 +275,57 @@ p {
   font-size: var(--font-size-1);
 }
 
+/*send-message-card*/
+.send-message-card {
+  padding: var(--mar-pad-1);
+  border-radius: var(--border-radius-2);
+  align-items: center;
+  background-color: var(--col-bg-2);
+  position: relative;
+}
+
+.send-message-card > .send-message-card-file-icon,
+.send-message-card-send-icon {
+  background-color: var(--col-bg-1);
+  border-radius: var(--border-radius-percent);
+  cursor: pointer;
+  font-size: var(--font-size-7);
+  color: var(--col-bg-2);
+  transition: 0.5s background-color;
+}
+
+.send-message-card > .send-message-card-file-icon:hover,
+.send-message-card-send-icon:hover {
+  background-color: var(--col-bg-hover-1);
+}
+
+.send-message-card .send-message-card-file-icon {
+  padding: var(--mar-pad-1);
+}
+
+.send-message-card .send-message-card-text-box {
+  flex: 1;
+  height: 100%;
+}
+
+.send-message-card .send-message-card-text-box input {
+  flex: 1;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--col-text-5);
+  font-size: var(--font-size-2);
+  padding: var(--mar-pad-1);
+  margin: 0 var(--mar-pad-3);
+}
+
+.send-message-card .send-message-card-send-icon {
+  padding: var(--mar-pad-2);
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
+  border: 1px solid var(--col-text-5);
+}
+
 /*nav-bar cards*/
 /*user-card*/
 .user-card {
@@ -925,10 +976,10 @@ apply in future on the all project
 }
 
 .chat-page .chat-page-right .chat-page-send-message {
-  /*will change*/
-  border: 1px solid green;
-  height: 100px;
-  /*will change*/
+  height: max-content;
+  justify-content: center;
+  padding: var(--mar-pad-2);
+  background-color: var(--col-bg-1);
 }
 
 /*sub-routes*/
