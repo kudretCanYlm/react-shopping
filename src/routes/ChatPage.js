@@ -7,6 +7,9 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { TabList, TabPanel, Tabs } from 'react-tabs';
+import { StyleRoot } from 'radium';
+import { fades } from 'components/base/animations/Animations';
+import SendMessageCard from 'components/main/cards/SendMessageCard';
 
 const mapStateToProps = (state) => ({});
 
@@ -350,6 +353,10 @@ const ChatPage = (props) => {
     console.log(id + 'clicked');
   };
 
+  const MessageOnClick = (text) => {
+    console.log(text);
+  };
+
   return (
     <DashboardPagesLayout>
       <div className="chat-page flex-row">
@@ -377,30 +384,37 @@ const ChatPage = (props) => {
                 }}
               />
             </div>
-            <div className="chat-page-members flex-column">
-              <TabPanel>
-                {UsersWithChat.map((user, key) => (
-                  <UserChatCard
-                    key={key}
-                    onClickUser={UserOnClick}
-                    isWithMessage={true}
-                    userChat={user}
-                    className="title-margin-2"
-                  />
-                ))}
-              </TabPanel>
-              <TabPanel>
-                {friends.map((friend, key) => (
-                  <UserChatCard
-                    key={key}
-                    onClickUser={UserOnClick}
-                    isWithMessage={false}
-                    userChat={friend}
-                    className="title-margin-2"
-                  />
-                ))}
-              </TabPanel>
-            </div>
+
+            <TabPanel>
+              <StyleRoot>
+                <div style={fades.fadeInUpBig} className="chat-page-members flex-column">
+                  {UsersWithChat.map((user, key) => (
+                    <UserChatCard
+                      key={key}
+                      onClickUser={UserOnClick}
+                      isWithMessage={true}
+                      userChat={user}
+                      className="title-margin-2"
+                    />
+                  ))}
+                </div>
+              </StyleRoot>
+            </TabPanel>
+            <TabPanel>
+              <StyleRoot>
+                <div style={fades.fadeInUpBig} className="chat-page-members flex-column">
+                  {friends.map((friend, key) => (
+                    <UserChatCard
+                      key={key}
+                      onClickUser={UserOnClick}
+                      isWithMessage={false}
+                      userChat={friend}
+                      className="title-margin-2"
+                    />
+                  ))}
+                </div>
+              </StyleRoot>
+            </TabPanel>
           </Tabs>
         </div>
         <div className="chat-page-right flex-column">
@@ -493,7 +507,9 @@ const ChatPage = (props) => {
             <br />
             <br />a
           </div>
-          <div className="chat-page-send-message flex-column">chat-page-send-message</div>
+          <div className="chat-page-send-message flex-column">
+            <SendMessageCard className="icon-margin-right-4" onClick={MessageOnClick} />
+          </div>
         </div>
       </div>
     </DashboardPagesLayout>
