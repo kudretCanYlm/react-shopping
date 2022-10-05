@@ -6,7 +6,7 @@ const IconButton = ({ children, text, onClick = (f) => f, className = '' }) => {
   return (
     <div className={`btn-icon flex-row ${className}`} onClick={onClick}>
       {children}
-      <p className="fontsize-dashboard white">{text}</p>
+      {text.length > 0 ? <p className="fontsize-dashboard white">{text}</p> : ''}
     </div>
   );
 };
