@@ -340,6 +340,10 @@
   background-color: var(--col-bg-hover-1) !important;
 }
 
+.bg-col-2 {
+  background-color: var(--col-bg-2) !important;
+}
+
 /*card-colors*/
 .card-col-1 {
   background-color: var(--col-bg-10) !important;
