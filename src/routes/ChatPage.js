@@ -10,6 +10,8 @@ import { TabList, TabPanel, Tabs } from 'react-tabs';
 import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
 import SendMessageCard from 'components/main/cards/SendMessageCard';
+import BigUserChatCard from 'components/main/cards/BigUserChatCard';
+import MessageCard from 'components/main/cards/MessageCard';
 
 const mapStateToProps = (state) => ({});
 
@@ -348,13 +350,193 @@ const ChatPage = (props) => {
     }
   ];
 
+  const selectedUser = {
+    id: 'sdlfksflşk-sdfdsfsdfsdf-hfghfghfgh-ddasdasdas',
+    name: 'Test Name',
+    img: 'https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg',
+    lastOnline: '2 days ago'
+  };
+
+  const messages = [
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message',
+      isOwner: true,
+      sendTime: '09.09.2022 14:53'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 2',
+      isOwner: true,
+      sendTime: '09.09.2022 14:54'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message',
+      isOwner: false,
+      sendTime: '09.09.2022 14:58'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 3',
+      isOwner: true,
+      sendTime: '09.09.2022 20:53'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 6',
+      isOwner: false,
+      sendTime: '09.09.2022 14:53'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 7',
+      isOwner: true,
+      sendTime: '09.09.2022 14:53'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    },
+    {
+      id: 'asdsdfsdffd',
+      senderId: 'fdsgdfsgfdgsfdg',
+      text: 'Test Message 9',
+      isOwner: true,
+      sendTime: '09.09.2022 21:20'
+    }
+  ];
+
+  const onClickChatCall = (id) => {
+    console.log('onClickChatCall user: ' + id);
+  };
+
+  const onClickChatVideo = (id) => {
+    console.log('onClickChatVideo user: ' + id);
+  };
+
+  const onClickPersonOptions = (id) => {
+    console.log('onClickPersonOptions user: ' + id);
+  };
+
   const UserOnClick = (id) => {
     //will addd
     console.log(id + 'clicked');
   };
 
-  const MessageOnClick = (text) => {
+  const SendMessageOnClick = (text) => {
     console.log(text);
+  };
+
+  const MessageOnClick = (id) => {
+    console.log(id);
   };
 
   return (
@@ -418,97 +600,24 @@ const ChatPage = (props) => {
           </Tabs>
         </div>
         <div className="chat-page-right flex-column">
-          <div className="chat-page-member-options">chat-page-member-options</div>
-          <div className="chat-page-messages flex-row">
-            chat-page-messages <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />a
+          <div className="chat-page-member-options">
+            <BigUserChatCard
+              selectedUserChat={selectedUser}
+              className=""
+              onClickChatCall={onClickChatCall}
+              onClickChatVideo={onClickChatVideo}
+              onClickPersonOptions={onClickPersonOptions}
+            />
+          </div>
+          <div className="chat-page-messages flex-column">
+            {messages.length > 0
+              ? messages.map((message, key) => (
+                  <MessageCard onClick={MessageOnClick} className="" message={message} key={key} />
+                ))
+              : 'Add somethings on here'}
           </div>
           <div className="chat-page-send-message flex-column">
-            <SendMessageCard className="icon-margin-right-4" onClick={MessageOnClick} />
+            <SendMessageCard className="icon-margin-right-4" onClick={SendMessageOnClick} />
           </div>
         </div>
       </div>
