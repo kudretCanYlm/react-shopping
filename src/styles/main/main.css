@@ -887,7 +887,7 @@ apply in future on the all project
   width: 100%;
   border-radius: var(--border-radius-3);
   padding: var(--mar-pad-2);
-  min-height: 100vh;
+  min-height: 90vh;
   overflow: hidden;
 }
 
@@ -983,7 +983,7 @@ apply in future on the all project
 
 /*chat-page*/
 .chat-page {
-  max-height: 100vh;
+  max-height: 88vh;
   border-radius: var(--border-radius-3);
   overflow: hidden;
 }
