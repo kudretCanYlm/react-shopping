@@ -16,12 +16,10 @@ import ListCard from 'components/main/cards/animationCards/ListCard';
 import EventsSliderCard from 'components/main/cards/detailsCards/EventsSliderCard';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => ({
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-  };
+  return {};
 };
 
 const CompanyDetailsPage = (props) => {

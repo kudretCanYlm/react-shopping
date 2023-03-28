@@ -29,7 +29,7 @@ const ButtonTextBox = ({
         onChange={() => {
           if (isWithParams) {
             if (text.current.value.length == 0) setSearchParams();
-            else setSearchParams({ src: text.current.value});
+            else setSearchParams({ src: text.current.value });
           }
         }}
         ref={text}

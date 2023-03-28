@@ -9,7 +9,7 @@ const ArticleCommentReducer = (state = [], action) => {
     case ARTICLE_COMMENT_IS_LOADING:
       return {
         ...state,
-        isLoading: action.Loading
+        isLoading: action.isLoading
       };
 
     case ARTICLE_COMMENT_LOADING_ERROR:

@@ -2,7 +2,7 @@ import React from 'react';
 import Store from './redux/stores/Store';
 /*test*/
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Test } from './routes/Test';
+import Test from './routes/Test';
 import './styles/main/main.css';
 import './styles/common/common.css';
 import './styles/base/base.css';

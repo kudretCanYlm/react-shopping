@@ -1,10 +1,12 @@
 import {
   PROJECT_IS_LOADING,
   PROJECT_LOADING_ERROR,
-  PROJECT_LOADED
+  PROJECT_LOADED,
+  PROJECT_CLEAR,
+  PROJECT_SET_PAGE
 } from 'redux/actions/project/ProjectAction';
 
-const ProjectReducer = (state = [], action) => {
+const ProjectReducer = (state = { payload: [], pageCount: 1,isEnd:false }, action) => {
   switch (action.type) {
     case PROJECT_IS_LOADING:
       return {
@@ -22,10 +24,22 @@ const ProjectReducer = (state = [], action) => {
     case PROJECT_LOADED:
       return {
         ...state,
-        payload: action.payload,
-        loaded: action.loaded
+        payload: [...state.payload, ...action.payload],
+        loaded: action.loaded,
+        isEnd: state.isEnd
       };
-
+    case PROJECT_SET_PAGE:
+      return {
+        ...state,
+        pageCount: state.pageCount + 1
+      };
+    case PROJECT_CLEAR:
+      return {
+        isError: false,
+        isLoading: false,
+        payload: [],
+        pageCount: 1
+      };
     default:
       return state;
   }

@@ -52,11 +52,9 @@
 }
 
 .sales-report-card .col-left {
+  flex: 1;
   text-align: left;
   margin: 0 var(--mar-pad-1) 0 0;
-}
-
-.sales-report-card .col-right {
 }
 
 .sales-report-card .col-right .sales-card {
@@ -67,13 +65,10 @@
 .yearly-sales-report-card {
   max-width: 100%;
   min-width: var(--size-3);
-  height: 100%;
 }
 
 /*compare-years-card*/
 .compare-years-card {
-  height: max-content;
-  max-height: 500px;
   user-select: none;
   overflow-y: auto;
 }
@@ -892,35 +887,20 @@ apply in future on the all project
 }
 
 .dashboard-page {
-  display: grid;
-  grid-gap: var(--mar-pad-4);
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 400px 450px 1fr;
+  display: flex;
+  
+  flex-wrap: wrap;
+  
+}
+
+.dashboard-page > *{
+  flex: 1;
+  min-width: 49%;
+  min-height: 100%;
 }
 
 .grid-left-first {
-  grid-column: 1/3;
-  grid-row: 1;
-}
-
-.grid-right-first {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.grid-left-second {
-  grid-column: 1 / 3;
-  grid-row: 2;
-}
-
-.grid-right-second {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.grid-bottom-thirth {
-  grid-column: 1/4;
-  grid-row: 3;
+  min-width: max-content;
 }
 
 /*project-page*/
@@ -1296,32 +1276,55 @@ apply in future on the all project
 /*nav-bar-left*/
 .nav-bar-left {
   height: 100vh;
-  min-width: 250px;
-  transition: 0.5s ease-in-out;
   background-color: var(--col-bg-1);
+  z-index: 9999;
+  overflow: hidden;
   position: sticky;
   top: 0;
+}
+
+.nav-bar-left .nav-bar-left-close-btn{
+  margin-top: var(--mar-pad-2);
+  display: none;
+}
+
+.nav-bar-left .nav-bar-left-close-btn > *{
+  font-size: var(--font-size-6);
+  color: var(--col-bg-2);
+  background-color: var(--col-bg-1);
+  cursor: pointer;
 }
 
 .logo {
   margin-bottom: var(--mar-pad-1);
 }
 
-.links {
-}
 
 .open-nav-bar {
-  min-width: 250px;
-  overflow: hidden;
-  transition: 0.5s;
+  width: var(--size-2-2);
 }
 
 .close-nav-bar {
   width: 0;
-  min-width: 0;
-  overflow: hidden;
-  transition: 0.5s;
 }
+
+@media only screen and (max-width: 1000px) {
+  .nav-bar-left{
+    position: fixed;
+  }
+  .nav-bar-left .nav-bar-left-close-btn {
+    display: flex;
+  }
+  .open-nav-bar {
+    width: var(--size-2);
+  }
+
+  .nav-bar-left .links > *{
+    font-size: var(--font-size-4);
+  }
+}
+
+
 
 /*nav-bar-top*/
 .nav-bar-top {
@@ -1403,6 +1406,16 @@ apply in future on the all project
 
   .project-card {
     width: 350px;
+  }
+
+  .dashboard-page{
+    flex-direction: column;
+  }
+
+  .dashboard-page > *{
+    flex: 1;
+    min-width: 300px;
+    width: 100%;
   }
 }
 

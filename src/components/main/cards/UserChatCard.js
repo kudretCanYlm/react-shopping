@@ -10,8 +10,7 @@ const UserChatCard = ({ userChat, isWithMessage, className, onClickUser = (id) =
   return (
     <div
       className={`user-chat-card flex-row ${className}`}
-      onClick={() => onClickUser(userChat.id)}
-    >
+      onClick={() => onClickUser(userChat.id)}>
       <div className="flex-row">
         <MiniRadiusImg className="icon-margin-right-2" url={userChat.img} />
         <div className="flex-column flex-space-evenly">

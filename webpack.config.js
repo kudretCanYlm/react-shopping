@@ -37,6 +37,9 @@ module.exports = {
         hot: true,
         historyApiFallback: true
     },
+    // optimization: {
+    //     runtimeChunk: true,
+    //   },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'dist/index.html',

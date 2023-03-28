@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import LogoImg from 'components/base/img/LogoImg';
 import IconLink from 'components/base/links/IconLink';
 
@@ -8,18 +8,42 @@ import IconLink from 'components/base/links/IconLink';
 import { FiHome } from 'react-icons/fi';
 import { GoProject } from 'react-icons/go';
 import { BsPersonLinesFill, BsFillChatLeftTextFill, BsBuilding } from 'react-icons/bs';
-import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
+import { AiOutlineMail, AiFillPhone, AiOutlineClose } from 'react-icons/ai';
 import { BiTime } from 'react-icons/bi';
 import Logo from 'assets/icon.svg';
-import { toChatPage, toCompanyPage, toDashboardPage, toMemberPage, toProjectPage } from 'utils/Redirects';
+import {
+  toChatPage,
+  toCompanyPage,
+  toDashboardPage,
+  toMemberPage,
+  toProjectPage
+} from 'utils/Redirects';
+import { TOGGLE_LEFT_NAV_BAR } from 'redux/actions/NavBarActions';
+
+const mapStateToProps = (state) => ({
+  navBarReducer: state.NavBarReducer
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleLeftNavBar: () => dispatch({ type: TOGGLE_LEFT_NAV_BAR })
+  };
+};
+
 
 const NavBarLeft = (props, { fontSize, color }) => {
   let selector = useSelector((state) => state.NavBarReducer);
 
+  const { toggleLeftNavBar } = props;
+
+  const onClick = () => toggleLeftNavBar();
+
   return (
     <div
-      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}
-    >
+      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}>
+      <div className='flex-column flex-center-items nav-bar-left-close-btn' onClick={onClick} >
+        <AiOutlineClose />
+      </div>
       <div className={'logo'}>
         <LogoImg imgUrl={Logo} className="title-big-margin-1" />
       </div>
@@ -65,4 +89,4 @@ NavBarLeft.defaultProps = {
   color: 'white'
 };
 
-export default NavBarLeft;
+export default connect(mapStateToProps, mapDispatchToProps)(NavBarLeft);

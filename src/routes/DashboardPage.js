@@ -157,16 +157,15 @@ const DashboardPage = (props) => {
           totalSales={'15,280.00'}
           totalRefunds={'12.00'}
           totalIncome={'$25,180.00'}
-          className={'grid-left-first'}
+          className={'grid-left-first icon-margin-1'}
         />
-        <YearlySalesCard productInfo={productInfo} className={'grid-right-first'} />
-        <CompareYearsCard compares={compares} className={'grid-left-second'} />
-        <SupportTicketsCard personInfo={persons} className={'grid-right-second'} />
-
+        <YearlySalesCard productInfo={productInfo} className={'icon-margin-1 grid-right-first'} />
+        <CompareYearsCard compares={compares} className={'icon-margin-1'} />
+        <SupportTicketsCard personInfo={persons} className={'icon-margin-1'} />
         <NewMembersCard
           lastYearAmount={'1,925,024'}
           thisYearAmount={'1,052,078'}
-          className={'grid-bottom-thirth'}
+          className={'icon-margin-1 full-width-min'}
         />
       </div>
     </DashboardPagesLayout>

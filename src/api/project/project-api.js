@@ -8,7 +8,6 @@ const getProjectsByRange = projectBaseUrl + '/getProjectsByRange';
 //get
 const GetProjectsByRange = async (pageNumber, pageSize) => {
   const projects = await BaseApi.get(`${getProjectsByRange}/${pageNumber}/${pageSize}`);
-
   return projects;
 };
 

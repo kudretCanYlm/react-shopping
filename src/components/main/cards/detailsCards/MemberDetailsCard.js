@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 import BackgroundImg from 'components/base/img/BackgroundImg';
 import MiniRadiusImg from 'components/base/img/MiniRadiusImg';
-import { GoReport } from "react-icons/go";
+import { GoReport } from 'react-icons/go';
 import BorderIconLink from 'components/base/links/BorderIconLink';
 import { toMemberReportPage } from 'utils/Redirects';
 import ContentText from 'components/base/texts/ContentText';
@@ -18,18 +18,26 @@ const MemberDetailsCard = ({ member, className }) => {
         <BackgroundImg imgUrl={member.BackImg} className="" />
       </div>
       <div className="bottom">
-        <div className='bottom-top flex-row'>
+        <div className="bottom-top flex-row">
           <MiniRadiusImg url={member.profileImg} className="member-img" />
           <BorderIconLink to={toMemberReportPage(member.memberId)} className="icon-margin-top-1">
             <GoReport fontSize={20} />
           </BorderIconLink>
         </div>
-        <div className='bottom-bottom'>
-          <ThinMidTitle className='title-color-5 title-margin-1'>{member.name}</ThinMidTitle>
-          <ThinMidTitle className='title-color-3 title-fontsize-1 title-margin-2'>{member.role}</ThinMidTitle>
-          <div className='flex-row flex-space-between flex-center-items'>
+        <div className="bottom-bottom">
+          <ThinMidTitle className="title-color-5 title-margin-1">{member.name}</ThinMidTitle>
+          <ThinMidTitle className="title-color-3 title-fontsize-1 title-margin-2">
+            {member.role}
+          </ThinMidTitle>
+          <div className="flex-row flex-space-between flex-center-items">
             <ContentText>{member.about}</ContentText>
-            <ClassicButton className='icon-margin-1' text='Follow' onClick={() => { /*will add a function*/ }} />
+            <ClassicButton
+              className="icon-margin-1"
+              text="Follow"
+              onClick={() => {
+                /*will add a function*/
+              }}
+            />
           </div>
         </div>
       </div>

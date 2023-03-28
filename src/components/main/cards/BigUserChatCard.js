@@ -18,7 +18,10 @@ const BigUserChatCard = ({
   return (
     <div className={`big-user-chat-card flex-row ${className}`}>
       <div className="flex-row">
-        <MiniRadiusImg url={selectedUserChat.img} className="icon-margin-right-2 big-user-chat-card-img" />
+        <MiniRadiusImg
+          url={selectedUserChat.img}
+          className="icon-margin-right-2 big-user-chat-card-img"
+        />
         <div className="flex-column flex-space-evenly">
           <ThinMidTitle className="title-color-1 title-fontsize-1">
             {selectedUserChat.name}
@@ -30,22 +33,19 @@ const BigUserChatCard = ({
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickChatCall(selectedUserChat.id)}
-        >
+          onClick={() => onClickChatCall(selectedUserChat.id)}>
           <AiFillPhone />
         </IconButton>
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickChatVideo(selectedUserChat.id)}
-        >
+          onClick={() => onClickChatVideo(selectedUserChat.id)}>
           <AiFillCamera />
         </IconButton>
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickPersonOptions(selectedUserChat.id)}
-        >
+          onClick={() => onClickPersonOptions(selectedUserChat.id)}>
           <BsThreeDots />
         </IconButton>
       </div>

@@ -16,14 +16,12 @@ const MessageCard = ({ message, onClick = (id) => id, className }) => {
     <div className={`message-card ${messageStyle.flex} ${className}`}>
       <div className="message-card-capture flex-column">
         <div
-          className={`message-card-message flex-row ${messageStyle.after} ${messageStyle.backgroundColor}`}
-        >
+          className={`message-card-message flex-row ${messageStyle.after} ${messageStyle.backgroundColor}`}>
           <ContentText className={` ${messageStyle.color}`}>{message.text}</ContentText>
           <IconButton
             className={`message-card-button ${messageStyle.color}`}
             text=""
-            onClick={() => onClick(message.id)}
-          >
+            onClick={() => onClick(message.id)}>
             <BsThreeDotsVertical />
           </IconButton>
         </div>

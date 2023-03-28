@@ -361,7 +361,8 @@
 /*charts*/
 /*column-chart*/
 .col-chart {
-  width: var(--size-5);
+  width: 100%;
+  min-width: 350px;
 }
 
 /*titles*/

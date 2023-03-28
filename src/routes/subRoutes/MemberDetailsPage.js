@@ -10,24 +10,53 @@ import { IMG_3 } from 'components/base/img/common/stock-images';
 import { TabList, TabPanel, Tabs } from 'react-tabs';
 import TabTypeA from 'components/base/tabs/TabTypeA';
 import { useTitle } from 'hooks/page-hooks';
+import { connect } from 'react-redux';
+import { GET_ARTICLES_BY_USER_ID } from 'redux/actions/article/ArticleAction';
 
-const MemberDetailsPage = () => {
+const mapStateToProp = (state) => ({
+  articleReducer: state.ArticleReducer
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getArticlesByUserId: (userId) => dispatch(GET_ARTICLES_BY_USER_ID(userId))
+  };
+};
+
+const MemberDetailsPage = (props) => {
+  const { getArticlesByUserId, articleReducer } = props;
+
   const { memberId } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [tabIndex, setTabIndex] = useState(searchParams.get('tab') ?? 0);
 
+  const [articles, setArticles] = useState([]);
+
   useEffect(() => {
     setSearchParams({ ['tab']: 0 });
+    getArticlesByUserId(memberId);
   }, []);
+
+  useEffect(() => {
+    articleReducer.loaded === true ? setArticles([...articleReducer.payload]) : '';
+    console.log('payload: ' + articleReducer.payload);
+    console.log('articles:  ' + articles);
+  }, [articleReducer]);
 
   const tabSelect = (index) => {
     setTabIndex(index);
     setSearchParams({ ['tab']: index });
+
+    switch (index) {
+      case 0:
+        getArticlesByUserId(memberId);
+        break;
+
+      default:
+        break;
+    }
   };
-
-
-  //will add animation router between articles,posts,shared
 
   const member = {
     memberId,
@@ -53,27 +82,6 @@ const MemberDetailsPage = () => {
       title: 'How to work from home',
       BackImg:
         'https://images.pexels.com/photos/589840/pexels-photo-589840.jpeg?cs=srgb&dl=pexels-valiphotos-589840.jpg&fm=jpg',
-      summary: 'I talked about working from home. I hope which will be userful'
-    },
-    {
-      articleId: 'asdasd47879-sdaf4456asdf-sdafsdaf67',
-      title: 'How to work from home',
-      BackImg:
-        'https://images.pexels.com/photos/589840/pexels-photo-589840.jpeg?cs=srgb&dl=pexels-valiphotos-589840.jpg&fm=jpg',
-      summary: 'I talked about working from home. I hope which will be userful'
-    },
-    {
-      articleId: 'asdasd47879-sdaf4456asdf-sdafsdaf67',
-      title: 'How to work from home',
-      BackImg:
-        'https://images.pexels.com/photos/589840/pexels-photo-589840.jpeg?cs=srgb&dl=pexels-valiphotos-589840.jpg&fm=jpg',
-      summary: 'I talked about working from home. I hope which will be userful'
-    },
-    {
-      articleId: 'asdasd47879-sdaf4456asdf-sdafsdaf67',
-      title: 'How to work from home',
-      BackImg:
-        'https://cdn57.androidauthority.net/wp-content/uploads/2015/11/00-best-backgrounds-and-wallpaper-apps-for-android.jpg',
       summary: 'I talked about working from home. I hope which will be userful'
     }
   ];
@@ -183,9 +191,21 @@ const MemberDetailsPage = () => {
               <ThinMidTitle className="title-color-5 icon-margin-4 center-text">{`${member.name}' Articles`}</ThinMidTitle>
               <StyleRoot>
                 <div style={fades.fadeInUpBig} className="articles flex-row">
-                  {memberArticles.length > 0 ? (
+                  {articleReducer.isLoading == true ? (
+                    'loading'
+                  ) : [...articles].length > 0 ? (
                     memberArticles.map((article, key) => (
-                      <ArticleCard key={key} article={article} className="icon-margin-2" />
+                      <ArticleCard
+                        key={key}
+                        article={{
+                          articleId: article.Id,
+                          title: article.ArticleTitle,
+                          summary: article.Summary,
+                          BackImg:
+                            'https://images.pexels.com/photos/589840/pexels-photo-589840.jpeg?cs=srgb&dl=pexels-valiphotos-589840.jpg&fm=jpg'
+                        }}
+                        className="icon-margin-2"
+                      />
                     ))
                   ) : (
                     <ThinMidTitle className="title-color-5 icon-margin-4 center-text">{`there isn't any article`}</ThinMidTitle>
@@ -217,4 +237,4 @@ const MemberDetailsPage = () => {
   );
 };
 
-export default MemberDetailsPage;
+export default connect(mapStateToProp, mapDispatchToProps)(MemberDetailsPage);

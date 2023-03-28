@@ -49,8 +49,7 @@ const EventsSliderCard = ({ events, className }) => {
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
-        className="slider"
-      >
+        className="slider">
         {events.map((event, key) => (
           <SwiperSlide key={key} className="flex-column slide">
             <div className="slide-img-layout">
@@ -101,8 +100,7 @@ const CustomSliderButton = ({ toLeft, className, customRef, fontSize = 20 }) => 
   return (
     <div
       className={`custom-slider-button flex-row ${toLeft ? 'to-left' : 'to-right'} ${className}`}
-      ref={customRef}
-    >
+      ref={customRef}>
       {icon}
     </div>
   );

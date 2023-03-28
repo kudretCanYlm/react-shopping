@@ -551,8 +551,7 @@ const ChatPage = (props) => {
                     key={key}
                     className={`chat-page-tab flex-row ${
                       tabIndex == key ? 'bg-col-1-hover-1' : ''
-                    }`}
-                  >
+                    }`}>
                     {tab}
                   </TabTypeA>
                 ))}

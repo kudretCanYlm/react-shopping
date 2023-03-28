@@ -39,8 +39,8 @@ const GET_COMMENTS_BY_ARTICLE_ID = (articleId) => {
 
     GetArticleCommentsById(articleId)
       .then((response) => {
-        dispatch(articleCommentIsLoading(false));
         dispatch(articleCommentLoaded(response.data));
+        dispatch(articleCommentIsLoading(false));
       })
       .catch((err) => dispatch(articleCommentLoadingError(err)));
   };

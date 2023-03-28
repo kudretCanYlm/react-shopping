@@ -1,12 +1,11 @@
 import BaseApi from 'api/utils/base-api';
 
 const articleBaseUrl = '/article';
-BaseApi.defaults.baseURL = BaseApi.defaults.baseURL + articleBaseUrl;
 
 //routes
-const getUserArticles = '/getUserArticles';
-const getArticleComments = '/getComments';
-const addArticleComment = '/addComment';
+const getUserArticles = articleBaseUrl + '/getUserArticles';
+const getArticleComments = articleBaseUrl + '/getComments';
+const addArticleComment = articleBaseUrl + '/addComment';
 
 //get
 const GetArticlesByUserId = async (userId) => {
