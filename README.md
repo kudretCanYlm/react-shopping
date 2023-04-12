@@ -13,19 +13,20 @@
 -    Babel
 -    Redux
 -    react-testing-library
--    jest
--    enzyme
--    apexcharts
--    axios
--    framer-motion
+-    Formik
+-    Jest
+-    Enzyme
+-    Apexcharts
+-    Axios
+-    Framer-motion
 -    react-animations
 -    react-router-dom
 -    react-tabs
--    swiper
--    webpack
--    eslint
--    postcss
--    prettier
+-    Swiper
+-    Webpack
+-    Eslint
+-    Postcss
+-    Prettier
 
 ### Start App
 ```sh
@@ -43,6 +44,7 @@
 
 ## Screens
 
+![](https://github.com/kudretCanYlm/react-shopping/blob/main/screens/img_0.PNG)
 ![](https://github.com/kudretCanYlm/react-shopping/blob/main/screens/img_1.PNG)
 ![](https://github.com/kudretCanYlm/react-shopping/blob/main/screens/img_2.PNG)
 ![](https://github.com/kudretCanYlm/react-shopping/blob/main/screens/img_3.PNG)
