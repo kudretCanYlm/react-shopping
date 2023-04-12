@@ -1,9 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
-import { createDevTools } from '@redux-devtools/core';
 import Reducers from '../reducers/Reducer';
 import thunkMiddleware from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import { PROJECT_LOADED } from 'redux/actions/project/ProjectAction';
 
@@ -14,8 +11,12 @@ const persistConfig = {
 
 //const persistedReducer=persistReducer(persistConfig,Reducers)
 
+//const middleware = routerMiddleware(browserHistory)
+
 function logger({ getState }) {
+  console.log(getState());
   return (next) => (action) => {
+    console.log(action.type);
     if (action.type == PROJECT_LOADED) console.log('will dispatch', action);
 
     // Call the next dispatch method in the middleware chain.
@@ -29,6 +30,21 @@ function logger({ getState }) {
   };
 }
 
-const Store = createStore(Reducers, applyMiddleware(thunkMiddleware, logger));
+function authMiddleware() {
+  return (next) => (action) => {
+    const token = localStorage.getItem('token');
+
+    if ((action?.errCode == 401 || token == null) && !action.type.includes('LOG')) {
+      localStorage.removeItem('token');
+      location.replace('http://localhost:3000/');
+
+      toLogin();
+    } else {
+      next(action);
+    }
+  };
+}
+
+const Store =  createStore(Reducers, applyMiddleware(thunkMiddleware, logger, authMiddleware));
 
 export default Store;
