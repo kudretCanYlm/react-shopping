@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ const ButtonTextBox = ({
   isWithParams,
   buttonText,
   className,
+  initAction = (f) => f,
   onClickBtn = (f) => f
 }) => {
   let text = useRef();
@@ -17,6 +18,7 @@ const ButtonTextBox = ({
   if (isWithParams) {
     useEffect(() => {
       text.current.value = searchParams.get('src') ?? '';
+      initAction(text.current.value);
     }, []);
   }
 
@@ -26,15 +28,26 @@ const ButtonTextBox = ({
         className="input-text"
         type={'text'}
         placeholder={placeHolder}
+        onKeyDown={(e) => {
+          if (e.keyCode == 13) onClickBtn(text.current.value);
+        }}
         onChange={() => {
           if (isWithParams) {
             if (text.current.value.length == 0) setSearchParams();
             else setSearchParams({ src: text.current.value });
+          } else {
+            setSearchParams({ src: text.current.value });
           }
         }}
         ref={text}
       />
-      <button onClick={() => onClickBtn(text.current.value)}>{buttonText}</button>
+      <button
+        onClick={() => {
+          onClickBtn(text.current.value);
+        }}
+      >
+        {buttonText}
+      </button>
     </div>
   );
 };
@@ -56,4 +69,4 @@ ButtonTextBox.defaultProps = {
   className: ''
 };
 
-export default ButtonTextBox;
+export default memo(ButtonTextBox);
