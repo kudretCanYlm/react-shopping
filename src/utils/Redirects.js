@@ -23,7 +23,7 @@ const toArticleDetailPage = (articleId) => {
 };
 
 const toDashboardPage = () => {
-  return `/dashboard`;
+  return `/`;
 };
 
 const toEventDetailsPage = (eventId) => {
