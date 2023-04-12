@@ -1,6 +1,6 @@
 import DashboardPagesLayout from 'components/layouts/DashBoardPagesLayout';
 import ListBoxTypeA from 'components/base/listboxes/ListBoxTypeA';
-import React, { memo, useEffect } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { StyleRoot } from 'radium';
 import { fades } from 'components/base/animations/Animations';
 import { connect } from 'react-redux';
@@ -8,7 +8,10 @@ import { CLOSE_NAV_BAR_TEXT_BOX } from 'redux/actions/TextBoxActions';
 import ButtonTextBox from 'components/base/textboxes/ButtonTextBox';
 import MemberCard from 'components/main/cards/MemberCard';
 import { useTitle } from 'hooks/page-hooks';
-import { GET_MEMBERS_BY_RANGE } from 'redux/actions/member/MemberAction';
+import { GET_MEMBERS_BY_RANGE, SET_MEMBER_CLEAR } from 'redux/actions/member/MemberAction';
+import Skeleton from 'react-loading-skeleton';
+import { toMemberDetailsPage } from 'utils/Redirects';
+import { createFilterObject, createOrderByObject } from 'api/utils/paged-list';
 
 const mapStateToProps = (state) => ({
   textBoxReducer: state.TextBoxReducer,
@@ -18,13 +21,15 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     closNavBarTextBox: () => dispatch({ type: CLOSE_NAV_BAR_TEXT_BOX }),
-    getMembersByRange: (pageNumber, pageSize) => dispatch(GET_MEMBERS_BY_RANGE(pageNumber, pageSize))
+    getMembersByRange: (pageNumber, pageSize, orderBys = [], filters = []) =>
+      dispatch(GET_MEMBERS_BY_RANGE(pageNumber, pageSize, orderBys, filters)),
+    setMemberClear: () => dispatch(SET_MEMBER_CLEAR())
   };
 };
 
 const MemberPage = (props) => {
   useTitle(`Member Page`);
-  const { closNavBarTextBox, getMembersByRange, memberReducer } = props;
+  const { closNavBarTextBox, getMembersByRange, memberReducer, setMemberClear } = props;
   const pageSize = 3;
 
   const handleUserScroll = () => {
@@ -41,7 +46,7 @@ const MemberPage = (props) => {
         memberReducer.isEnd != true &&
         memberReducer.isError != true
       ) {
-        getMembersByRange(memberReducer.pageCount, pageSize)
+        getMembersByRange(memberReducer.pageCount, pageSize, orderBys, filters);
       }
     }
   };
@@ -54,85 +59,95 @@ const MemberPage = (props) => {
     };
   });
 
-
   useEffect(() => {
-
-    getMembersByRange(memberReducer.pageCount, pageSize)
     closNavBarTextBox();
   }, []);
 
+  const [filters, setFilters] = useState(null);
+  const [orderBys, setOrderBys] = useState([]);
 
+  const getListBoxValues = useCallback((value = '') => {
+    if (value == '-1') {
+      setOrderBys([]);
+      return;
+    }
 
-  const getListBoxValues = (value) => {
-    //will use serach function on here
-    console.log(value);
-  };
+    var [name, direction] = value.split('.');
+    var orderBy = createOrderByObject(name, direction);
+    setOrderBys([orderBy]);
+  });
 
   const list = [
     {
-      name: 'most papuler',
-      value: 'most-popular-val'
+      name: 'No Sort',
+      value: '-1'
     },
     {
-      name: 'A-Z',
-      value: 'a-z-val'
+      name: 'Name A-Z',
+      value: 'name.0'
     },
     {
-      name: 'Z-A',
-      value: 'z-a-val'
+      name: 'Name Z-A',
+      value: 'name.1'
     },
     {
-      name: 'most costly',
-      value: 'most costly-val'
+      name: 'Time Ascending',
+      value: 'createdAt.0'
+    },
+    {
+      name: 'Time Descending',
+      value: 'createdAt.1'
     }
   ];
 
-  const members = [
-    {
-      id: '0b382dfd-9660-444f-9f2c-0bf9b65cb3d4',
-      name: 'Kudret Can',
-      imgUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg',
-      job: 'Programer',
-      description: 'I develop myself as well as,I develop myself as well as sdsad'
-    },
-  ];
+  const onClickTextBoxAndInit = (text) => {
+    setMemberClear();
 
-  const onClickTextBox = (text) => {
-    console.log(text);
+    text == '' ? setFilters([]) : setFilters([createFilterObject('search', 0, text)]);
   };
+
+  useEffect(() => {
+    if (filters != null) getMembersByRange(memberReducer.pageCount, pageSize, orderBys, filters);
+  }, [filters]);
 
   return (
     <DashboardPagesLayout>
       <div className="member-page flex-column">
         <div className="top title-margin-2">
-          <ButtonTextBox className="title-margin-1" onClickBtn={onClickTextBox} />
+          <ButtonTextBox
+            className="title-margin-1"
+            initAction={onClickTextBoxAndInit}
+            isWithParams={true}
+            onClickBtn={onClickTextBoxAndInit}
+          />
           <ListBoxTypeA className="list-box" onChangeSelect={getListBoxValues} list={list} />
         </div>
         <StyleRoot>
           <div style={fades.fadeInUp} className="center flex-row">
-
-          {memberReducer.payload.length > 0
+            {memberReducer.payload.length > 0
               ? memberReducer.payload.map((member, key) => (
-                <MemberCard
-                to={`${member.id}`}
-                className="icon-margin-2 member-card "
-                member={{
-                  id:member.Id,
-                  name:member.Name,
-                  job:member.Job,
-                  description:member.Description,
-                  //imgUrl:member.ImgUrl
-                }}
-              />
-              ))
+                  <MemberCard
+                    to={`${member.id}`}
+                    className="icon-margin-2 member-card "
+                    member={{
+                      to: toMemberDetailsPage(member.Id),
+                      name: member.Name,
+                      job: member.Job,
+                      description: member.Description,
+                      imgUrl:
+                        'https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg'
+                    }}
+                  />
+                ))
               : ''}
-            {memberReducer.isLoading == true && memberReducer.isError != true ?
-
+            {memberReducer.isLoading == true &&
+            memberReducer.isEnd == false &&
+            memberReducer.isError != true ? (
               <SkeletonCreate pageSize={pageSize} />
-              : ''}
+            ) : (
+              ''
+            )}
             {memberReducer.isError ? memberReducer.errMessage : ''}
-
           </div>
         </StyleRoot>
       </div>
@@ -141,18 +156,19 @@ const MemberPage = (props) => {
 };
 
 const SkeletonCreate = memo(({ pageSize = 3 }) => {
-
   return (
     <>
       {[...Array(pageSize)].map(() => {
-        console.log("test");
         return (
-          <Skeleton containerClassName='member-card' style={{ height: "100%" }} className=" main-card flex-column member-card" />
-        )
+          <Skeleton
+            containerClassName="project-card"
+            style={{ height: '100%' }}
+            className="main-card flex-column project-card icon-margin-2"
+          />
+        );
       })}
     </>
-  )
-
-})
+  );
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberPage);
