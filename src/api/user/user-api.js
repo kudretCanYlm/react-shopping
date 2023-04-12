@@ -1,16 +1,36 @@
-import BaseApi from 'api/utils/base-api';
+import BaseApiClass from 'api/utils/base-api';
+import { createPagedListPostObject } from 'api/utils/paged-list';
 
 const userBaseUrl = '/user';
 
 //routes
 const getUserRoleAndDescriptionByRange = userBaseUrl + '/getUserRoleAndDescriptionByRange';
+const getUserRoleAndDescriptionByPagedList = userBaseUrl + '/getUserRoleAndDescriptionByPagedList';
 
 //get
 const GetUserRoleAndDescriptionByRange = async (pageNumber, pageSize) => {
-  const userRoleAndDescriptions = BaseApi.get(
-    `${getUserRoleAndDescriptionByRange}/${pageNumber}/${pageSize}`
-  );
+  const baseApiClass = new BaseApiClass();
+  const userRoleAndDescriptions = await baseApiClass
+    .BaseApi()
+    .get(`${getUserRoleAndDescriptionByRange}/${pageNumber}/${pageSize}`);
   return userRoleAndDescriptions;
 };
 
-export { GetUserRoleAndDescriptionByRange };
+const GetUserRoleAndDescriptionByPagedList = async (
+  pageNumber,
+  pageSize,
+  orderBys = [],
+  filters = []
+) => {
+  const baseApiClass = new BaseApiClass();
+  const userRoleAndDescriptionByPagedList = await baseApiClass
+    .BaseApi()
+    .post(
+      getUserRoleAndDescriptionByPagedList,
+      createPagedListPostObject(pageNumber, pageSize, orderBys, filters)
+    );
+
+  return userRoleAndDescriptionByPagedList;
+};
+
+export { GetUserRoleAndDescriptionByRange, GetUserRoleAndDescriptionByPagedList };
