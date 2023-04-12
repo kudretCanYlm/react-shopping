@@ -1,6 +1,5 @@
 import React from 'react';
 import Store from './redux/stores/Store';
-/*test*/
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Test from './routes/Test';
 import './styles/main/main.css';
@@ -16,7 +15,7 @@ import ProjectDetailsPage from 'routes/subRoutes/ProjectDetailsPage';
 import MemberDetailsPage from 'routes/subRoutes/MemberDetailsPage';
 import CompanyDetailsPage from 'routes/subRoutes/CompanyDetailsPage';
 import ChatPage from 'routes/ChatPage';
-/*test*/
+import LoginPage from 'routes/LoginPage';
 
 function App() {
   return (
@@ -24,11 +23,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path={'/dashboard'}
+            path={'/'}
             element={
-              <DashboardLayout>
-                <DashboardPage />
-              </DashboardLayout>
+              localStorage.getItem('token') == null ? (
+                <LoginPage />
+              ) : (
+                <DashboardLayout>
+                  <DashboardPage />
+                </DashboardLayout>
+              )
             }
           />
           <Route
