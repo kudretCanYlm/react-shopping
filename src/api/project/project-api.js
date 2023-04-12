@@ -1,4 +1,4 @@
-import BaseApi from 'api/utils/base-api';
+import BaseApiClass from 'api/utils/base-api';
 
 const projectBaseUrl = '/project';
 
@@ -7,7 +7,10 @@ const getProjectsByRange = projectBaseUrl + '/getProjectsByRange';
 
 //get
 const GetProjectsByRange = async (pageNumber, pageSize) => {
-  const projects = await BaseApi.get(`${getProjectsByRange}/${pageNumber}/${pageSize}`);
+  const baseApiClass = new BaseApiClass();
+  const projects = await baseApiClass
+    .BaseApi()
+    .get(`${getProjectsByRange}/${pageNumber}/${pageSize}`);
   return projects;
 };
 

@@ -1,4 +1,4 @@
-import BaseApi from 'api/utils/base-api';
+import BaseApiClass from 'api/utils/base-api';
 
 const articleBaseUrl = '/article';
 
@@ -9,24 +9,27 @@ const addArticleComment = articleBaseUrl + '/addComment';
 
 //get
 const GetArticlesByUserId = async (userId) => {
-  const articles = await BaseApi.get(getUserArticles + `/${userId}`);
+  const baseApiClass = new BaseApiClass();
+  const articles = await baseApiClass.BaseApi().get(getUserArticles + `/${userId}`);
   return articles;
 };
 
 const GetArticleById = async (articleId) => {
-  const article = await BaseApi.get(`/${articleId}`);
+  const baseApiClass = new BaseApiClass();
+  const article = await baseApiClass.BaseApi().get(`/${articleId}`);
   return article;
 };
 
 const GetArticleCommentsById = async (articleId) => {
-  const articleComments = await BaseApi.get(`${getArticleComments}/${articleId}`);
+  const baseApiClass = new BaseApiClass();
+  const articleComments = await baseApiClass.BaseApi().get(`${getArticleComments}/${articleId}`);
   return articleComments;
 };
 
 //post
 const PostArticle = async (article) => {
-  //will add validation control
-  const status = await BaseApi.post('', {
+  const baseApiClass = new BaseApiClass();
+  const status = await baseApiClass.BaseApi().post('', {
     ArticleTitle: article.ArticleTitle,
     Summary: article.Summary,
     Content: article.Content,
@@ -36,8 +39,8 @@ const PostArticle = async (article) => {
 };
 
 const PostArticleComment = async (articleComment) => {
-  //will add validation control
-  const status = await BaseApi.post(`${addArticleComment}`, {
+  const baseApiClass = new BaseApiClass();
+  const status = await baseApiClass.BaseApi().post(`${addArticleComment}`, {
     Comment: articleComment.Comment,
     ArticleId: articleComment.ArticleId
   });

@@ -1,4 +1,4 @@
-import BaseApi from 'api/utils/base-api';
+import baseApiClass from 'api/utils/base-api';
 
 const memberBaseUrl = '/member';
 
@@ -7,7 +7,10 @@ const getMembersByRange = memberBaseUrl + '/getMembersByRange';
 
 //get
 const GetMembersByRange = async (pageNumber, pageSize) => {
-  const members = BaseApi.get(`${getMembersByRange}/${pageNumber}/${pageSize}`);
+  const baseApiClass = new BaseApiClass();
+  const members = await baseApiClass
+    .BaseApi()
+    .get(`${getMembersByRange}/${pageNumber}/${pageSize}`);
   return members;
 };
 
