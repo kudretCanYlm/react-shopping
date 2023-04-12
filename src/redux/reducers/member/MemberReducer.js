@@ -12,7 +12,8 @@ const MemberReducer = (state = { payload: [], pageCount: 1, isEnd: false }, acti
     case MEMBER_IS_LOADING:
       return {
         ...state,
-        isLoading: action.isLoading
+        isLoading: action.isLoading,
+        isEnd: action.isEnd
       };
 
     case MEMBER_LOADING_ERROR:
@@ -20,7 +21,8 @@ const MemberReducer = (state = { payload: [], pageCount: 1, isEnd: false }, acti
         ...state,
         isError: action.isError,
         errCode: action.errCode,
-        errMessage: action.errMessage
+        errMessage: action.errMessage,
+        isEnd: action.isEnd
       };
 
     case MEMBER_LOADED:
@@ -34,14 +36,15 @@ const MemberReducer = (state = { payload: [], pageCount: 1, isEnd: false }, acti
       return {
         ...state,
         pageCount: state.pageCount + 1
-      }
+      };
     case MEMBER_CLEAR:
       return {
         isError: false,
         isLoading: false,
         payload: [],
-        pageCount: 1
-      }
+        pageCount: 1,
+        isEnd: false
+      };
 
     default:
       return state;
