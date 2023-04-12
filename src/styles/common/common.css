@@ -207,7 +207,7 @@
   width: 100%;
 }
 
-.full-width-min{
+.full-width-min {
   min-width: 100%;
 }
 
@@ -218,6 +218,10 @@
 /*link-margin*/
 .link-margin-1-vertical {
   margin: 0 var(--mar-pad-3) 0 !important;
+}
+
+.link-margin-1-horizontal {
+  margin: var(--mar-pad-3) 0 var(--mar-pad-3) !important;
 }
 
 /*title-margin*/
@@ -333,6 +337,10 @@
 
 .gray-4 {
   color: var(--col-text-6) !important;
+}
+
+.red-1 {
+  color: var(--col-icon-2) !important;
 }
 
 /*background-colors*/

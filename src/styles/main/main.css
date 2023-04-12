@@ -888,12 +888,11 @@ apply in future on the all project
 
 .dashboard-page {
   display: flex;
-  
+
   flex-wrap: wrap;
-  
 }
 
-.dashboard-page > *{
+.dashboard-page > * {
   flex: 1;
   min-width: 49%;
   min-height: 100%;
@@ -1028,6 +1027,16 @@ apply in future on the all project
   justify-content: center;
   padding: var(--mar-pad-2);
   background-color: var(--col-bg-1);
+}
+
+/*login-page*/
+.login-page {
+  padding: var(--mar-pad-1);
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url('../../assets/dragon-scales.svg');
 }
 
 /*sub-routes*/
@@ -1272,6 +1281,18 @@ apply in future on the all project
   margin: var(--mar-pad-2) 0;
 }
 
+/*forms*/
+/*login-form*/
+.login-form {
+  background-color: var(--col-bg-2);
+  width: 100%;
+  height: max-content;
+  max-width: 450px;
+  padding: var(--mar-pad-8);
+  align-items: center;
+  border-radius: var(--border-radius-2);
+}
+
 /*nav-bars*/
 /*nav-bar-left*/
 .nav-bar-left {
@@ -1283,12 +1304,12 @@ apply in future on the all project
   top: 0;
 }
 
-.nav-bar-left .nav-bar-left-close-btn{
+.nav-bar-left .nav-bar-left-close-btn {
   margin-top: var(--mar-pad-2);
   display: none;
 }
 
-.nav-bar-left .nav-bar-left-close-btn > *{
+.nav-bar-left .nav-bar-left-close-btn > * {
   font-size: var(--font-size-6);
   color: var(--col-bg-2);
   background-color: var(--col-bg-1);
@@ -1299,7 +1320,6 @@ apply in future on the all project
   margin-bottom: var(--mar-pad-1);
 }
 
-
 .open-nav-bar {
   width: var(--size-2-2);
 }
@@ -1309,7 +1329,7 @@ apply in future on the all project
 }
 
 @media only screen and (max-width: 1000px) {
-  .nav-bar-left{
+  .nav-bar-left {
     position: fixed;
   }
   .nav-bar-left .nav-bar-left-close-btn {
@@ -1319,12 +1339,10 @@ apply in future on the all project
     width: var(--size-2);
   }
 
-  .nav-bar-left .links > *{
+  .nav-bar-left .links > * {
     font-size: var(--font-size-4);
   }
 }
-
-
 
 /*nav-bar-top*/
 .nav-bar-top {
@@ -1408,11 +1426,11 @@ apply in future on the all project
     width: 350px;
   }
 
-  .dashboard-page{
+  .dashboard-page {
     flex-direction: column;
   }
 
-  .dashboard-page > *{
+  .dashboard-page > * {
     flex: 1;
     min-width: 300px;
     width: 100%;
