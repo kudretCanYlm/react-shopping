@@ -6,7 +6,7 @@ import {
   PROJECT_SET_PAGE
 } from 'redux/actions/project/ProjectAction';
 
-const ProjectReducer = (state = { payload: [], pageCount: 1,isEnd:false }, action) => {
+const ProjectReducer = (state = { payload: [], pageCount: 1, isEnd: false }, action) => {
   switch (action.type) {
     case PROJECT_IS_LOADING:
       return {

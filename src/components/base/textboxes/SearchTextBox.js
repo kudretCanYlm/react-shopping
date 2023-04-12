@@ -22,8 +22,9 @@ const SearchTextBox = ({ placeHolder, isWithParams, textChange = (t) => t, class
     <div
       className={`text-box-search flex-row ${className} ${
         isOpen ? 'open-text-box' : 'close-text-box'
-      }`}>
-      <BsSearch className="icon" />
+      }`}
+    >
+      <BsSearch className="icon flex-column" />
       <input
         className="input-text"
         type={'text'}

@@ -28,7 +28,8 @@ const ScrollCard = ({ children, hueA, hueB, className }) => {
       className={`flex-row scroll-card ${className}`}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.8 }}>
+      viewport={{ once: false, amount: 0.8 }}
+    >
       <div className="splash" style={{ background }} />
       <motion.div className="card flex-row" variants={cardVariants}>
         {children}

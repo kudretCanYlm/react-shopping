@@ -30,7 +30,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-
 const NavBarLeft = (props, { fontSize, color }) => {
   let selector = useSelector((state) => state.NavBarReducer);
 
@@ -40,8 +39,9 @@ const NavBarLeft = (props, { fontSize, color }) => {
 
   return (
     <div
-      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}>
-      <div className='flex-column flex-center-items nav-bar-left-close-btn' onClick={onClick} >
+      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}
+    >
+      <div className="flex-column flex-center-items nav-bar-left-close-btn" onClick={onClick}>
         <AiOutlineClose />
       </div>
       <div className={'logo'}>

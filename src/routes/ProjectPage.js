@@ -14,7 +14,7 @@ import {
   GET_PROJECT_FIRST_PAGE
 } from 'redux/actions/project/ProjectAction';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
 import { memo } from 'react';
 
 const mapStateToProps = (state) => ({
@@ -51,7 +51,6 @@ const ProjectPage = (props) => {
         projectReducer.isEnd != true &&
         projectReducer.isError != true
       ) {
-
         getProjectsByRange(projectReducer.pageCount, pageSize);
       }
     }
@@ -64,7 +63,6 @@ const ProjectPage = (props) => {
       window.removeEventListener('scroll', handleUserScroll);
     };
   });
-
 
   useEffect(() => {
     openNavBarTextBox();
@@ -82,22 +80,23 @@ const ProjectPage = (props) => {
           <div style={fades.fadeInUp} className="content flex-row">
             {projectReducer.payload.length > 0
               ? projectReducer.payload.map((project, key) => (
-                <ProjectCard
-                  className="icon-margin-3"
-                  key={key}
-                  project={{
-                    title: project.Name,
-                    about: project.ContentText,
-                    imgUrl: project.imgUrl,
-                    to: toProjectDetailsPage(project.Id)
-                  }}
-                />
-              ))
+                  <ProjectCard
+                    className="icon-margin-3"
+                    key={key}
+                    project={{
+                      title: project.Name,
+                      about: project.ContentText,
+                      imgUrl: project.imgUrl,
+                      to: toProjectDetailsPage(project.Id)
+                    }}
+                  />
+                ))
               : ''}
-            {projectReducer.isLoading == true && projectReducer.isError != true ?
-
+            {projectReducer.isLoading == true && projectReducer.isError != true ? (
               <SkeletonCreate pageSize={pageSize} />
-              : ''}
+            ) : (
+              ''
+            )}
             {projectReducer.isError ? projectReducer.errMessage : ''}
           </div>
         </StyleRoot>
@@ -107,18 +106,20 @@ const ProjectPage = (props) => {
 };
 
 const SkeletonCreate = memo(({ pageSize = 3 }) => {
-
   return (
     <>
       {[...Array(pageSize)].map(() => {
-        console.log("test");
+        console.log('test');
         return (
-          <Skeleton containerClassName='project-card' style={{ height: "100%" }} className=" main-card flex-column project-card" />
-        )
+          <Skeleton
+            containerClassName="project-card"
+            style={{ height: '100%' }}
+            className=" main-card flex-column project-card"
+          />
+        );
       })}
     </>
-  )
-
-})
+  );
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectPage);
