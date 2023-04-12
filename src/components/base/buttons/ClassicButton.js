@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ClassicButton = ({ text, onClick = (f) => f, className }) => {
+const ClassicButton = ({ text, onClick = (f) => f, isSubmit, className }) => {
   return (
-    <button onClick={onClick} className={`btn-classic ${className}`}>
+    <button
+      type={isSubmit === true ? 'submit' : 'button'}
+      onClick={onClick}
+      className={`btn-classic ${className}`}
+    >
       {text}
     </button>
   );
@@ -13,6 +17,7 @@ const ClassicButton = ({ text, onClick = (f) => f, className }) => {
 ClassicButton.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  isSubmit: PropTypes.bool,
   className: PropTypes.string
 };
 
@@ -20,6 +25,7 @@ ClassicButton.propTypes = {
 ClassicButton.defaultProps = {
   text: 'Empty',
   onClick: () => console.log('Empty function'),
+  isSubmit: false,
   className: ''
 };
 
