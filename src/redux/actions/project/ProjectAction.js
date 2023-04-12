@@ -19,7 +19,7 @@ const projectIsLoading = (bool) => {
 const projectLoadingError = (err) => {
   return {
     type: PROJECT_LOADING_ERROR,
-    errCode: err.code,
+    errCode: err.response.status,
     errMessage: err.message,
     isError: true
   };
@@ -57,19 +57,16 @@ const GET_PROJECTS_BY_RANGE = (pageNumber, pageSize) => {
       .then((response) => {
         dispatch(projectIsLoading(false));
 
-        if ([...response.data].length == 0)
-          dispatch(projectLoaded(response.data, true));
+        if ([...response.data].length == 0) dispatch(projectLoaded(response.data, true));
         else {
           dispatch(projectLoaded(response.data, false));
           dispatch(projectSetPage());
         }
-
       })
       .catch((err) => {
         dispatch(projectLoadingError(err));
         dispatch(projectIsLoading(false));
       });
-      
   };
 };
 

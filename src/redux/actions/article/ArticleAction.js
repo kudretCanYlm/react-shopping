@@ -16,7 +16,7 @@ const articleIsLoading = (bool) => {
 const articleLoadingError = (err) => {
   return {
     type: ARTICLE_LOADING_ERROR,
-    errCode: err.code,
+    errCode: err.response.status,
     errMessage: err.message,
     isError: true
   };

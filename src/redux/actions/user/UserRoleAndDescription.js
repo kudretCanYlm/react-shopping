@@ -14,7 +14,7 @@ const userRoleAndDescriptionIsLoading = (bool) => {
 const userRoleAndDescriptionIsLoadingError = (err) => {
   return {
     type: USER_ROLE_AND_DESCRIPTION_LOADING_ERROR,
-    errCode: err.code,
+    errCode: err.response.status,
     errMessage: err.message,
     isError: true
   };

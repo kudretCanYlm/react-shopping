@@ -16,7 +16,7 @@ const companyIsLoading = (bool) => {
 const companyLoadingError = (err) => {
   return {
     type: COMPANY_LOADING_ERROR,
-    errCode: err.code,
+    errCode: err.response.status,
     errMessage: err.message,
     isError: true
   };
