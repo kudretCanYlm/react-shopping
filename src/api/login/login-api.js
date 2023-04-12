@@ -1,4 +1,4 @@
-import BaseApi from 'api/utils/base-api';
+import BaseApiClass from 'api/utils/base-api';
 
 const loginBaseUrl = '/auth';
 
@@ -6,11 +6,9 @@ const loginBaseUrl = '/auth';
 const login = loginBaseUrl + '/login';
 
 //post
-const Login = async (login) => {
-  const status = await BaseApi.post(loginBaseUrl, {
-    Username: login.Username,
-    Password: login.Password
-  });
+const Login = async (params) => {
+  const baseApiClass = new BaseApiClass();
+  const status = await baseApiClass.BaseApi().post(login, params);
   return status;
 };
 
