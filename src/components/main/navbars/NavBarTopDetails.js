@@ -25,8 +25,7 @@ const NavBarTopDetails = () => {
     <nav
       className={`nav-bar-top-details ${
         isBottom ? 'close-nav-bar-top' : 'open-nav-bar-top'
-      } flex-row`}
-    >
+      } flex-row`}>
       <div className="left flex-row">
         <BorderIconLink to={'/dashboard'} className="border-icon">
           <RiHome2Line fontSize={iconSize} className={'icon-color-2'} />

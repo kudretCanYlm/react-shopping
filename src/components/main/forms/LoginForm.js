@@ -25,8 +25,7 @@ const LoginForm = ({ submitForm = (values) => values, submitErrorMessage, isProc
       validationSchema={loginSchema}
       onSubmit={(values) => {
         submitForm(JSON.stringify(values));
-      }}
-    >
+      }}>
       {({ errors, touched }) => (
         <Form className="login-form flex-column">
           <ThickMidTitle className="title-color-5 title-fontsize-4 title-margin-5">

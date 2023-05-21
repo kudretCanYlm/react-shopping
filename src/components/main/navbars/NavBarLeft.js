@@ -39,8 +39,7 @@ const NavBarLeft = (props, { fontSize, color }) => {
 
   return (
     <div
-      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}
-    >
+      className={`nav-bar-left flex-column ${selector.isOpen ? 'open-nav-bar' : 'close-nav-bar'}`}>
       <div className="flex-column flex-center-items nav-bar-left-close-btn" onClick={onClick}>
         <AiOutlineClose />
       </div>

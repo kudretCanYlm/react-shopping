@@ -44,8 +44,7 @@ const ButtonTextBox = ({
       <button
         onClick={() => {
           onClickBtn(text.current.value);
-        }}
-      >
+        }}>
         {buttonText}
       </button>
     </div>

@@ -6,8 +6,7 @@ import CardImg from 'components/base/img/CardImg';
 const MemberCard = ({ member, className }) => {
   return (
     <div
-      className={`main-card title-color-1 flex-center-items member-card flex-column ${className}`}
-    >
+      className={`main-card title-color-1 flex-center-items member-card flex-column ${className}`}>
       <CardImg className="member-img " imgUrl={member.imgUrl} />
       <div className="title center-text">
         <h2 className="title-margin-1">{member.name}</h2>

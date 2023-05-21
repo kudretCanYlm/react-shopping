@@ -33,22 +33,19 @@ const BigUserChatCard = ({
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickChatCall(selectedUserChat.id)}
-        >
+          onClick={() => onClickChatCall(selectedUserChat.id)}>
           <AiFillPhone />
         </IconButton>
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickChatVideo(selectedUserChat.id)}
-        >
+          onClick={() => onClickChatVideo(selectedUserChat.id)}>
           <AiFillCamera />
         </IconButton>
         <IconButton
           text=""
           className="bg-col-2 icon-color-1 big-user-chat-card-icons"
-          onClick={() => onClickPersonOptions(selectedUserChat.id)}
-        >
+          onClick={() => onClickPersonOptions(selectedUserChat.id)}>
           <BsThreeDots />
         </IconButton>
       </div>
