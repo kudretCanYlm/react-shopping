@@ -4,15 +4,18 @@ import { DEFAULT_IMG_URL } from 'components/base/img/common/common-props';
 import CardImg from 'components/base/img/CardImg';
 import ButtonLink from 'components/base/links/ButtonLink';
 import { toCompanyDetailsPage } from 'utils/Redirects';
+import ThinMidTitle from 'components/base/headers/ThinMidTitle';
 
 const CompanyCard = ({ company, className }) => {
-  //https://i.pinimg.com/736x/02/52/28/0252284a8382aff1095d2dbd9d8f343a--dashboard-design-card-ui-dashboard.jpg
-
   return (
     <div className={`company-card flex-column ${className}`}>
-      <CardImg imgUrl={company.logoUrl} className="img" />
-      <div className="content">
-        content
+      <div className="company-card-top flex-column">
+        <CardImg imgUrl={company.backgroundUrl} className="background" />
+        <CardImg imgUrl={company.logoUrl} className="logo" />
+      </div>
+      <div className="company-card-center flex-column">
+        <ThinMidTitle className="black title-margin-1">{company.name}</ThinMidTitle>
+        <div className="content title-margin-4">{company.about}</div>
         <ButtonLink to={toCompanyDetailsPage(company.id)}>Details</ButtonLink>
       </div>
     </div>
@@ -24,10 +27,8 @@ CompanyCard.propTypes = {
   company: PropTypes.shape({
     name: PropTypes.string.isRequired,
     logoUrl: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    about: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
-    totalProject: PropTypes.number.isRequired
+    backgroundUrl: PropTypes.string.isRequired,
+    about: PropTypes.string.isRequired
   }),
   className: PropTypes.string
 };
@@ -37,10 +38,8 @@ CompanyCard.defaultProps = {
   company: {
     name: 'Empty Name',
     logoUrl: DEFAULT_IMG_URL,
-    location: 'Empty Location',
-    about: 'Empty about',
-    score: -1,
-    totalProject: -1
+    backgroundUrl: DEFAULT_IMG_URL,
+    about: 'Empty about'
   },
   className: ''
 };
