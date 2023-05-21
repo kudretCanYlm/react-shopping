@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Store from './redux/stores/Store';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Test from './routes/Test';
@@ -16,84 +16,97 @@ import MemberDetailsPage from 'routes/subRoutes/MemberDetailsPage';
 import CompanyDetailsPage from 'routes/subRoutes/CompanyDetailsPage';
 import ChatPage from 'routes/ChatPage';
 import LoginPage from 'routes/LoginPage';
+import LogOutPage from 'routes/LogOutPage';
+import CompanyPage from 'routes/CompanyPage';
 
 function App() {
   return (
     <Provider store={Store}>
       <BrowserRouter>
         <Routes>
-          <Route
-            path={'/'}
-            element={
-              localStorage.getItem('token') == null ? (
-                <LoginPage />
-              ) : (
-                <DashboardLayout>
-                  <DashboardPage />
-                </DashboardLayout>
-              )
-            }
-          />
-          <Route
-            path={'/project'}
-            element={
-              <DashboardLayout>
-                <ProjectPage />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path={'/member'}
-            element={
-              <DashboardLayout>
-                <MemberPage />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path={'/member/:memberId'}
-            element={
-              <DetailsLayout>
-                <MemberDetailsPage />
-              </DetailsLayout>
-            }
-          />
-          <Route
-            path={'/test'}
-            element={
-              <DashboardLayout>
-                <Test />
-              </DashboardLayout>
-            }
-          />
-          <Route
-            path={'/project/:projectId'}
-            element={
-              <DetailsLayout>
-                <ProjectDetailsPage />
-              </DetailsLayout>
-            }
-          />
+          {localStorage.getItem('token') == null ? (
+            <Route path="*" element={<LoginPage />} />
+          ) : (
+            <>
+              <Route
+                path={'/'}
+                element={
+                  <DashboardLayout>
+                    <DashboardPage />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path={'/project'}
+                element={
+                  <DashboardLayout>
+                    <ProjectPage />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path={'/member'}
+                element={
+                  <DashboardLayout>
+                    <MemberPage />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path={'/member/:memberId'}
+                element={
+                  <DetailsLayout>
+                    <MemberDetailsPage />
+                  </DetailsLayout>
+                }
+              />
+              <Route
+                path={'/test'}
+                element={
+                  <DashboardLayout>
+                    <Test />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path={'/project/:projectId'}
+                element={
+                  <DetailsLayout>
+                    <ProjectDetailsPage />
+                  </DetailsLayout>
+                }
+              />
 
-          <Route
-            path={'/company/:projectId'}
-            element={
-              <DetailsLayout>
-                <CompanyDetailsPage />
-              </DetailsLayout>
-            }
-          />
+              <Route
+                path={'/company'}
+                element={
+                  <DashboardLayout>
+                    <CompanyPage />
+                  </DashboardLayout>
+                }
+              />
 
-          <Route
-            path={'/chat'}
-            element={
-              <DashboardLayout>
-                <ChatPage />
-              </DashboardLayout>
-            }
-          />
+              <Route
+                path={'/company/:projectId'}
+                element={
+                  <DetailsLayout>
+                    <CompanyDetailsPage />
+                  </DetailsLayout>
+                }
+              />
 
-          <Route path="*" element={<div>Upps!</div>} />
+              <Route
+                path={'/chat'}
+                element={
+                  <DashboardLayout>
+                    <ChatPage />
+                  </DashboardLayout>
+                }
+              />
+              <Route path={'/logout'} element={<LogOutPage />} />
+              <Route path="*" element={<div>Upps!</div>} />
+            </>
+          )}
         </Routes>
       </BrowserRouter>
     </Provider>
