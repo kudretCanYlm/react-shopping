@@ -6,6 +6,7 @@ import ArticleCommentReducer from './article/ArticleCommentReducer';
 import ProjectReducer from './project/ProjectReducer';
 import MemberReducer from './member/MemberReducer';
 import LoginReducer from './login/LoginReducer';
+import UserReducer from './user/UserReducer';
 
 const Reducers = combineReducers({
   NavBarReducer,
@@ -14,7 +15,8 @@ const Reducers = combineReducers({
   ArticleCommentReducer,
   ProjectReducer,
   MemberReducer,
-  LoginReducer
+  LoginReducer,
+  UserReducer
 });
 
 export default Reducers;
