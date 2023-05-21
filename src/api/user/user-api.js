@@ -6,6 +6,7 @@ const userBaseUrl = '/user';
 //routes
 const getUserRoleAndDescriptionByRange = userBaseUrl + '/getUserRoleAndDescriptionByRange';
 const getUserRoleAndDescriptionByPagedList = userBaseUrl + '/getUserRoleAndDescriptionByPagedList';
+const getAuthorizedUserInformationMini = userBaseUrl + '/getAuthorizedUserInformationMini';
 
 //get
 const GetUserRoleAndDescriptionByRange = async (pageNumber, pageSize) => {
@@ -33,4 +34,17 @@ const GetUserRoleAndDescriptionByPagedList = async (
   return userRoleAndDescriptionByPagedList;
 };
 
-export { GetUserRoleAndDescriptionByRange, GetUserRoleAndDescriptionByPagedList };
+const GetAuthorizedUserInformationMini = async () => {
+  const baseApiClass = new BaseApiClass();
+  const authorizedUserInformationMini = await baseApiClass
+    .BaseApi()
+    .get(`${getAuthorizedUserInformationMini}`);
+
+  return authorizedUserInformationMini;
+};
+
+export {
+  GetUserRoleAndDescriptionByRange,
+  GetUserRoleAndDescriptionByPagedList,
+  GetAuthorizedUserInformationMini
+};
