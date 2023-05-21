@@ -26,7 +26,7 @@ const ProjectReducer = (state = { payload: [], pageCount: 1, isEnd: false }, act
         ...state,
         payload: [...state.payload, ...action.payload],
         loaded: action.loaded,
-        isEnd: state.isEnd
+        isEnd: action.isEnd
       };
     case PROJECT_SET_PAGE:
       return {

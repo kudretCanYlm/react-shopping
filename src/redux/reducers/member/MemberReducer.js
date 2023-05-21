@@ -30,7 +30,7 @@ const MemberReducer = (state = { payload: [], pageCount: 1, isEnd: false }, acti
         ...state,
         payload: [...state.payload, ...action.payload],
         loaded: action.loaded,
-        isEnd: state.isEnd
+        isEnd: action.isEnd
       };
     case MEMBER_SET_PAGE:
       return {
