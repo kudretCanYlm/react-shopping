@@ -34,9 +34,12 @@ const CompanyPage = () => {
       id: 'asdsadas-kjljsddff-xzcxc',
       name: 'Test Company',
       logoUrl:
-        'https://static-cse.canva.com/_next/static/assets/logo_w2000xh641_3b021976d60d0277e95febf805ad9fe8c7d6d54f86969ec03b83299084b7cb93.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png',
       location: 'London / England',
-      about: 'We are a test company for the test falan filan falan filan',
+      backgroundUrl:
+        'https://images.unsplash.com/photo-1614026480209-cd9934144671?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80',
+      about:
+        'We are a test company for the test falan  are a test company for the test falan filan falan filanWe are a test company for the test falan filan falan filanWe are a test company for the test falan filan falan filanWe are a test company for the test falan filan falan filan',
       score: 2.9,
       totalProject: 50
     },
@@ -46,6 +49,7 @@ const CompanyPage = () => {
       logoUrl:
         'https://static-cse.canva.com/_next/static/assets/logo_w2000xh641_3b021976d60d0277e95febf805ad9fe8c7d6d54f86969ec03b83299084b7cb93.png',
       location: 'London / England',
+      backgroundUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg',
       about: 'We are a test company for the test falan filan falan filan',
       score: 2.9,
       totalProject: 50
