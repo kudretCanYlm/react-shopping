@@ -241,6 +241,11 @@
   border-bottom: 2px solid var(--col-text-2) !important;
 }
 
+.text-box-input-focus-border  i {
+  color: var(--col-text-2)!important;
+
+
+}
 .text-box-input .main .field::placeholder {
   color: var(--col-text-4);
 }
@@ -333,8 +338,8 @@
 }
 
 .mini-img {
-  width: 60px;
-  height: 60px;
+  width: var(--min-size-2);
+  height: var(--min-size-2);
   overflow: hidden;
   border-radius: 50%;
   background-color: var(--col-bg-3);
@@ -342,6 +347,7 @@
 }
 
 .mini-img img {
+  
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -584,5 +590,20 @@
 }
 
 .tab-type-a:hover {
+  background-color: var(--col-bg-hover-1);
+}
+
+.tab-type-b{
+  text-align: center;
+  display: flex;
+  width: 100%;
+  background-color: var(--col-bg-9);
+  border-radius: var(--border-radius-1);
+  padding: var(--mar-pad-1);
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.tab-type-b:hover{
   background-color: var(--col-bg-hover-1);
 }

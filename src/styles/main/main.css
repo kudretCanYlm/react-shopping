@@ -188,8 +188,7 @@ p {
   margin-bottom: var(--mar-pad-2);
 }
 
-.post-card .post-bottom {
-}
+.post-card .post-bottom {}
 
 .post-card .post-bottom .post-datas {
   justify-content: space-between;
@@ -222,28 +221,51 @@ p {
   background-color: var(--col-bg-5);
 }
 
-.post-card .post-bottom .post-buttons .btn > p {
+.post-card .post-bottom .post-buttons .btn>p {
   color: var(--col-text-6) !important;
   font-size: var(--font-size-2) !important;
 }
 
 /*company-card*/
 .company-card {
-  /*will change*/
-  width: 400px;
-  /*will change*/
-  margin: var(--mar-pad-1);
+  min-width: var(--size-3);
+  max-width: var(--size-4);
+  margin: var(--mar-pad-2);
   background-color: var(--col-bg-2);
   border-radius: var(--border-radius-3);
   overflow: hidden;
+  justify-content: flex-start;
+  max-height: var(--size-4-2);
 }
 
-.company-card .img {
+.company-card .company-card-top {
+  align-items: center;
+  position: relative;
+  margin-bottom: calc(var(--min-size-3)/2);
+}
+
+.company-card .company-card-top .background {
   width: 100%;
+  height: var(--size-2);
+  border-bottom: 2px solid var(--col-bg-1);
+  border-radius: 0;
 }
 
-.company-card .content {
-  border: 1px solid red;
+.company-card .company-card-top .logo {
+  bottom: calc(var(--min-size-3)/-2);
+  position: absolute;
+  background-color: var(--col-bg-2);
+  border: 2px solid var(--col-bg-1);
+  width: var(--min-size-3);
+  height: var(--min-size-3);
+  border-radius: var(--border-radius-percent);
+}
+
+.company-card .company-card-center {
+  padding: var(--mar-pad-2);
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*user-message-card*/
@@ -279,7 +301,7 @@ p {
   position: relative;
 }
 
-.send-message-card > .send-message-card-file-icon,
+.send-message-card>.send-message-card-file-icon,
 .send-message-card-send-icon {
   background-color: var(--col-bg-1);
   border-radius: var(--border-radius-percent);
@@ -289,7 +311,7 @@ p {
   transition: 0.5s background-color;
 }
 
-.send-message-card > .send-message-card-file-icon:hover,
+.send-message-card>.send-message-card-file-icon:hover,
 .send-message-card-send-icon:hover {
   background-color: var(--col-bg-hover-1);
 }
@@ -441,8 +463,7 @@ p {
   flex: 1;
 }
 
-.company-details-card .top .left .left-content {
-}
+.company-details-card .top .left .left-content {}
 
 .company-details-card .top .left .left-content p {
   color: var(--col-text-4);
@@ -499,8 +520,7 @@ apply in future on the all project
   user-select: none;
 }
 
-.company-details-card .bottom {
-}
+.company-details-card .bottom {}
 
 .company-details-card .bottom h3 {
   margin-bottom: var(--mar-pad-1);
@@ -661,7 +681,7 @@ apply in future on the all project
   height: var(--size-1);
 }
 
-.member-details-card-mini > .member-details-card-mini-center,
+.member-details-card-mini>.member-details-card-mini-center,
 .member-details-card-mini-right {
   flex: 1;
 }
@@ -807,9 +827,8 @@ apply in future on the all project
   left: 0;
   right: 0;
   top: 0;
-  clip-path: path(
-    'M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
-  );
+  clip-path: path('M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z'
+    );
 }
 
 .scroll-card .card {
@@ -892,7 +911,7 @@ apply in future on the all project
   flex-wrap: wrap;
 }
 
-.dashboard-page > * {
+.dashboard-page>* {
   flex: 1;
   min-width: 49%;
   min-height: 100%;
@@ -928,6 +947,7 @@ apply in future on the all project
 /*member-page*/
 .member-page {
   width: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -957,7 +977,7 @@ apply in future on the all project
 
 .company-page .center {
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /*chat-page*/
@@ -1001,7 +1021,7 @@ apply in future on the all project
   padding: var(--mar-pad-2);
 }
 
-.chat-page > .chat-page-left .chat-page-members,
+.chat-page>.chat-page-left .chat-page-members,
 .chat-page-right .chat-page-messages {
   background-color: var(--col-bg-9);
   padding: 2% 5%;
@@ -1011,8 +1031,7 @@ apply in future on the all project
   flex: 65%;
 }
 
-.chat-page .chat-page-right .chat-page-member-options {
-}
+.chat-page .chat-page-right .chat-page-member-options {}
 
 .chat-page .chat-page-right .chat-page-messages {
   /*will change*/
@@ -1038,6 +1057,88 @@ apply in future on the all project
   align-items: center;
   background: url('../../assets/dragon-scales.svg');
 }
+
+.login-page .login-page-panel {
+  border-radius: var(--border-radius-2);
+  background-color: var(--col-bg-2);
+  width: 100%;
+  height: max-content;
+  max-width: var(--size-6);
+  overflow: hidden;
+}
+
+.login-page .login-page-panel .login-page-tabs{
+  padding: var(--mar-pad-8);
+}
+
+/*logout-page*/
+.logout-page {
+  background-color: var(--col-bg-1);
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-page .logout-icon {
+  font-size: var(--font-size-14);
+  left: 10%;
+  position: absolute;
+  animation: icon-animation forwards 5s infinite;
+  color: yellow;
+}
+
+@keyframes icon-animation {
+  10% {
+    left: 10%;
+    transform: rotate(15deg);
+  }
+
+  20% {
+    left: 20%;
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    left: 30%;
+    transform: rotate(15deg);
+  }
+
+  40% {
+    left: 40%;
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    left: 50%;
+    transform: rotate(15deg);
+  }
+
+  60% {
+    left: 60%;
+    transform: rotate(-15deg);
+  }
+
+  70% {
+    left: 70%;
+    transform: rotate(15deg);
+  }
+
+  80% {
+    left: 80%;
+    transform: rotate(-15deg);
+  }
+
+  90% {
+    left: 90%;
+    transform: rotate(15deg);
+  }
+
+  100% {
+    left: 10%;
+    transform: rotate(-15deg);
+  }
+}
+
 
 /*sub-routes*/
 /*project-details-page*/
@@ -1283,14 +1384,9 @@ apply in future on the all project
 
 /*forms*/
 /*login-form*/
-.login-form {
-  background-color: var(--col-bg-2);
-  width: 100%;
-  height: max-content;
-  max-width: 450px;
-  padding: var(--mar-pad-8);
+.login-form,
+.sign-up-form {
   align-items: center;
-  border-radius: var(--border-radius-2);
 }
 
 /*nav-bars*/
@@ -1309,7 +1405,7 @@ apply in future on the all project
   display: none;
 }
 
-.nav-bar-left .nav-bar-left-close-btn > * {
+.nav-bar-left .nav-bar-left-close-btn>* {
   font-size: var(--font-size-6);
   color: var(--col-bg-2);
   background-color: var(--col-bg-1);
@@ -1332,14 +1428,16 @@ apply in future on the all project
   .nav-bar-left {
     position: fixed;
   }
+
   .nav-bar-left .nav-bar-left-close-btn {
     display: flex;
   }
+
   .open-nav-bar {
     width: var(--size-2);
   }
 
-  .nav-bar-left .links > * {
+  .nav-bar-left .links>* {
     font-size: var(--font-size-4);
   }
 }
@@ -1430,7 +1528,7 @@ apply in future on the all project
     flex-direction: column;
   }
 
-  .dashboard-page > * {
+  .dashboard-page>* {
     flex: 1;
     min-width: 300px;
     width: 100%;
