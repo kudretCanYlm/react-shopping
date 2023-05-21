@@ -4,6 +4,7 @@ const loginBaseUrl = '/auth';
 
 //routes
 const login = loginBaseUrl + '/login';
+const signUp = loginBaseUrl + '/signUp';
 
 //post
 const Login = async (params) => {
@@ -12,4 +13,11 @@ const Login = async (params) => {
   return status;
 };
 
-export { Login };
+//post
+const SignUp = async (params) => {
+  const baseApiClass = new BaseApiClass();
+  const status = await baseApiClass.BaseApi().post(signUp, params);
+  return status;
+};
+
+export { Login, SignUp };
