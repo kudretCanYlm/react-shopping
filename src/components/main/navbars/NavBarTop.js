@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from 'components/base/buttons/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
 import SearchTextBox from 'components/base/textboxes/SearchTextBox';
@@ -6,19 +6,26 @@ import TextLink from 'components/base/links/TextLink';
 import { connect } from 'react-redux';
 import { TOGGLE_LEFT_NAV_BAR } from 'redux/actions/NavBarActions';
 import UserCard from 'components/main/cards/navBarCards/UserCard';
+import { GET_AUTHORIZED_USER_INFORMATION_MINI } from 'redux/actions/user/AuthorizedUserInformationMini';
 
 const mapStateToProps = (state) => ({
-  navBarReducer: state.NavBarReducer
+  navBarReducer: state.NavBarReducer,
+  userReducer: state.UserReducer
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleLeftNavBar: () => dispatch({ type: TOGGLE_LEFT_NAV_BAR })
+    toggleLeftNavBar: () => dispatch({ type: TOGGLE_LEFT_NAV_BAR }),
+    GetAuthorizedUserInformationMini: () => dispatch(GET_AUTHORIZED_USER_INFORMATION_MINI())
   };
 };
 
 const NavBarTop = (props) => {
-  const { toggleLeftNavBar } = props;
+  const { toggleLeftNavBar, GetAuthorizedUserInformationMini, userReducer } = props;
+
+  useEffect(() => {
+    GetAuthorizedUserInformationMini();
+  }, []);
 
   const onClick = () => toggleLeftNavBar();
 
@@ -37,8 +44,7 @@ const NavBarTop = (props) => {
         />
         <TextLink
           to={'/dashboard'}
-          className={'white fontsize-dashboard-min link-margin-1-vertical'}
-        >
+          className={'white fontsize-dashboard-min link-margin-1-vertical'}>
           Dashboard
         </TextLink>
         <TextLink to={'/member'} className={'white fontsize-dashboard-min link-margin-1-vertical'}>
@@ -52,14 +58,23 @@ const NavBarTop = (props) => {
         </TextLink>
       </div>
       <div className="right">
-        <UserCard
-          user={{
-            userName: 'Kudret Can',
-            role: 'Admin',
-            imgUrl:
-              'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg'
-          }}
-        />
+        {(userReducer.isLoading || userReducer.isError) && userReducer.loaded != true ? (
+          <UserCard loaded={false} />
+        ) : (
+          ''
+        )}
+        {userReducer.loaded ? (
+          <UserCard
+            user={{
+              userName: userReducer.payload.Name + ' ' + userReducer.payload.Surname,
+              mail: userReducer.payload.Email,
+              imgUrl:
+                'https://image.shutterstock.com/z/stock-photo-red-apple-fruit-isolated-on-white-background-1896616390.jpg'
+            }}
+          />
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
