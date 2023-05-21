@@ -6,8 +6,7 @@ const ClassicButton = ({ text, onClick = (f) => f, isSubmit, className }) => {
     <button
       type={isSubmit === true ? 'submit' : 'button'}
       onClick={onClick}
-      className={`btn-classic ${className}`}
-    >
+      className={`btn-classic ${className}`}>
       {text}
     </button>
   );
