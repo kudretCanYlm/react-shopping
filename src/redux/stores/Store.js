@@ -3,6 +3,7 @@ import Reducers from '../reducers/Reducer';
 import thunkMiddleware from 'redux-thunk';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import { PROJECT_LOADED } from 'redux/actions/project/ProjectAction';
+import { logOut } from 'utils/Auth';
 
 const persistConfig = {
   key: 'root',
@@ -34,17 +35,16 @@ function authMiddleware() {
   return (next) => (action) => {
     const token = localStorage.getItem('token');
 
-    if ((action?.errCode == 401 || token == null) && !action.type.includes('LOG')) {
-      localStorage.removeItem('token');
-      location.replace('http://localhost:3000/');
-
-      toLogin();
-    } else {
-      next(action);
-    }
+    if (
+      (action?.errCode == 401 || token == null) &&
+      !action.type.includes('LOG') &&
+      !action.type.includes('SIGN')
+    )
+      logOut();
+    else next(action);
   };
 }
 
-const Store =  createStore(Reducers, applyMiddleware(thunkMiddleware, logger, authMiddleware));
+const Store = createStore(Reducers, applyMiddleware(thunkMiddleware, logger, authMiddleware));
 
 export default Store;
